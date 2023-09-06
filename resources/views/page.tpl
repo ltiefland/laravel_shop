@@ -1,6 +1,6 @@
 {nocache}
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
 
         <title>{$title}</title>
@@ -111,8 +111,8 @@
         {/if}
 
         <script>
-            var checkVerfuegbarenBestand = false;
-            var buy_link_base = "{$buy_link_base}";
+            let checkVerfuegbarenBestand = false;
+            let buy_link_base = "{$buy_link_base}";
             {if $ini.modules.checkVerfuegbarenBestand==1}
                 checkVerfuegbarenBestand = true;
             {/if}
@@ -122,10 +122,11 @@
         {/if}
         {if $pagetype|stristr:"Bestellvorgang"}
         <script>
+            let land;
             {if $smarty.session.SHOP.Lieferadresse=="true"}
-            var land = {$smarty.session.SHOP.buy.Persdata.liefer_Land|default:$defaultLandID:47};
+            land = {$smarty.session.SHOP.buy.Persdata.liefer_Land|default:$defaultLandID:47};
             {else}
-            var land = {$smarty.session.SHOP.buy.Persdata.Land|default:$defaultLandID:47};
+            land = {$smarty.session.SHOP.buy.Persdata.Land|default:$defaultLandID:47};
             {/if}
         </script>
         <script type="text/javascript" src="/JavaScript/change_versand.js"></script>
@@ -219,16 +220,16 @@
 
             <script type="text/plain" src="//www.googleadservices.com/pagead/conversion.js" data-usercentrics="Google Remarketing" ></script>
             <script type="text/plain" data-usercentrics="Google Remarketing">
-                var google_tag_params = {
+                let google_tag_params = {
                     ecomm_prodid: {$ecomm_prodid},
                     ecomm_pagetype: {$ecomm_pagetype},
                     ecomm_totalvalue: {$ecomm_totalvalue|default:0}
                 };
 
                 /* <![CDATA[ */
-                var google_conversion_id = '{$ini.google.google_conversion_id}';
-                var google_custom_params = window.google_tag_params;
-                var google_remarketing_only = true;
+                let google_conversion_id = '{$ini.google.google_conversion_id}';
+                let google_custom_params = window.google_tag_params;
+                let google_remarketing_only = true;
                 /* ]]> */
             </script>
 
@@ -242,9 +243,9 @@
         {/if}
 
         {if $ini.google.trustedstores_aktiv == 1 && $ini.google.trustedstores_id != "" && $ini.google.trustedstores_position != "" && $ini.google.trustedstores_page_language != "" && $ini.google.merchant_id != ""}
-        <!-- BEGIN: Google Zertifizierte H�ndler -->
+        <!-- BEGIN: Google zertifizierte Händler -->
         <script type="text/plain" data-usercentrics="Google Trusted Stores" >
-            var gts = gts || [];
+            let gts = gts || [];
 
             gts.push(["id", "{$ini.google.trustedstores_id}"]);
             gts.push(["badge_position", "{$ini.google.trustedstores_position}"]);
@@ -255,15 +256,15 @@
             gts.push(["google_base_subaccount_id", "{$ini.google.merchant_id}"]);
 
             (function() {
-                var gts = document.createElement("script");
+                let gts = document.createElement("script");
                 gts.type = "text/javascript";
                 gts.async = true;
                 gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
-                var s = document.getElementsByTagName("script")[0];
+                let s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(gts, s);
             })();
         </script>
-        <!-- END: Google Zertifizierte H�ndler -->
+        <!-- END: Google zertifizierte Händler -->
         {/if}
 
 
@@ -276,7 +277,7 @@
 
         {if $ini.google.analytics_account != ""}
         <script {if $ini.consentTool.anbieter=="usercentrics" && $ini.consentTool.anbieterId}type="text/plain" data-usercentrics="Google Analytics"{/if}>
-            var _gaq = _gaq || [];
+            let _gaq = _gaq || [];
             _gaq.push(['_setAccount', '{$ini.google.analytics_account}']);
             _gaq.push (['_gat._anonymizeIP']);
             _gaq.push(['_trackPageview']);
@@ -326,10 +327,10 @@
             {/if}
 
             (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript';
+                    let ga = document.createElement('script'); ga.type = 'text/javascript';
                     ga.async = true;
                     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    let s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                 })();
         </script>
         {/if}
@@ -353,8 +354,8 @@
             }
             window.renderOptIn = function() {
                 // estimated_delivery_date
-                var edd = new Date();
-                var addDays = {$ini.google.estimated_delivery_date};
+                let edd = new Date();
+                let addDays = {$ini.google.estimated_delivery_date};
                 edd.setDate(edd.getDate() + addDays);
                 edd_formatted = ISODateString(edd);
 
@@ -376,7 +377,7 @@
         <script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
         <script>
           window.renderBadge = function() {
-            var ratingBadgeContainer = document.createElement("div");
+            let ratingBadgeContainer = document.createElement("div");
             document.body.appendChild(ratingBadgeContainer);
             window.gapi.load('ratingbadge', function() {
               window.gapi.ratingbadge.render(ratingBadgeContainer, { "merchant_id": {$ini.google.merchant_id} } );
@@ -471,7 +472,7 @@
 
         <script>
             $(function(){
-                var w = $(window).width();
+                let w = $(window).width();
                 $('input:submit, input:button, input:reset').button();
                 {if $ini.amazon.aktiv ==1}
                     $('#place_order').attr("disabled","disabled");
@@ -522,8 +523,8 @@
                 {/if}
 
 
-                //10.01.13 - MK: Header Menue Funktion zum einblenden/ausblenden der unterebene
-                var timeout;
+                //10.01.13 - MK: Header Menü Funktion zum ein-/ausblenden der unterebene
+                let timeout;
                 /**
                     $('.warenkorb').mouseenter(function(){
                         timeout = setTimeout(function() {
@@ -588,23 +589,23 @@
 
 
                 $('.lastVisit').mouseenter(function(){
-                    var item = $(this);
+                    let item = $(this);
                     timeout = setTimeout(function() {
-                        var id = $(item).attr("id").split("a_");
+                        let id = $(item).attr("id").split("a_");
                         $('#b_'+id[1]).show();
                     },400);
                 });
 
                 $('.lastVisit').mouseleave(function(){
                     clearTimeout(timeout);
-                    var item = $(this);
-                    var id = $(item).attr("id").split("a_");
+                    let item = $(this);
+                    let id = $(item).attr("id").split("a_");
                     $('#b_'+id[1]).hide();
                 });
 
                 $('.lastVisitItemZoom').mouseleave(function(){
                     clearTimeout(timeout);
-                    var id = $(this).attr("id")
+                    let id = $(this).attr("id")
                     $('#'+id).hide();
                 });
 
@@ -665,8 +666,8 @@
             function motorfinderForm() {
                 $('.mf_dialog').html("<img src='/images/webelemente/loading.gif' /><br> Bitte warten...");
                 //$('.mf_dialog').show();
-                var formValues = $(this).closest('form').serialize();
-                //Loescht den div in dem das item dargestellt wird, damit kein Fehler des jqzoom auftritt
+                let formValues = $(this).closest('form').serialize();
+                //Löscht den div in dem das item dargestellt wird, damit kein Fehler des jqzoom auftritt
                 $('.zoomContainer').remove();
 
                 $('.rightcontent').load("/module/motorfinder.php",formValues,function(){
@@ -674,7 +675,7 @@
                 });
             }
 
-            // seachbutton darf nicht von jqueryUI manipuliert werden
+            // searchButton darf nicht von jqueryUI manipuliert werden
             $('#searchSubmit').removeAttr('class');
 
 
@@ -723,9 +724,9 @@
         window.__lc = window.__lc || {};
         window.__lc.license = 8104511;
         (function() {
-          var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-          lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+          let lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+          lc.src = 'https://cdn.livechatinc.com/tracking.js';
+          let s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
         })();
         </script>
         <!-- End of LiveChat code -->
@@ -734,8 +735,8 @@
         {if $ini.trustedShops.shop_id}
         <script type="text/javascript">
           (function () {
-            var _tsid = '{$ini.trustedShops.shop_id}';
-            _tsConfig = {
+            let _tsid = '{$ini.trustedShops.shop_id}';
+            let _tsConfig = {
               'yOffset': '0', /* offset from page bottom */
               'variant': 'reviews', /* text, default, small, reviews, custom, custom_reviews */
               'customElementId': '', /* required for variants custom and custom_reviews */
@@ -746,12 +747,12 @@
               'disableTrustbadge': 'false', /* deactivate trustbadge */
               'trustCardTrigger': 'mouseenter' /* set to 'click' if you want the trustcard to be opened on click instead */
             };
-            var _ts = document.createElement('script');
+            let _ts = document.createElement('script');
             _ts.type = 'text/javascript';
             _ts.charset = 'utf-8';
             _ts.async = true;
             _ts.src = '//widgets.trustedshops.com/js/' + _tsid + '.js';
-            var __ts = document.getElementsByTagName('script')[0];
+            let __ts = document.getElementsByTagName('script')[0];
             __ts.parentNode.insertBefore(_ts, __ts);
           })();
         </script>
