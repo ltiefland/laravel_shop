@@ -4,5 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="main" level="application" />
+    <orderEntry type="library" name="uc-block.bundle" level="application" />
+    <orderEntry type="library" name="uc-block-ui.bundle" level="application" />
   </component>
 </module>
