@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'work_sanslight';
+    src: url('/styles/fonts/worksans-light-webfont.woff2') format('woff2'),
+         url('/styles/fonts/worksans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'work_sansregular';
+    src: url('/styles/fonts/worksans-regular-webfont.woff2') format('woff2'),
+         url('/styles/fonts/worksans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'work_sanssemibold';
+    src: url('/styles/fonts/worksans-semibold-webfont.woff2') format('woff2'),
+         url('/styles/fonts/worksans-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* fonts */
+body,
+.preis_message {
+    font-family:'work_sansregular';
+}
+
+h1,
+b,
+strong,
+.bold,
+.head,
+.item_preis,
+.preisInner,
+h1,h2,h3,h4,h5,h6,
+.box_top,
+.bezeichnung,
+.einstieg02,
+.itemnameInner
+{
+    font-family:'work_sanssemibold'!important;
+    font-weight:normal;
+}
+
+
+/* font sizes */
+body {
+  -ms-hyphens: auto; /* ab IE10 */
+  -moz-hyphens: auto; /* seit Firefox 6 */
+  -webkit-hyphens: auto; /* seit Safari 5.1 (OS X), Safari 4.1 (iOS) */
+  hyphens: auto;
+  font-size:1em;
+}
+ 
+h1,
+.shopname {
+    font-size:2rem;
+}
+h3 {
+    font-size:1.2rem;
+}
+.bestellartInfoText {
+    font-size:1rem;
+}
+.itemnameInner,
+.service_center .head,
+.topnav ul li,
+.box_top,
+h3.bezeichnung
+{
+    font-size:1.1em;
+}
+
+.einstieg02,
+.box_2 .item_preis,
+#item_name_h1 {
+    font-size:2em;
+}
+
+.preisInner,
+.item_preis,
+.kontakt .head {
+    font-size:1.7em;
+}
+.billiger_gesehen_headline h2 {
+    font-size:1.6em;
+}
+
+.box_subdir {
+    font-size:1.6em;
+}
+
+.basket_head1,
+.basket_summe .item_preis {
+    font-size:1.2em;
+}
+.inner_basket h1 {
+    font-size:1em;
+}
+
+.bestellvorgang,
+.item_mobile,
+.versand_aufschlag,
+.pagination_container,
+.header .warenkorb .warenkorb_preis,
+.bottomfooter,
+.root .breadcrumb,
+#overDiv,
+.lieferstatusText,
+.preis_lieferstatus,
+.item_preis_message,
+.descriptionInner,
+#gutschein,
+#overDiv,
+.item_rightrow .item_preiseinheit,
+.mengen_input span,
+.itemNav,
+.warenkorb_preis,
+.item_beschreibung {
+    font-size:.8em;
+}
+
+.mengenlabel,
+.item_slider_wrapper_inner .preis_message,
+.preis_messageInner {
+    font-weight:normal;
+    font-size:12px;
+}
+
+.head {
+    text-transform:uppercase;
+}
+
+h1 {
+    line-height:1.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+

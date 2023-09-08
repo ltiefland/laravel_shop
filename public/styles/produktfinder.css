@@ -1,0 +1,128 @@
+/* produktfinder */
+.produktfinder {
+    clear:both;
+    float:left;
+}
+.produktfinder h1 {
+    padding:0 0 2px 25px!important;
+}
+#produktfinder_result {
+    clear:both;
+    float:none;
+}
+
+#produktfinder_form {
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap:28px; 
+    width: 100%;
+    margin: 0;
+}
+#produktfinder_form > div {
+    grid-column: span 4;   
+    background:#fff;
+    border-radius:5px;
+    border:2px solid #e95801;
+    padding:10px;
+    margin:0;
+}
+#produktfinder_form .ui-widget {
+    margin:5%!important;
+}
+.produktfinder select {
+    margin: 5px 10px 5px 0px;
+    padding:4px;
+    border: 1px solid #EA5900;
+    background: #fff;
+    background-color: rgb(255, 255, 255);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: none;
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+    color: #EA5900;
+    width:50%;
+}
+.ui-slider {
+    margin-top:6px!important;
+}
+.produktfinder .checkbox_label {
+    float:left;
+    padding: 0 2%;
+}
+.produktfinder .checklist {
+    padding-top:0px;
+    display:block;
+    height:auto!important;
+    width:100%!important;
+}
+.produktfinder .checklist li {
+    list-style-type:none;
+    padding:0.5% 0px!important;
+    clear:both;
+    float:none;
+    width:100%;
+}
+.produktfinder .checklist input {
+    margin-top:3px;
+}
+.produktfinder .checklist input,
+.produktfinder .checklist label {
+    float:left;
+}
+.produktfinder li label {
+    padding:0 0 0 4px;
+}
+.produktfinder .filter_elem_radio label {
+    float:left;
+    width:30%;
+    margin:2% 0;
+}
+.produktfinder .filter_elem_radio label input {
+    
+    margin:0 2%!important;
+    float:left;
+}
+
+.ui-slider .ui-slider-range {
+    background:#2FBABD;
+}
+
+
+.filter_elem h1,
+.filter_elem_select h1,
+.filter_elem_radio h1{
+    padding: 0px 0px 2px 0px !important;
+}
+.infobutton {
+    display:block;
+    text-align:center;
+    border:2px solid #C3743F;
+    background-color:#FFECCE;
+    margin:0 10px 20px 0;
+    
+}
+#frb_dialog {
+    display: flex;
+    width: auto;
+    min-height: 0px;
+    max-height: none;
+    height: 195px;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:800px) {
+    #produktfinder_form {
+        width:96%;
+        margin:20px auto;
+    }
+    #produktfinder_form > div {
+        grid-column: span 12;
+    }
+}
+/* ENDE produktfinder */

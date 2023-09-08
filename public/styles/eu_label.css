@@ -1,0 +1,194 @@
+table.euLabel
+{
+    vertical-align:top;
+    color:#3A3B3D000;
+}
+
+
+table.euLabel tr td
+{
+
+    font-size: 10px;
+    vertical-align:top;
+    border-bottom: 1px solid #CCCCCC;
+    color:#3A3B3D000;
+}
+
+table.euLabel tr th {
+    text-align:left;
+    font-size:10px;
+    
+    text-align: left;
+}
+
+
+table.euLabel tr td.title
+{
+    text-align:right;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;	
+}
+
+table.euLabelRadio 
+{
+    background-color: #EEEEEE;
+    border-collapse:collapse;
+    margin:0px;
+}
+
+table.euLabelRadio tr td
+{
+    font-size: 10px;
+    
+    text-align: center;
+    background-color: #EEEEEE;
+    margin:0px;
+
+}
+
+table.euLabelRadio tr td.head
+{
+    width:auto;
+    font-size: 10px;
+    
+}
+
+table.euLabelRadio tr td.A
+{
+    color: #FFFFFF;
+    background-color: #1B8000;
+}
+table.euLabelRadio tr td.B
+{
+    color: #FFFFFF;
+    background-color: #75AA51;
+}
+table.euLabelRadio tr td.C
+{
+    color: #FFFFFF;
+    background-color: #B2CE5E;
+}
+table.euLabelRadio tr td.D
+{
+    color: #FFFFFF;
+    background-color: #E6F311;
+    }
+table.euLabelRadio tr td.E
+{
+    color: #FFFFFF;
+    background-color: #E9C01A;
+}
+table.euLabelRadio tr td.F
+{
+    color: #FFFFFF;
+    background-color: #D37D0D;
+}
+table.euLabelRadio tr td.G
+{
+    color: #FFFFFF;
+    background-color: #D90404;
+}
+
+
+/* 
+ * Kühlschränke Appp1 bis D1
+ * Waschmaschinen Appp3 bis D3
+ * Geschirrspüler Appp4 bis D4
+ * Fernsher Ap5 bis F5
+ * Trockner Appp6 bis D6
+ * Klimageräte Appp7 bis D7
+ * Elektroherde A8 bis G8
+ * Leuchtmittel A9 bis G9
+*/
+
+table.euLabelRadio tr td.Appp1,
+table.euLabelRadio tr td.Appp3,
+table.euLabelRadio tr td.Appp4,
+table.euLabelRadio tr td.Ap5,
+table.euLabelRadio tr td.Appp6,
+table.euLabelRadio tr td.Appp7,
+table.euLabelRadio tr td.A8,
+table.euLabelRadio tr td.A9
+{
+    color:#FFFFFF;
+    
+    background-color: #00963F;
+}
+table.euLabelRadio tr td.App1,
+table.euLabelRadio tr td.App3,
+table.euLabelRadio tr td.App4,
+table.euLabelRadio tr td.A5,
+table.euLabelRadio tr td.App6,
+table.euLabelRadio tr td.App7,
+table.euLabelRadio tr td.B8,
+table.euLabelRadio tr td.B9
+{
+    color:#FFFFFF;
+    
+    background-color: #4EAF30;
+}
+table.euLabelRadio tr td.Ap1, 
+table.euLabelRadio tr td.Ap3, 
+table.euLabelRadio tr td.Ap4,
+table.euLabelRadio tr td.B5,
+table.euLabelRadio tr td.Ap6,
+table.euLabelRadio tr td.Ap7,
+table.euLabelRadio tr td.C8,
+table.euLabelRadio tr td.C9
+{
+    color:#FFFFFF;
+    
+    background-color: #C7D300;
+}
+table.euLabelRadio tr td.A1, 
+table.euLabelRadio tr td.A3,
+table.euLabelRadio tr td.A4,
+table.euLabelRadio tr td.C5,
+table.euLabelRadio tr td.A6,
+table.euLabelRadio tr td.A7,
+table.euLabelRadio tr td.D8,
+table.euLabelRadio tr td.D9
+{
+    color:#FFFFFF;
+    
+    background-color: #FFED00;
+}
+table.euLabelRadio tr td.B1, 
+table.euLabelRadio tr td.B3, 
+table.euLabelRadio tr td.B4,
+table.euLabelRadio tr td.D5, 
+table.euLabelRadio tr td.B6,
+table.euLabelRadio tr td.B7,
+table.euLabelRadio tr td.E8,
+table.euLabelRadio tr td.E9
+{
+    color:#FFFFFF;
+    
+    background-color: #FBB900;
+}
+table.euLabelRadio tr td.C1, 
+table.euLabelRadio tr td.C3, 
+table.euLabelRadio tr td.C4,
+table.euLabelRadio tr td.E5, 
+table.euLabelRadio tr td.C6,
+table.euLabelRadio tr td.C7,
+table.euLabelRadio tr td.F8,
+table.euLabelRadio tr td.F9
+{
+    color:#FFFFFF;
+    
+    background-color: #EC6504;
+}
+table.euLabelRadio tr td.D1, 
+table.euLabelRadio tr td.D3,
+table.euLabelRadio tr td.D4,
+table.euLabelRadio tr td.F5, 
+table.euLabelRadio tr td.D6,
+table.euLabelRadio tr td.D7,
+table.euLabelRadio tr td.G8,
+table.euLabelRadio tr td.G9
+{
+    color:#FFFFFF;
+    
+    background-color: #E3000F;
+}

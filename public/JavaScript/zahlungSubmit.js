@@ -1,0 +1,4 @@
+function zahlungsubmit()
+{
+    $('#zahlung').submit();
+}

@@ -1,0 +1,64 @@
+$(function(){
+    $('#checkPLZ').click(checkKurier).css("cursor","pointer").button();
+    $('#plz').keyup(checkKurierOrder).change(checkKurierOrder);
+    $('#plz2').keyup(checkKurierOrder).change(checkKurierOrder);
+    $('#plz_pst').keyup(checkKurierOrder).change(checkKurierOrder);
+})
+
+function checkKurier()
+{
+    zip=$('#zip').val();
+    $('#plz_ok').hide();
+    $('#plz_nok').hide();
+    if(zip.length==5)
+    {    
+        $.get("/module/checkPLZ.php?plz="+zip,function(html)
+        {
+            if(html==1)
+            {
+                $('#plz_ok').show();
+            }
+            else
+            {
+                $('#plz_nok').show();
+            }
+        })
+    }
+}
+
+function checkKurierOrder()
+{
+    $('.kurier').hide();
+    zip=$(this).val();
+    if(zip.length==5)
+    {    
+        $.get("/module/checkPLZ.php?mode=full&plz="+zip,function(html)
+        {
+            if(html==1)
+            {
+                $('#plz_ok').show();
+            }
+            else
+            {
+                if(html==0)
+                {
+                    $('#plz_nok').show();
+                }
+                else
+                {
+                    if(html==-1)
+                    {
+                        $('#basket_nok').show();
+                    }
+                    else
+                    {
+                        if(html==-2)
+                        {
+                            $('#day_nok').show();
+                        }
+                    }
+                }
+            }
+        })
+    }
+}

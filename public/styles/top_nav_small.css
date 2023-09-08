@@ -1,0 +1,96 @@
+.topnav {
+    clear:both;
+    float:left;
+    width:100%;
+    margin-top:8px;
+}
+.topnav .inner {
+    background-color:#3d3d3d!important;
+    
+}
+.topnav ul {
+    margin:0;
+    float:left;
+    font-size: 16px;
+    max-width:12.5%;
+    width:100%;
+}
+.topnav ul li {
+    list-style-type:none;
+    float:left;
+    max-width: 160px;
+    font-size:14px;
+    height:55px;
+    z-index:9999;
+    text-align: center;
+    line-height:1.4em;
+}
+.topnav ul li a {
+    display:block;
+    height:20px;
+    padding:9px 10px 0 10px;
+    vertical-align:middle;
+    display:table-cell;
+    color:#fff!important;
+}
+.topnav ul li a:link,
+.topnav ul li a:active,
+.topnav ul li a:visited {
+    
+}
+.topnav ul li a:hover {
+    color:#03A1C6!important;
+    text-decoration:none;
+}
+
+.topnav ul li.last {
+    border:none!important;
+}
+.topnav ul li.last ul {
+
+}
+
+
+/* 2. Ebene */                
+.topnav ul li:hover ul {
+    display:block;
+    float:left;
+}
+ul.level2 {
+    width:auto;
+    max-width:none;
+    padding-bottom:10px;
+    margin-top:0px;
+    position:absolute;
+    clear:both;
+    float:left;
+    display:none;
+    color:#fff;
+    z-index:999999;
+    list-style-type:none!important;
+    
+}
+
+ul.level2 li {
+    clear:both;
+    float:none;
+    border:none!important;
+    text-align:left;
+    text-transform:none;
+    padding: 2% 0;
+    height: 100%;
+}
+.level2 li:hover {
+    background:none!important;
+    color:#fff!important;
+}
+
+ul.level2 li a:link,
+ul.level2 li a:active,
+ul.level2 li a:visited {
+    color:#fff;
+    width: auto;
+}
+ul.level2 li a:hover {
+}
+

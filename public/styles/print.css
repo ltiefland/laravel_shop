@@ -1,0 +1,65 @@
+/* 
+	$Id: print.css 2 2015-04-24 14:31:35Z tiefland $
+	Projekt:   kuechen-design-outlet.de
+	Autor:     Webagentur Niewerth <erling@weban.de>
+	Copyright: 2012 Webagentur Niewerth
+*/ 
+
+.backstretch { 
+    display: none !important; 
+}
+
+.headnav,
+.warenkorb,
+.search,
+.leftcontent,
+.right,
+.box_top,
+.footer,
+.topfooter,
+.mainnav,
+.topnav,
+#socialshareprivacy,
+#angebote,
+.basketButton,
+.mengen_input,
+.loading_dlg {
+    display:none;
+}
+.noprint,
+.noprint td {
+    display:none;
+}
+.itemLeftContainer {
+    width:300px;
+}
+.itemLeftContainer img {
+    width:20%;
+}
+.thumbs img {
+    width:100%;
+}
+#contact {
+    margin-left:-50px!important;
+}
+.onprint {
+    display:block!important;
+    visibility: visible!important;
+    
+}
+.content {
+    margin-left:0!important;
+}
+
+.basket_table {
+    clear:both;
+    float:none;
+}
+.basket_table_artikel {
+    width:90%;
+    margin-left:-10px!important;
+    margin-top:20px!important;
+}
+.basket-items-overview {
+    width:90%;
+}

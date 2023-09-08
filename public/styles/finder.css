@@ -1,0 +1,205 @@
+/*
+* Button zum Aufklappen
+*/
+.mf_menu_button {
+    position:fixed;
+    margin:0px 0 0 -82px;
+    cursor:pointer;
+    background:url(/images/webelemente/finder-bg.png) repeat-y;
+    background-position:24px 0;
+    font-family: 'montserratmedium Condensed', sans-serif;
+    color:#fff;
+    font-size:20px;
+    text-transform:uppercase;
+    line-height:20px;
+    text-align:center;
+    z-index: 9;
+    float:inherit !important;
+    overflow:hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.mf_menu_button_text {
+    margin-left:46px;
+    padding-bottom:10px;
+    width:10px;
+}
+.mf_main {
+    background-color:#fff;
+    padding:10px 5px 10px 10px;
+    float:left;
+    width:159px;
+}
+
+.mf_main h1 {
+    color:#fff;
+    font-family: 'montserratmedium Condensed', sans-serif;
+}
+.mf_main p {
+
+}
+.mf_close {
+    float:right;
+    color:#fff;
+    font-size:10px;
+    cursor:pointer;
+}
+.mf_close:hover {
+    color:#193364;
+}
+.mf_list_close {
+    color:#2C3E7E;
+    float:right;
+    padding:0 16px 0 0;
+    width:200px;
+    text-align:right;
+    cursor:pointer;
+}
+.mf_list_close:hover {
+    color:#EE1C27;
+}
+.mf_dialog {
+    display:none;
+    padding:4px;
+}
+.finder_icons{
+    margin-left:-60px;
+    margin-top:-2px;
+    float:left;
+    
+}
+.finder_icons img{
+    cursor: pointer;
+}
+.clickFinder{
+    display: none;
+    float:none;
+    position:absolute;
+    margin-left: 57px;
+    background-color: #002454;
+    color: #fff;  
+    z-index: 101;
+    max-width: 515px;
+}
+.motorfinder {
+    font-size:12px;
+}
+.motorfinderHeadline{
+    border-bottom:1px dotted #3A3B3D;
+    height:16px;
+      
+}
+.filter_elem_button{
+    float:left;
+    text-align:center;
+}
+.filter_elem_button_submit{
+    margin-right:5px;
+    clear:both;
+    float:right;
+    text-align:center;
+}
+.kill_filter{
+    width:20px;
+    padding:0!important;
+    margin:0;    
+}
+.clickFinder .motorfinderHeadline{
+    height:44px;
+    background-color: #FDD71E;
+    color: #002454;
+    padding: 5px;
+    vertical-align: middle;
+    display: table-cell;
+    width:505px;
+    border-bottom:1px solid #fff;
+}
+.clickFinder .mf_dialog{
+    color: #fff;
+}
+.clickFinder .filter_elem_range,
+.clickFinder .filter_elem_radio,
+.clickFinder .filter_elem_button,
+.clickFinder .filter_elem,
+.clickFinder .filter_elem_select{
+    padding: 0px 5px 0 10px; 
+    float:left;
+    clear:none;
+    min-height: 75px;  
+}
+.clickFinder .filter_elem_button_submit{
+    float:right;
+    clear:both;
+}
+.clickFinder .infoIcon,
+.clickFinder label{
+   color: #fff;  
+}
+.clickFinder label{
+   float: left;
+   clear: both;
+}
+.clickFinder .kill_filter_x{   
+    
+}
+.motorfinder input{
+    background-color:#666!important;
+    border:1px solid #666!important;
+    margin-bottom:7px!important;
+    margin-right: 5px;
+    color: #fff
+}
+.motorfinder input[type=checkbox]{
+    background-color: transparent!important;
+}
+.motorfinder input:hover,
+.motorfinder input:active{
+    background-color:#B9B9B9!important;
+    border:1px solid #B9B9B9!important;
+}
+.motorfinder .ui-slider-handle{
+    background-color:#fff!important;
+    border:1px solid #B9B9B9!important;
+}
+.motorfinder .ui-slider-handle:hover,
+.motorfinder .ui-slider-handle:active{
+    background-color:#B9B9B9!important;
+    border:1px solid #B9B9B9!important;
+    cursor: pointer;
+}
+.motorfinder .ui-slider .ui-slider-range{
+    
+}
+.filter,
+.filter_elem,
+.filter_elem_range,
+.filter_elem_radio,
+.filter_elem_select {
+    float:none;
+    clear:both;
+    width:150px;
+    margin-top:20px;
+    margin-right:5px;
+}
+.filter_elem_range .preis,
+.filter_elem_range .elem_range {
+    width:125px;
+    margin:10px 0 0 10px;
+    
+}
+.filter select,
+.filter_elem select,
+.filter_elem_select select {
+    margin:5px 0 20px 5px;
+    width:130px;
+    float:left;
+}
+.filter label {
+    padding-left:5px;
+    cursor:pointer;
+}
+.filter .checklistHighlighted{
+    height: auto!important;
+}
+ul.checklist label{
+    padding-left:7px!important;
+}

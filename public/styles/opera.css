@@ -1,0 +1,28 @@
+div#underline {
+	left: -1px;
+}
+
+div#underline div.middle {
+	height: 8px;
+	padding: 0;
+}
+
+div#container-content {
+	margin:18px 0 4px 1px;
+}
+
+.aktion-preisbox-small {
+	display: none;
+}
+
+div#content div.box div.box-middle {
+	height:170px;
+}
+
+.top-angebot-image {
+	margin-top: 12px
+}
+
+input#suchbegriff {
+	float: left;
+}

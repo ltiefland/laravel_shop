@@ -1,0 +1,103 @@
+/* jquery UI Anpassungen */
+
+.ui-widget,
+.ui-widget *,
+ {
+    font-family:montserrat-regular!important;
+}
+
+
+.ui-dialog {
+    border:1px solid #ccc!important;
+    background-color:#ebf2f3!important;
+    
+}
+.ui-widget-content {
+    color:#262626!important;
+    background:none!important;
+    background-color:#ebf2f3!important;
+}
+.ui-widget-header {
+    color:#262626!important;
+    background:none!important;
+    background-color:#ebf2f3!important;
+}
+.ui-dialog-titlebar-close {
+    border:none!important;
+    background:none!important;
+    background-color:transparent!important;
+    color:#262626!important;
+    
+}
+.ui-dialog .ui-dialog-buttonpane {
+    border:none!important;
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+    transition:all 200ms ease;
+    background-image:none!important;
+}
+
+.ui-dialog-buttonset .ui-button {
+    border:none!important;
+    background:none!important;
+    background-color:#2FBABD!important;
+    border-radius:5px;
+    color:#fff!important;
+    transition:all 200ms ease;
+} 
+.ui-dialog-buttonset .ui-state-hover {
+    background-color:#9CD9DA!important;
+}
+.ui-widget-overlay {
+    background:none!important;
+    background-color:#fff!important;
+    opacity:.5;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background-color:#EA5901!important;
+    color:#fff!important;
+}
+.ui-state-default a:link,
+.ui-state-default a:active,
+.ui-state-default a:visited {
+    color:#666;
+}
+.ui-state-default:hover,
+.ui-state-default:focus,
+.ui-state-default a:hover,
+.ui-state-default a:focus {
+    color:#fff;
+}
+
+.ui-state-default a,
+.ui-state-default a span {
+    color:#666;
+}
+li.ui-state-default:hover a span {
+    color:#fff;
+}
+
+.ui-state-default:hover,
+.ui-state-default:focus {
+    background-color:#6ab3dc!important;
+}
+.ui-state-active a,
+.ui-state-active a span {
+    color:#fff!important;
+}
+#reiter .ui-tabs-nav {
+    background-color:transparent!important;
+}
+.inner_basket .ui-widget,
+.inner_basket .ui-widget-content,
+.inner_basket .ui-widget-header,
+#reiter .ui-widget-content {
+    background-color:#fff!important;
+}
+.inner_basket
+{
+    background-color:#fff!important;
+}

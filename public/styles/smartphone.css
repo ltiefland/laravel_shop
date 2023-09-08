@@ -1,0 +1,72 @@
+
+header,
+.header {
+    float:left;
+    width:100%;
+    height: auto;
+}
+header .inner{
+    padding: 0 2%;
+    width:96%;
+    float:left;
+}
+header .logo{
+    float:left;
+    margin: 0;
+} 
+header .logo img{
+    width:100%;
+}   
+header .headnav{
+    float:left;
+    width: 100%;
+}
+header .inner .login_menu{
+    float:left;
+}
+header .inner .search{
+    float:right;
+    position:relative;
+    margin: 0;
+    width:100%;
+}
+header .inner .search #suchbegriff{
+    width:72%;
+    
+}
+header .inner .search #searchSubmit{
+    float:left;
+    width:20%;
+}
+
+
+
+/** ITEMDETAILSEITE **/
+.itemLeftContainer{
+    display: none;
+}
+.smartphone{
+    display:block;
+}
+.content .bottomcontent .hersteller_slider, 
+.content .bottomcontent .zahlarten{
+    display:none;
+}
+
+/** FOOTER **/
+.footer .bottomfooter .inner > span{
+    width: 96%!important;
+    clear: both;
+    text-align: left!important;
+    padding: 2%;
+}
+
+.backToShopButton
+{
+    float: right;
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}

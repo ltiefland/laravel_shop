@@ -1,0 +1,488 @@
+@charset "utf-8";
+/* CSS Document */
+/* CSS COPYRIGHT 2013 
+   lp-MEDIA, CAPSICUM-DESIGN
+   www.lp-media.de */
+   
+/* Allgemeine Einstellung */
+body {margin:0; padding:0; width:1180px}
+
+/* Seitenhintergrund-Einstellungen */
+#lp-pageBackground {
+	background-color: #F2F2F2;
+top left repeat-x; 	margin: 0;
+	padding: 0 0 20px 0;
+	width: 1180px;
+	align-content: center;
+}
+#wraper{
+	width: 1180px;
+}
+#lp-pageContainer {margin: 0 auto; padding: 0; width: 100%; font-family:montserratmedium, Helvetica, sans-serif; font-size: 12px; font-style:normal;}
+#lp-pageContainer a {text-decoration: none; color:#6e0118;}
+#lp-pageContainer a:hover {text-decoration: underline; color:#bb0000;}
+#logobox {
+	float: left;
+	border-style: none;
+	display:block;
+}
+#servicenummer{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:16px;
+	font-weight:normal;
+	float: right;
+	border-style: none;
+	display:block;
+	height:85px;
+	width:auto;
+	display:block;
+	padding: 0 40px 0 0;
+	}
+.search {
+	position:absolute; 
+	clear:both; 
+	float:left; 
+	margin:25px 0 0 290px; 
+	padding:0 0 0 0;
+	display:block;
+	}
+#suggest {position:relative;}	
+#searchSubmit {
+background-image: url(http://www.ababum.de/images/webelemente/lupe.png)
+float: right;
+margin: 0px 0 0 0px;
+width: 43px;
+height: 29px;
+border: none;
+cursor: pointer;
+}
+
+#suchbegriff {
+background-color: #fff;
+color: #3A3B3D;
+width: 330px;
+height:29px;
+outline: none;
+border: 1px solid #6D6E68!important;
+border-radius: 2px;
+margin: 0px 0 0 0;
+padding: 6px 6px 5px 6px;
+}
+
+/* Auktionsvorlagen-Inhalt und Einstellungen */
+#lp-breadcrumb{margin: 0 auto; width:1100px; overflow: hidden; padding: 0;} 
+#lp-contentContainer {
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 25px;
+	width: 1100px;
+	height: auto;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	padding-bottom: 0px;
+	box-shadow: 3px 5px 3px grey;
+	-webkit-box-shadow: 3px 5px 3px grey;
+} 
+
+/* Einstellungen: Kopfbereich - Logo, Servicekasten */
+#lp-headerContainer {width:1138px; height: 110px; overflow: hidden; background-color:#FFF; padding: 25px 0 0 40px; box-shadow: 0px 5px 3px grey; -webkit-box-shadow: 0px 5px 3px grey; margin-bottom:20px;}
+
+#lp-linkContainer {
+	float: right;
+	width: 1100px;
+	height: 45px;
+	text-align: left;
+	background-color: #312782;
+	display: block;
+	margin-left: 0px;
+
+}
+#lp-linkContainer .trinity {
+	width: auto;
+	height: auto;
+	float: left;
+	padding-left: 40px;
+	padding-top: 8px;
+}
+
+#trinity p {
+	font-size:14px;
+	}
+#trinity-l, #trinity-m, #trinity-r, #trinity-alt {
+	display: block;
+	float: left;
+	width: auto;
+	height: auto;
+	padding: 0px;
+	background-color: transparent;
+	color: #3d3d3d;
+	text-decoration: none;
+	text-align: left;
+}
+#trinity-l, #trinity-m, #trinity-r, #trinity-alt {
+	margin: 0;
+}
+#trinity-l p, #trinity-m p, #trinity-r p, #trinity-alt p  {margin: 0; padding: 0;}
+#trinity-l span, #trinity-m span, #trinity-r span, #trinity-alt span {font-size: 14px; font-weight:bold;}
+#trinity-l a, #trinity-m a, #trinity-r a, #trinity-alt a {
+	display: block;
+	width: auto;
+	height: auto;
+	padding: 0px;
+	margin: 4px 0 0 0;
+	border: 0px solid #3A3B3D;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: left;
+:}
+#trinity-l a:hover {
+	display: inline-block;
+	color: #212121;
+	text-decoration: none;
+}
+#trinity-m a:hover {display:block; color:#212121; text-decoration:none;}
+#trinity-r a:hover {display:block; color:#212121; text-decoration:none;}
+#trinity-alt a:hover {display:block; color:#212121; text-decoration:none;}
+#trinity-m a:hover span, #trinity-l a:hover span, #trinity-r a:hover span, #trinity-alt a:hover span {
+	color: #EA6419;
+	font-size: 14px;
+}
+
+
+/* Einstellungen: Kopfbereich - Navigation und Serviceleiste */
+#naviContainerEffect {width: 1016px; height:60px; margin-bottom: 10px; padding: 0 1px 1px 1px; border-left: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; background: #ffffff;}
+#naviContainer {width:1012px; height:58px; overflow:hidden; text-align:right; margin: 0; padding: 0;}
+div#naviContainer ul {list-style:none; float:right; padding:0; margin:0;}
+div#naviContainer li {display:block; float:left;}
+div#naviContainer li a {text-decoration:none; color:#878686; font-size: 16px; font-style:italic; font-weight:bold; margin:0; padding: 32px 22px 8px 22px;	display:block; float:left; border-left: 1px solid #212121;}
+div#naviContainer li a p {color:#3A3B3D000; padding:0; margin:0;}
+div#naviContainer li a:hover {color:#6e0118; text-decoration:none;}
+
+#serviceContainer {margin: 0; width:1020px; height:35px; overflow:hidden; text-align:left; background-color:#252525}
+#serviceContainer .serviceLine {float: left; width: 750px; height:30px; margin-top: 5px; margin-left: 5px; overflow: hidden; background:#bb0000;}
+.serviceText {float: left; width: 120px; height:24px; padding-top: 5px; padding-left: 4px; line-height:22px; color:#ffffff; overflow:hidden; font-family:montserratmedium, Helvetica, sans-serif; font-size:11px; font-weight:bold;}
+.serviceLineEffect {float: right; width:610px; height:16px; margin: 2px; padding: 5px; background:#ffffff;}
+#serviceContainer .searchLine {float: right; width: 265px; height:30px; overflow: hidden; margin-top: 3px;}
+.supp-theme {font-family:montserratmedium, Helvetica, sans-serif; font-size:14px; color:#3d3d3d;}
+.supp-text {font-family:montserratmedium, Helvetica, sans-serif; font-size:14px; color: #595959;}
+
+/* Einstellungen Kopfbereich: Suchfeld */
+#searchwrapper {float: left; width: 263px; heigth: 25px; background:#252525; padding: 0px; position: relative; margin: 0;}
+#searchwrapper form {display:inline;}
+.searchbox {width: 172px; height:22px; background: #ffffff; border: 0; font-size: 12px; font-style: italic; color:#535353; padding: 1px 15px 1px 24px; line-height: 22px; margin-left: 50px; margin-top: 2px; margin-right: 2px; margin-bottom: 2px;}
+.searchbox_submit {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 25px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+.searchbox_submit img {border: 0;}
+
+/* Einstellungen: Hauptbereich */
+.mainContainer {
+	height: auto;
+	width: 1020px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: left;
+	margin-bottom: 20px;
+}
+#copyrightContainer {height: auto; width:1020px; background:#f8f8f8; margin: 0 auto; overflow: hidden; font-family:montserratmedium, Helvetica, sans-serif; font-size: 10px; text-align:right;}
+#copyColorTheme {margin-bottom: 10px; background:#bb0000; padding: 6px;}
+#copyColorTheme p {padding: 0; margin: 0; color:#e6e6e6;}
+#copyColorTheme a, #copyColorTheme a:hover {color:#ffffff;}
+
+#leftContainer {float: left; position: relative; z-index:2000;
+	width: 200px; height:auto; padding: 0; margin: 10px 0;}
+#rightContainer {float: left; position: relative; z-index:2000;
+	width: 200px; height:auto; padding: 0; margin: 10px 0;}
+#middleContainer {
+    float: right; 
+	width:605px;
+    height:auto;
+    padding: 0 5px;
+    margin-right:100px;
+ }
+
+/* Einstellungen: Hauptbereich - Linke + Rechte Leiste */
+.leftThemeEffect {
+	float: left; 
+	width:200px; height:30px; 
+	padding: 0 0 6px 0; 
+	border-left: 1px solid #3d3d3d; 
+	border-right: 1px solid #3d3d3d; 
+	background-color:#252525;
+	}
+.leftTheme {
+	float: left; 
+	width:200px; 
+	min-height:42px; 
+	color: #ffffff; 
+	text-shadow:#595959 0px 0px 1px; 
+	text-align:left; 
+	font-family:montserratmedium, Helvetica, sans-serif; 
+	font-size:14px; 
+	white-space: normal;
+	}
+.rightThemeEffect {
+	float: left; 
+	width:198px; height:30px; 
+	padding-top: 6px; 
+	border-left: 1px solid #3d3d3d;
+	 border-top: 1px solid #3d3d3d; 
+	 border-right: 1px solid #3d3d3d; 
+	 background-color:#252525;
+	 }
+.rightTheme {
+	margin-top:2px;
+	float: left; 
+	width:196px; 
+	min-height:42px; 
+	color: #fff; 
+	text-align:right; 
+	text-shadow:#595959 0px 0px 1px; 
+	font-family:montserratmedium, Helvetica, sans-serif; 
+	font-size:14px; 
+	white-space: normal;
+	}	
+.rT-titel {
+	text-align:left;
+	padding:0 0 0 -5px;
+}
+.inner{
+	padding:20px 10px 10px 10px;
+	}
+
+.leftTheme p, .rightTheme p {margin: 5px 0; padding: 0 10px; text-align:left;}
+.middleTheme p {padding: 0 5px; margin: 0;}
+
+.leftTheme .icon-cat p, .leftTheme .icon-payment p, .leftTheme .icon-shipping p, .leftTheme .icon-opt p, .leftTheme .icon-impressum p
+{padding-left: 0px; padding-top: 4px; padding-bottom: 6px;}   
+.leftTheme .icon-payment {margin-left: 10px; min-height:32px;}
+.leftTheme .icon-shipping {margin-left: 10px; min-height:32px;}
+.rightTheme .icon-top {margin-left: 10px; min-height:32px;}
+.leftTheme .icon-opt, .rightTheme .icon-opt {margin-left: 10px; min-height:32px;}
+.leftTheme .icon-impressum {margin-left: 10px; min-height:32px;}
+
+.blackbox{background-color:#3A3B3D;color:#fff; padding:0; margin-top:0px}.blackbox a:link,
+.blackbox a:active,
+.blackbox a:visited{color:#fff}.blackbox a:hover{color:#DA0006}
+
+/* Einstellungen: Hauptbereich - alle Flächen */
+.leftContent {float: left; 
+	position: relative; z-index:2000;
+	background:#ffffff; width:200px; border-left: 1px solid #3d3d3d; border-right: 1px solid #3d3d3d; border-bottom: 1px solid #3d3d3d; height:auto; margin-bottom: 15px; line-height:1.5em;}
+.rightContent {
+	float: left;
+	position: relative;
+	z-index: 2000;
+	background: #FFF;
+	line-height: 1.5em;
+	width: 198px;
+	height: auto;
+	margin-bottom: 15px;
+	border-right: 1px solid #3d3d3d;
+	border-left: 1px solid #3d3d3d;
+	border-bottom: 1px solid #3d3d3d;
+}
+.leftContent img {margin: 1px;}
+.leftContent p, .rightContent p, .middleContent p {
+	margin: 0;
+	padding-top: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	line-height:1.5em;
+}
+.leftContent ul li, .middleContent ul li, .rightContent ul li {
+	font-size: 12px;
+	list-style-type: square;
+}
+.leftContent h1, .rightContent h1, .middleContent h1 {font-size: 16px; color:#3A3B3D;}
+.leftContent ul li {
+	font-size: 12px;
+	line-height:1.5em;}
+
+/* Einstellungen: Hauptbereich - Rechte Leiste */
+.rcStyle img {margin-bottom: 5px;}
+
+/* Einstellungen: Hauptbereich - Mittelteil */
+.middleTheme {float: left; width:595px; height:30px; margin: 5px 0; color: #3d3d3d; text-shadow:#595959 0px 0px 1px; font-weight:bold; text-align:left; font-family:montserratmedium, Helvetica, sans-serif; font-size:16px; padding-top: 15px; padding-left: 5px; padding-right: 5px; border-bottom: 1px solid #c1c1c1;}
+.middleContent {float: left; width:610px; height:auto;}
+
+/* Galerie-Einstellungen */
+#lp-gallery {float: left; z-index:1000;
+	width: 545px; 
+	margin:5px 0; padding:0;}
+#lp-gallery-content-left{
+	width: 250px;
+	padding-left:10px;
+	float: left;
+	}
+#lp-gallery-content-right{
+	width: 235px;
+	margin: 0 10px 10px 20px;
+	float: right;
+	}
+.artikeldetails-h1 {
+	font-size: 24px;
+	}
+.small-font{
+	font-size:9px !important;
+	font-weight:100;
+	}
+#lp-gallery-content-right p {
+	padding:0px !important;
+	font-size: 16px;
+	}
+.preis{
+	font-weight:bold !important;
+	font-size:28px !important;
+	margin:35px 0 25px 0 !important;
+	line-height:0.6em;
+	color:#919191;
+	}
+#lp-galleryPreview {float: right; 
+	width: auto;
+	margin: 0; padding: 0;
+	position: relative; left: -50%; text-align: left;}
+#lp-galleryPreview ul {position: relative; left: 50%;
+	width: 100%; height:auto;
+	margin: auto; padding: 0;
+	text-align:center;}
+#lp-galleryPreview li {list-style: none; display:block; float: left;
+	width: 98px; height:95px;
+	padding: 0; margin: 4px;}
+#lp-galleryPreview a {display:table-cell;
+	width: 95px; height:85px;
+	margin: 0; padding: 0;
+	text-align:center;
+	vertical-align: middle;
+	border: solid 5px #f1f1f1; 
+	box-shadow: 0px 0px 0px 1px #c1c1c1;
+	-webkit-box-shadow: 0px 0px 0px 1px #c1c1c1; 
+	-moz-box-shadow: 0px 0px 0px 1px #c1c1c1; 
+	background:#ffffff;}
+#lp-galleryPreview img {
+	max-height:85px; max-width:75px;
+	margin: 0; padding: 0;
+	border:none;}	
+.lte-ie8 img {height:85px; width:75px !important;}
+.lte-ie8 ul {margin: 0 !important;
+	width: 550px !important;}
+
+#lp-galleryPreview a:hover {border: 5px solid #646464;}
+
+#lp-galleryFull {float: left;
+	height: 10px; width: 545px;
+	text-align:center;}
+#lp-galleryFull img {
+	max-height: 500px; max-width: 502px; 
+	margin: 5px;
+	float:left;
+	border: solid 10px #f1f1f1; 
+	-webkit-box-shadow: 0px 0px 0px 1px #c1c1c1; 
+	box-shadow: 0px 0px 0px 1px #c1c1c1;
+	-moz-box-shadow: 0px 0px 0px 1px #c1c1c1;}
+.lte-ie8-full img {max-height: 100% !important;
+	width: 502px !important;}
+
+#lp-galleryPreview a * {
+	vertical-align: middle;}
+	
+/*\*//*/
+#lp-galleryPreview a {
+    display: block;}
+#lp-galleryPreview span {
+    display: inline-block;
+    height: 100%;
+	width: 1px;}
+/**/
+
+/* Einstellungen: Hauptbereich - Linke Leiste Kateogrieauflistung */
+#rcCatContainer {
+	float: left;
+	width: 200px;
+	height: auto;
+	margin-bottom: 10px;
+	background-color: #EBE4D1;
+	color: #252525;
+}
+#rcCatContainer ul{
+	margin-left:-5px;
+	}
+#rcCatContainer ul li {
+	list-style: none;
+	font-weight:bold;
+	padding-bottom: 8px;
+	padding-top:10px;
+
+}
+
+#eBayCategories {float: left;
+	width: 200px;
+	border-bottom: 1px solid #c1c1c1;}
+#eBayCategories a {font-size:14px; color:#313131; text-decoration:none;}
+#eBayCategories a:hover {text-decoration: none;}
+
+#eBayCategories ul li,
+ul.categories-tree li,
+ul#MenuSub1Item,
+ul#MenuSub2Item {list-style:none;}
+
+ul.categories-tree,
+ul#MenuSub1Item,
+ul#MenuSub2Item {margin: 0; padding: 0;}
+
+ul.categories-tree {float: left; 
+	width:100%;
+	margin: 0; padding: 0;}
+	
+/* 1st Menu Level */
+#eBayCategories .MenuItem {font-weight: bold;}
+#eBayCategories li.MenuItem {float:left; display:block; 
+	width:200px; height: auto;
+	border: 1px solid #c1c1c1; 
+	color:#303030; font-weight:bold; font-size:13px;}
+#eBayCategories li.MenuItem a {display:block; 
+	width:170px; height:auto; 
+	padding: 10px;
+	font-weight:bold; color:#303030 !important; margin: 0;}
+#eBayCategories li.MenuItem a:hover {
+	background-color:#bb0000 !important;}
+
+/* 2nd Menu Level */
+#eBayCategories ul#MenuSub1Item {float: left;
+	font-weight: normal;}
+#eBayCategories ul#MenuSub1Item li:first-child {border-top: 0 none transparent;}
+#eBayCategories ul#MenuSub1Item li {float:left; display:block;
+	width:200px; min-height: 20px; height:auto;
+	background: #e5e5e5;
+	border:none; border-left: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1;
+	border-top: 1px dotted #c1c1c1;}
+#eBayCategories ul#MenuSub1Item li a,
+#eBayCategories ul#MenuSub2Item li a {display:block;
+	width:180px; min-height: 20px;
+	padding: 2px 10px; margin: 0; 
+	font-weight: normal;}
+#eBayCategories ul#MenuSub1Item li a:hover {background-color: #f7f7f7;}	
+
+/* 3rd Menu Level */
+#eBayCategories ul#MenuSub2Item {float: left; 
+	border-top: 1px dotted #c1c1c1;
+	font-weight: normal;}
+#eBayCategories ul#MenuSub2Item li {float:left; display:block;
+	width:200px; min-height: 18px; height:auto;
+	padding: 0; margin: 0;
+	background: #f1f1f1;
+	border:none; border-left: 1px solid #c1c1c1; border-right: 1px solid #c1c1c1;
+	border-top: 1px dotted #c1c1c1;}
+#eBayCategories ul#MenuSub2Item li a {display:block;
+	width:170px; height: auto;
+	padding: 2px 10px 2px 20px; margin: 0; 
+   font-weight: normal;}
+#eBayCategories ul#MenuSub2Item li a:hover {background-color:#ffffff;}	

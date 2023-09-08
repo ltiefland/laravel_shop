@@ -1,0 +1,314 @@
+/* background colors */
+.neu_icon {
+  background-color: #2FBABD;
+  color: #fff;
+}
+#maincontent {
+    background:#f9f9f9;
+}
+#topinfo {
+    background:#E2E2E2;
+    color:#898989;
+}
+#suchbegriff {
+    background:#898989;
+}
+#newsletter_email {
+
+    background-color:#A8B7C8;    
+}
+
+#butt_ok {
+    background:#2fbabd;
+    color:#fff;
+}
+body {
+    background-color: #fff;
+}
+.artikel_box,
+.trustpilot .box_top,
+.artikel_box .center,
+.item_slider_inner .item_slider_wrapper {
+    color: #3A3B3D;
+}
+
+.preisInner {
+    color:#EA5802;
+}
+.header,
+.bgwhite,
+.content .box_2,
+#maincontent section .inner,
+.typo3content,
+.artikel_box .top,
+.content .subdir_sort,
+.subdir_info_wrapper,
+.subdir_bild,
+.subdir_text,
+.bestellvorgang_bg,
+.bestellvorgang,
+.hersteller_menu,
+.grill_anim,
+.zahlarten_wrapper div
+{
+    background-color:#f9f9f9!important;
+}
+.bg01 {
+    margin-top:5%;
+    background:#fff;
+    border-top:1px solid #3A3B3D;
+}
+.kontakt {
+    background-color:#0E2E7B;
+    color:#fff;    
+}
+
+.content {
+    background-color:rgba(255, 255, 255, 0);
+}
+.sie_sparen {
+    background-color:#2FBABD;
+}
+/* /background colors */
+
+
+
+
+body,
+.itemSlider .box_top,
+.topfooter {
+    color:#3A3B3D;
+}
+
+.uvp,
+.artikel_box .preis_lieferstatus,
+.sie_sparen,
+section.billiger_gesehen h2,
+.billiger_gesehen_headline,
+.billiger_gesehen_content {
+    color:#FFF!important;
+}
+
+ 
+.inner_basket,
+.infobar {
+    background-color:#fff!important;
+    color:#383838!important;
+}
+.fa-check {
+    color:#13cb13;
+}
+.fa-star {
+    color:#f3c50b;
+}
+.item_preis a:link,
+.item_preis a:active,
+.item_preis a:visited {
+    color:#EA5802 !important;  
+    font-weight:bold;
+}
+.item_preis a:focus,
+.item_preis a:hover {
+
+}
+
+.warenkorb_preis,
+.artikel_box .lieferstatusText {
+    color:#fff;
+}
+form#basket {
+    float: left;
+    margin-top: 15px;
+}
+
+h1,h2,h3,h3,h5,h6 {
+    color:#3e3e3e;
+}
+
+.topnav,
+.title {
+    color:#EA5802;
+}
+
+
+.basketMenge {
+    background:#2FBABD;
+}
+.itemBasketButton .basketButton:hover {
+    background-color:#9CD9DA;
+}
+    /*
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    */
+.basketButton:hover .basketMenge,
+.basketButton:hover {
+    background:#FFB725!important;
+}
+.box_2,
+.box_static,
+.bottomcontent,
+.typo3content {
+    background-color:rgba(255, 255, 255, 1);
+}
+
+.artikel_box .center a .itemname .itemnameInner,
+.artikel_box .center a .description .descriptionInner {
+    color: #3A3B3D;
+    line-height:1.2em;
+}
+
+.pagination_container {
+    background-color: rgb(255, 255, 255);
+}
+
+#hinweis {
+    color:#fff;
+    background-color:#303030;
+}
+#hinweis a:link,
+#hinweis a:active,
+#hinweis a:visited {
+    color:#fff;
+    text-decoration:underline;
+}
+#hinweis a:hover {
+    color:#EA5802;
+}
+
+b.red,
+.errorBox,
+.hersteller,
+.input_error_msg 
+{
+    color:#E42E23;
+}
+.basketButton {
+    color:#fff!important;
+}
+.content .serviceBox .bild a:hover,
+.bottomfooter {
+    color:#3e3e3e;
+    /*background-color:#303030;*/
+}
+
+#message,
+.ui-state-error {
+    color:#f00;
+}
+hr {
+    color:#e3e3e3;
+}
+.tr0 {
+    background-color:#e3e3e3;
+}
+.tr1,
+.box_subdir {
+    background-color:#fff;
+}
+
+.box_subdir .bottom {
+    background-color:#EA5802;
+    color:#fff;
+}
+.box_subdir:hover .bottom {
+    background-color:#FFB725;
+}
+
+.anthrazit {
+    color:#fff;
+    background:#252525;
+    border-bottom:1px solid #525453;
+}
+.red {
+    color:#7E0404!important;
+}
+.black {
+    color:#010101!important;
+}
+.grey {
+    color:#666!important;
+}
+
+
+#loading {
+    color:#010101!important;
+    background-color:#fff!important;   
+}
+ 
+
+.content .serviceBox {
+    /*
+    -webkit-box-shadow: 0px 0px 9px -2px rgba(125,125,125,1);
+    -moz-box-shadow: 0px 0px 9px -2px rgba(125,125,125,1);
+    box-shadow: 0px 0px 9px -2px rgba(125,125,125,1);
+    */
+}
+
+
+.content .subdir_artikel_wrapper .subdir_artikel .artikel_box .bottom .basket{
+    color: #fff;
+    background-color: #EA5802;
+}
+
+
+.box_singleitem_preis_message,
+.itemRightLeft .lieferstatusText,
+.content .subdir_artikel_wrapper .subdir_artikel .artikel_box .preisInner span{
+    color: #3e3e3e;    
+}
+.content .directory_box .bottom .itemLink span,
+.content .subdir .box_subdir .title .itemLink span{
+    color:#EA5802;
+}
+
+
+.log_button,
+.content .box_2 .bestellartWrapper .bestellartbox .bestellartButtons input,
+.weiterButton,
+.jetztKaufenButton,
+.zurKasseButton,
+.shopButton {
+    background: none;
+    background-color:#2FBABD;
+    color:#fff;
+}
+.shopButton {
+    color:#fff!important;
+}
+.shopButton:hover,
+.shopButton:focus,
+.shopButton.active
+ {
+    background-color:#9CD9DA;
+ }
+  
+ 
+.zurueckButton,
+.backToShopButton,
+.druckenButton{
+   background-color:#eeeeee;
+   color:#3e3e3e; 
+}
+
+.subnav_special div{
+    background-color: transparent!important;
+}
+/* topnav */
+#topnav {
+    background-color:#fff;
+    color:#3A3B3D;
+}
+
+/* box_top */
+.box_top > h3 {
+    color: #2FBABD !important;
+}
+
+.basket_addFavorites {
+    background:#9CD9DA;
+} 
+.favorite_active {
+    background:#2FBABD;
+}

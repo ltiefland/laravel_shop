@@ -1,0 +1,165 @@
+.ui-dialog {
+    z-index: 999999999999999 !important;
+}
+
+.ui-dialog,
+#reiter > div .ui-widget-content {
+    border:none!important;
+}
+
+input.ui-button {
+    padding: 0.35em 1em !important;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    top: 0 !important;
+}
+.ui-button {
+    margin: 2% 0% !important;
+}
+.ui-dialog-buttonset {
+    width: 100%;
+    text-align: right;
+}
+
+.ui-dialog-buttonset .ui-button {
+    margin: 1% 0.5% !important;
+    padding: 1%;
+    background:#2fbabd;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+}
+.ui-dialog-buttonset .ui-button:hover,
+.ui-dialog-buttonset .ui-button:focus {
+    background:#9cd9da;
+    color:#fff;
+}
+.ui-tabs-nav .ui-state-active,
+.ui-tabs-nav .ui-state-default,
+.ui-tabs-nav .ui-widget-content .ui-state-active,
+.ui-tabs-nav .ui-widget-header .ui-state-active {
+    background:none;
+    border:none;
+    font-weight: normal;
+    color: black;
+    
+}
+
+.ui-tabs-active,
+#reiter .ui-state-default {
+    background:none!important;
+    border:none;
+}
+
+.ui-tabs-active {
+    border-bottom:2px solid #EA5802!important; 
+}
+
+
+.content #reiter .ui-tabs {
+    padding: 0;
+}
+#tabsBasket .ui-tabs-panel {
+    min-height: 400px;
+}
+
+#tabsBasket ul.ui-widget-header,
+.content #reiter ul.ui-widget-header {
+    border: medium none !important;
+    padding: 0;
+}
+
+.ui-state-error {
+    width: auto !important;
+    padding: 10px !important;
+}
+
+/** Autocomplete **/
+.ui-autocomplete {
+    width: 465px !important;
+}
+.ui-autocomplete .ui-menu-item {
+    float: left;
+    clear: both;
+    width: 98%;
+    padding: 3px 1% !important;
+}
+
+.ui-autocomplete .ui-state-focus {
+    width: 98%;
+}
+.ui-autocomplete .ui-menu-item a {
+    float: left;
+    width: 98%;
+    vertical-align: middle;
+    display: table;
+    min-height: 45px;
+}
+.ui-autocomplete .ui-menu-item .searchBild {
+    vertical-align: middle;
+    display: table-cell;
+    width: 60px;
+    padding-right: 7px;
+}
+.ui-autocomplete .ui-menu-item .searchLabel {
+    vertical-align: middle;
+    display: table-cell;
+    width: 65%;
+}
+.ui-autocomplete .ui-menu-item .searchPreis {
+    vertical-align: middle;
+    display: table-cell;
+    text-align: right;
+}
+/** Autocomplete ende **/
+
+
+
+#tabsBasket {
+    width:60%;
+    border:none;
+}
+#tabsBasket .ui-widget-content {
+    border:none!important;
+}
+
+.inner_basket h2,
+.inner_basket h3 {
+    font-family:hurmegeometricsans1_regular,Helvetica,sans-serif!important;
+    border:none!important;
+    border-bottom:2px solid #aaa!important;
+    background:none!important;
+}
+
+.inner_basket h2.ui-state-active,
+.inner_basket h3.ui-state-active  {
+    color:#EA5802;
+}
+.inner_basket .ui-accordion-content {
+    border:none;
+}
+.inner_basket input[type=text],
+.inner_basket input[type=email],
+.inner_basket input[type=password] {
+    background:#EDF1F4;
+    border-radius: 5px;
+    padding:1% 2%;
+    border:1px solid #A9BCCA;    
+}
+.inner_basket .ui-button {
+    background:#2FBABD;
+    color:#fff!important;
+    border-radius:5px!important;
+    border:none!important;
+}
+.inner_basket .ui-button:hover {
+    background:#9CD9DA;
+}
+.ui-accordion .ui-accordion-icons {
+    padding-left:.5em;
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+    position:unset;
+    float:right;
+    margin-top:10px;
+}
