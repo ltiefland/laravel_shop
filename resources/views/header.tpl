@@ -1,4 +1,3 @@
-{block name=""}
 <!-- $Id$ BEGIN -->
+TEST
 <!-- $Id$ END -->
-{/block}
