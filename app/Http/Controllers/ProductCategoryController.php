@@ -16,7 +16,10 @@
                     "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
-            dd( $response );
+            foreach ( $response->data as $cat )
+            {
+                dump( $cat );
+            }
         }
 
         public function show( int $id )
