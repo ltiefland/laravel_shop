@@ -32,6 +32,9 @@
                     "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
-            dd( $response );
+            foreach ( json_decode( $response )->data as $cat )
+            {
+                dump( $cat );
+            }
         }
     }
