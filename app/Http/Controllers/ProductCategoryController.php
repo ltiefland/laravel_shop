@@ -9,7 +9,7 @@
         public function index()
         {
             $client = new \GuzzleHttp\Client();
-            $response = $client->get( config( "APP_API_URL" ) . "/productcategories/" );
+            $response = $client->get( config( "api.url" ) . "/productcategories/" );
             dd( $response );
         }
     }
