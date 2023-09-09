@@ -25,9 +25,9 @@
                 {
                     $nav[$cat->id] = $cat;
                 }
-                else
+                elseif(!@is_null($nav[$cat->product_category_id]))
                 {
-                    //$nav[$cat->product_category_id]->sub[$cat->id] = $cat;
+                    $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
                 }
             }
             dd( $nav );
