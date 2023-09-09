@@ -11,7 +11,9 @@
             $client = new \GuzzleHttp\Client();
             $response = $client->get( config( "api.url" ) . "product-categories/", [
                 'headers' => [
-                    'Authorization' => 'Bearer ' . config( "api.key" )
+                    'Authorization' => 'Bearer ' . config( "api.key" ),
+                    "Content-Type"  => "application/json",
+                    "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
             dd( $response );
