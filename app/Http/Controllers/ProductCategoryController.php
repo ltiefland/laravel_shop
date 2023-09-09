@@ -13,7 +13,7 @@
                 'headers' => [
                     'Authorization' => 'Bearer ' . config( "api.key" )
                 ]
-            ] );
+            ] )->getBody()->getContents();
             dd( $response );
         }
     }
