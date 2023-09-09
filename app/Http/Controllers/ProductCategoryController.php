@@ -21,16 +21,16 @@
             $nav = array();
             foreach ( json_decode( $response )->data as $cat )
             {
-                if(is_null($cat->product_category_id))
+                if ( is_null( $cat->product_category_id ) )
                 {
-                    $nav[$cat->id]=$cat;
+                    $nav[$cat->id] = $cat;
                 }
                 else
                 {
-                    $nav[$cat->product_category_id]->sub[$cat->id]=$cat;
+                    $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
                 }
-                dump( $nav );
             }
+            dd( $nav );
         }
 
         public function show( int $id )
