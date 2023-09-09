@@ -66,7 +66,8 @@
             "item" => $item,
         ] );
     } );
-    Route::get( "/directory/{id}-{name}", [ ProductCategoryController::class, "index" ] )->whereNumber( 'id' );
+    Route::get( "/directory/", [ ProductCategoryController::class, "index" ] )->whereNumber( 'id' );
+    Route::get( "/directory/{id}-{name}", [ ProductCategoryController::class, "show" ] )->whereNumber( 'id' );
     Route::get( '/dashboard', function ()
     {
         return view( 'dashboard' );
