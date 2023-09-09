@@ -9,7 +9,11 @@
         public function index()
         {
             $client = new \GuzzleHttp\Client();
-            $response = $client->get( config( "api.url" ) . "/product-categories/" );
+            $response = $client->get( config( "api.url" ) . "product-categories/", [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . config( "api.key" )
+                ]
+            ] );
             dd( $response );
         }
     }
