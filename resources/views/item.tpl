@@ -228,11 +228,6 @@
         });
 
 </script>
-
-
-    {*
-    <div class="skycraper_img"><a href=""><img  src="/images/webelemente/skyscraper.jpg" style="float: right;margin-right: -17%;margin-top: 1%;" /></a></div>
-    *}
     <div class="box_2">
 
         {if $item->cntRatings>0}
@@ -372,93 +367,6 @@
                     {/if}
 
                 </div>
-                {*
-                <!-- item_center_row -->
-                <div class="item_centerrow">
-                    <!-- Hersteller -->
-                    {if $item->hersteller_Logo1}
-                    <div id="herstellerLogo">
-                        <span class="item_herstellerlogo">
-                            <a href="?hersteller={$item->hersteller_ID}">{$item->hersteller_Logo1}</a>
-                        </span>
-
-                        {if $item->hersteller_Name || $item->hersteller_Bezeichnung}
-                            <span class="preis_lieferstatus">
-                                Hersteller: {$item->hersteller_Bezeichnung|default:$item->hersteller_Name}
-                            </span>
-                        {/if}
-                    </div>
-                    {/if}
-
-                    <div class="leftrow_flex">
-                        {if $item->cntRatings>0}
-                        <div class="bewertungen" title="{$item->avgRating} von 5 Sternen">
-                            {for $i=1;$i<=$item->avgRating|floor;$i++}
-                                <img src="/images/webelemente/fullstar.png" />
-                            {/for}
-                            {if $item->avgRating|stristr:"."}
-                            {if $item->avgRating|substr:-1 <=2}
-                                <img src="/images/webelemente/emptystar.png" />
-                            {elseif $item->avgRating|substr:-1 <=7}
-                                <img src="/images/webelemente/halfstar.png" />
-                            {else}
-                                <img src="/images/webelemente/fullstar.png" />
-                            {/if}
-                            {/if}
-                            {for $i=($item->avgRating+1)|ceil;$i<=5;$i++}
-                                <img src="/images/webelemente/emptystar.png" />
-                            {/for}
-                            <span style="vertical-align:top">&nbsp;&nbsp;({$item->cntRatings})</span>
-                            {if $ini.Produktbewertungen.Besucherbewertung==1}
-                                <span style="vertical-align:top">
-                                    &nbsp;&nbsp;<a href="/produktbewertung_direct_{$item->ID}.php" style="vertical-align:top">eigene Bewertung abgeben</a>
-                                </span>
-                            {/if}
-                        </div>
-                        {/if}
-
-
-                        <!-- Lagerbestand -->
-                        {include file="item_kurier.tpl"}
-                        {include file="lagerbestand.tpl"}
-                        {if $item->short_line_2}
-
-                        <!-- Lagertemperatur -->
-                        <div class="item_icons">
-                            <img src="/images/webelemente/svg/cooling.svg" /><br />
-                            K&uuml;hlung:{if date("N")==4 || date("N")==5}<sup>*</sup>{/if}<br />
-                            {$item->short_line_2}
-                        </div>
-                    {/if}
-
-                    {if $item->medium|count>1}
-                    <div class="icons">
-                    {assign var="showEULabel" value=0}
-                    {foreach $item->medium as $medium}
-                        {if $medium->medium.medium_type_id==6 || $medium->medium.medium_type_id==5}
-                            {if $medium->medium.medium_type_id==5}
-                                <div>
-                                <a class="euLabel" data-link="{$medium->medium.abs_bild_url}" style="float:left;" title="{$medium->medium.beschreibung}">
-                                  <img src="{$medium->medium.abs_bild_url_klein}" align="absmiddle" />
-                                </a>
-                                {assign var="showEULabel" value=1}
-                                </div>
-                            {else}
-                                <div>
-                                    <img src="{$medium->medium.bild_url_klein}" title="{$medium->medium.beschreibung}" />
-                                </div>
-                            {/if}
-                        {/if}
-                    {/foreach}
-
-
-                    </div>
-                    {/if}
-                    </div>
-
-                </div>
-                *}
-
                 <!-- item_rightrow -->
                 <div class="item_rightrow">
                     <div class="logo_breadcrumb">
@@ -548,17 +456,6 @@
 
                             <a href="/versand_uebersicht.html" class="tooltip_opener">{$langstrings.shop.price_msg_link}</a>
 
-                            {*
-                            {if $item->versandkosten_overlib}
-                                <span class="tooltip">
-                                    <h3 style="padding:0;">mögliche Versandkosten:</h3><br />
-                                    <p>
-                                        {$item->versandkosten_overlib|html_entity_decode}
-                                    </p>
-                                </span>
-                            {/if}
-                            *}
-
                             <!-- Preis / Grundpreis -->
                             {if $item->gebinde_menge > 0 && $item->gebinde_einheit}
                                <br /> Grundpreis: {($item->price/$item->gebinde_menge)|number_format:2} €  / {$item->gebinde_einheit}
@@ -586,12 +483,6 @@
 
 
                         </div>
-
-                    {*
-                    {if $ini.PayPalPlus.aktiv==1 && $ini.PayPalPlus.clientId}
-                    <div class="item_pp_message" data-pp-message data-pp-amount="{$item->preis}"></div>
-                    {/if}
-                    *}
 
                     {if $item->price >= 200 && $ini.easycredit.aktiv==1}
                         <div class="easycredit_box" style="margin-top:10px;">
@@ -714,84 +605,12 @@
 
                         <div class="itemNav">
                             <a href="{$item->fatherLink}"><i class="fa fa-caret-left" aria-hidden="true"></i> Zur&uuml;ck zur &Uuml;bersicht</a>
-                            {*
-                            &nbsp;
-                             <a class="nachster" id="{$item->ID}" href="#">Nächster Artikel</a> <i class="fa fa-caret-right" aria-hidden="true"></i>
-                             *}
                         </div>
                     </form>
 
                 </div>
 
             </div>
-            {*
-            {if date("N")==4 || date("N")==5}
-            {if $item->Eigenschaft_2}
-                <span style="background-color:yellow;font-weight:bold;"><sup>*</sup> {$langstrings.shop.note_chilled}</span>
-            {/if}
-            {/if}
-            *}
-
-            {*
-            <div class="item_top" >
-
-                <div class="item_backbutton">
-                    <a href="{$item['subdirLink']}#anker{$item->ID}"><img src="/images/webelemente/svg/butt_zurueck.svg" alt="zurück" /></a>
-                </div>
-
-
-
-                <div class="itemRightContainer">
-
-
-                        <div class="itemRightLeft">
-                            <div class="break"></div>
-
-
-                            {if $item->Eigenschaft_2_text}
-                            <div>{$item->Eigenschaft_2_text}</div>
-                            {/if}
-
-
-                            {if $item->Eigenschaft_3==1}
-                                <div class="versandfrei">
-                                    Versand kostenlos!
-                                </div>
-                            {/if}
-
-                            {if $item->nachlass}
-                            <div>
-                                {include file="nachlass_detail.tpl" format="kl" preis=$item->nachlass}
-                            </div>
-                            {/if}
-                            <div class="itemPreis">
-                                <div style="float:left;">
-
-                                    {if $ini.template.durchstreichpreise==1}
-                                        <br />
-                                        {assign var=UVP value="preis{$ini.uvpPreisIndex}"}
-                                        <span>
-                                            {if $item->$UVP>0 && $item->$UVP>$item->preis}
-                                            <b style="font-size:12px;">{$langstrings.shop.special_offer}</b>
-                                            {/if}
-                                        </span>
-                                        {if $item->$UVP>0 && $item->$UVP>$item->preis}
-                                        <span class="strike" style="color: #3A3B3D;font-size:19px;">{$item->$UVP|money_format|replace:"USD":"$"|replace:"EUR":"&euro;"}</span>
-                                        {/if}
-                                    {/if}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="break;"></div>
-                        <div class="shariff" style="float: left;width: 100%"></div>
-
-                </div>
-            </div>
-        </div>
- *}
-
-
-
 
             {if $ini.modules.reiter=="jquery"}
 
@@ -805,13 +624,6 @@
                         <a href="#{$item->reiter[r_ind].url}">{$item->reiter[r_ind].name}</a>
                     </li>
                     {/section}
-                    {*
-                    {if $addonitems}
-                    <li>
-                        <a href="#zubehoer">Zubeh&ouml;r</a>
-                    </li>
-                    {/if}
-                    *}
 
                     {* Produktbewertungen *}
                     {if $ini.Produktbewertungen.aktiv==true && $item->cntRatings>0}
@@ -891,13 +703,6 @@
 
 
 
-                {*
-                {if $addonitems}
-                <div id="zubehoer">
-                    {include file="addonItems.tpl"}
-                </div>
-                {/if}
-                *}
             {else}
                 <div id="beschreibung">
                     {if $item->EAN}
