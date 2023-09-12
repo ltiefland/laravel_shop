@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\ProductCategoryController;
+    use App\Http\Controllers\ProductController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -60,13 +61,8 @@
     } )->where( 'step', '[1-4][ab]{0,1}' );
     Route::post( "/bestellen_seite_{step}.html", [ BuyController::class, 'step1' ] )->where( 'step', '[1-4][ab]{0,1}' );
     Route::view( "basket.html", 'basket' );
-    Route::get( "{item:slug}.html", function ( Item $item )
-    {
-        return view( 'item', [
-            "item" => $item,
-        ] );
-    } );
     Route::get( "/directory/", [ ProductCategoryController::class, "index" ] )->whereNumber( 'id' );
+    Route::get( "/item/{id}", [ ProductController::class, "show" ] )->whereNumber( 'id' );
     Route::get( "/directory/{id}-{name}", [ ProductCategoryController::class, "show" ] )->whereNumber( 'id' );
     Route::get( '/dashboard', function ()
     {
