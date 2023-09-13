@@ -111,7 +111,7 @@
         {/if}
 
         <script>
-            let checkVerfuegbarenBestand = false;
+            let checkVerfuegbarenBestand;
             let buy_link_base = "{$buy_link_base}";
             {if $ini.modules.checkVerfuegbarenBestand==1}
                 checkVerfuegbarenBestand = true;
@@ -718,20 +718,6 @@
         <div id="session"></div>
         <div id="postfinder_dlg" title="Packstationen / Postfilialen suchen"></div>
 
-        {if $ini.chat.active}
-        <!-- Start of LiveChat (www.livechatinc.com) code -->
-        <script type="text/javascript">
-        window.__lc = window.__lc || {};
-        window.__lc.license = 8104511;
-        (function() {
-          let lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-          lc.src = 'https://cdn.livechatinc.com/tracking.js';
-          let s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-        })();
-        </script>
-        <!-- End of LiveChat code -->
-        {/if}
-
         {if $ini.trustedShops.shop_id}
         <script type="text/javascript">
           (function () {
@@ -749,7 +735,7 @@
             };
             let _ts = document.createElement('script');
             _ts.type = 'text/javascript';
-            _ts.charset = 'utf-8';
+            //_ts.charset = 'utf-8';
             _ts.async = true;
             _ts.src = '//widgets.trustedshops.com/js/' + _tsid + '.js';
             let __ts = document.getElementsByTagName('script')[0];
