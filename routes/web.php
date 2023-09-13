@@ -16,7 +16,41 @@
     |
     */
 
-    Route::get( '/', function ()
+    $GLOBALS["INI"] = getConfig();
+
+    $sql = "
+        SELECT
+            *
+        FROM
+            i18n_de
+    ";
+    if ( Schema::hasTable( 'i18n_de' ) )
+    {
+        $langstrings = DB::select( $sql );
+    }
+    else
+    {
+        $langstrings = DB::connection( "old" )->select( $sql );
+    }
+    foreach ( $langstrings as $langstring )
+    {
+        $GLOBALS["langstrings"][$langstring->page_id][$langstring->id] = $langstring->string;
+    }
+
+    /*$nav = new DirectoryController();
+    $menu = $nav->nav_menu();
+    $shopPosition = $nav->shopPosition();
+    $sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );*/
+    $data = [
+        /*"nav"               => $menu,
+        "serviceCenterMenu" => $sc["menu"],
+        "shopPosition"      => $shopPosition,*/
+        "langstrings"       => $GLOBALS["langstrings"],
+        "ini"               => $GLOBALS["INI"],
+    ];
+    \View::share( $data );
+
+Route::get( '/', function ()
     {
         $date = date( "Y-m-d" );
         //$aktion = Action::with( 'medium.medium' )->where( 'valid_from', '<=', $date )->where( 'valid_to', '>=', $date )->get();

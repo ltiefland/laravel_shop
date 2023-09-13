@@ -47,20 +47,20 @@
         <div>
             <!-- Bild -->
             <div class="art_dlg_img">
-                <img id="dialog_img" src="{$item.medien[0]->medium.bild_url_mini}" />
+                <img id="dialog_img" src="{$item->media[0]->preview_url}" />
             </div>
             <!-- Bezeichnung -->
             <div class="art_dlg_text">
                 <div id="dialog_kurzbezeichnung">
-                    {$item.hersteller_kurzbezeichnung}
+                    {$item->hersteller_kurzbezeichnung}
                 </div>
                 <div id="dialog_id">
-                    Art.Nr.: {$item.ID}
+                    Art.Nr.: {$item->id}
                 </div>
             </div>
             <!-- Preis -->
             <div class="art_dlg_preis">
-                <b id="dialog_preis">{$item.preis|number_format|replace:" ":"&nbsp;"}&nbsp;&euro;</b>
+                <b id="dialog_preis">{$item->price|number_format|replace:" ":"&nbsp;"}&nbsp;&euro;</b>
             </div>
         </div>
         <div>
@@ -73,14 +73,14 @@
     </div>
     {/if}
     
-    {if is_array($item.zusatz)}
+    {if is_array($item->zusatz)}
     <table class="zusatz">
         <tr>
             <td colspan="4">
                 {$langstrings.item.zusatz_title}
             </td>
         </tr>
-        {foreach $item.zusatz as $zusatz}
+        {foreach $item->zusatz as $zusatz}
         <tr>
             <td>
                 <img src="/images/webelemente/zusatz/{$zusatz.rufname}.gif" {if $zusatz.beschreibung} alt="{$zusatz.name}"{popup text=$zusatz.beschreibung width="400" caption=$zusatz.name}{else}title="{$zusatz.name}"{/if}>
