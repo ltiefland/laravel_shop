@@ -20,10 +20,10 @@
         <meta property="og:site_name" content="{$ini.titel_only} Online-Shop" />
         <meta property="og:type" content="product" />
         <meta property="og:title" content="{$title_facebook}" />
-    {if $subdir.medium[0]->medium.name}
-        <meta property="og:image" content="{$ini.absoluteURL}/images/uplaod/{$item.medium[0]->medium->folder}/{$subdir.medien[0]->medium.name}" />
-    {elseif $item->medium[0]->medium->name}
-        <meta property="og:image" content="{$ini.absoluteURL}/images/uplaod/{$item.medium[0]->medium->folder}/{$item.medium[0]->medium->name}" />
+    {if $subdir->media[0]->url}
+        <meta property="og:image" content="{$subdir->medien[0]->url}" />
+    {elseif $item->media[0]->url}
+        <meta property="og:image" content="{$item->medium[0]->url}" />
     {else}
         <meta property="og:image" content="{$ini.absoluteURL}/images/webelemente/logo.png" />
     {/if}
