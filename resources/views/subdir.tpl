@@ -37,7 +37,7 @@
     <div class="box_subdir">
             <a href="/directory/{$subDir->id}-{$subDir->slug}">
                 <div class="top"
-                {if $subDir->media[0]-url != ''}
+                {if $subDir->media[0]->url != ''}
                     style="
                         background: url('/images/upload/{$subDir->media[0]->url}') no-repeat center;
                         background-size:cover;

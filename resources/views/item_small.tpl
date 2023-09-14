@@ -18,7 +18,7 @@
         {if $item->media[0]->url != $ini.itemKorrektur.noImage}
             style="
                 cursor:pointer;
-                background:url('/images/upload/{$item.media[0]-url}') no-repeat top center;
+                background:url('/images/upload/{$item.media[0]->url}') no-repeat top center;
                 background-size:cover;
 
             "
