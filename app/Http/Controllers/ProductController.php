@@ -25,7 +25,7 @@
                 {
                     $nav[$cat->id] = $cat;
                 }
-                elseif(!@is_null($nav[$cat->product_category_id]))
+                elseif ( !@is_null( $nav[$cat->product_category_id] ) )
                 {
                     $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
                 }
@@ -36,15 +36,15 @@
         public function show( string $item )
         {
             $client = new Client();
-            $response = $client->request( "get", config( "api.url" ) . "products/" . $item, [
+            $response = $client->request( "get", config( "api.url" ) . "products/" . $item . ".html", [
                 'headers' => [
                     'Authorization' => 'Bearer ' . config( "api.key" ),
                     "Content-Type"  => "application/json",
                     "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
-	    return view("item", [
-	    	"item" => json_decode($response)->data,
-	    ]);
+            return view( "item", [
+                "item" => json_decode( $response )->data,
+            ] );
         }
     }
