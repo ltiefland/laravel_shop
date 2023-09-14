@@ -5,11 +5,11 @@
     {include file="shopposition.tpl"}
 
 <div class="subdir_info_wrapper">
-    {if is_countable($subdir->medium) && count($subdir->medium) > 0}
-        {if $subdir->medium[1]->medium->name}
+    {if is_countable($subdir->media) && count($subdir->media) > 0}
+        {if $subdir->media[1]->url}
             <div class="subdir_bild">
-                {if $subdir->medium[1]->medium->name}
-                    <img src="/images/upload/{$subdir->medium[1]->medium->folder}/gr/{$subdir->medium[1]->medium->name}" alt="">
+                {if $subdir->media[1]->url}
+                    <img src="/images/upload/{$subdir->media[1]->url}" alt="">
                 {/if}
             </div>
         {elseif $subdir->media[0]->url}
@@ -37,13 +37,13 @@
     <div class="box_subdir">
             <a href="/directory/{$subDir->id}-{$subDir->slug}">
                 <div class="top"
-                {if $subDir->medium[0]->medium->name != ''}
+                {if $subDir->media[0]-url != ''}
                     style="
-                        background: url('/images/upload/{$subDir->medium[0]->medium->folder}/gr/{$subDir->medium[0]->medium->name}') no-repeat center;
+                        background: url('/images/upload/{$subDir->media[0]->url}') no-repeat center;
                         background-size:cover;
                     "
                 {/if}
-                alt="{$subDir.name}"
+                alt="{$subDir->name}"
                 >
 
                 </div>
@@ -108,9 +108,9 @@
     <section id="infotext">
         <div class="inner">
 
-            {if $subdir->medium[2]->medium->name}
+            {if $subdir->media[2]->url}
             <div class="subdir_bild">
-                <img src="/images/upload/{$subdir->medium[2]->medium->folder}/gr/{$subdir->medium[2]->medium->name}" alt="">
+                <img src="/images/upload/{$subdir->media[2]->url}" alt="">
             </div>
             {/if}
 
