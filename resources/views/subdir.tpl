@@ -12,18 +12,18 @@
                     <img src="/images/upload/{$subdir->medium[1]->medium->folder}/gr/{$subdir->medium[1]->medium->name}" alt="">
                 {/if}
             </div>
-        {elseif $subdir->medien[0]->medium->name}
+        {elseif $subdir->media[0]->url}
             <div class="subdir_bild">
-                <img src="/images/upload/{$subdir->medium[0]->medium->folder}/gr/{$subdir->medium[0]->medium->name}" alt="">
+                <img src="/images/upload/{$subdir->media[0]->url}" alt="">
             </div>
         {/if}
     {/if}
-    
+
     {if $subdir->description}
         <div class="subdir_text">
             <h1>{$subdir->Alternativer_Titel|default:$subdir->name}</h1>
             {$subdir->description}
-            
+
             {if $subdir->description2}
                 <p class="infotext_subdir"><a href="#infotext">Mehr lesen</a></p>
             {/if}
@@ -32,11 +32,11 @@
 </div>
 
 {if $subdir->subdirs|count}
-<div class="subdir">   
+<div class="subdir">
     {foreach $subdir->subdirs as $subDir}
-    <div class="box_subdir">     
+    <div class="box_subdir">
             <a href="/directory/{$subDir->id}-{$subDir->slug}">
-                <div class="top" 
+                <div class="top"
                 {if $subDir->medium[0]->medium->name != ''}
                     style="
                         background: url('/images/upload/{$subDir->medium[0]->medium->folder}/gr/{$subDir->medium[0]->medium->name}') no-repeat center;
@@ -60,7 +60,7 @@
     {if is_countable($subdir->items)}
         {if count($subdir->items) > 0}
 
-                        
+
             {if (isset($dropdown_opts) && ($dropdown_opts|count>0 )|| ( isset($bool_opts) && $bool_opts|count>0)) && $ini.filter_auspraegungen==1}
                 <div class="subdir_sort loading">
                     <form name="sort" action="" method="get" id="modellForm1">
@@ -72,8 +72,8 @@
             	    </form>
                 </div>
             {/if}
-            
-            
+
+
             {if $smarty.const.USE_SMARTY_PAGINATE===true}
             {include file="pagination.tpl"}
             {/if}
@@ -90,7 +90,7 @@
                     {/if}
                 {/foreach}
             </div>
-            
+
             {if $smarty.const.USE_SMARTY_PAGINATE===true}
                 {include file="pagination.tpl"}
             {/if}
