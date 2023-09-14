@@ -33,10 +33,10 @@
             dd( $nav );
         }
 
-        public function show( int $id )
+        public function show( string $item )
         {
             $client = new Client();
-            $response = $client->request( "get", config( "api.url" ) . "products/" . $id, [
+            $response = $client->request( "get", config( "api.url" ) . "products/" . $item, [
                 'headers' => [
                     'Authorization' => 'Bearer ' . config( "api.key" ),
                     "Content-Type"  => "application/json",
