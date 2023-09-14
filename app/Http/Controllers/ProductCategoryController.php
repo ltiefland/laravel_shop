@@ -43,6 +43,8 @@
                     "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
-            dd( json_decode( $response ) );
+	    return view("subdir", [
+	    	"subdir" => json_decode($response),
+	    ]);
         }
     }
