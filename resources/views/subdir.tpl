@@ -9,12 +9,12 @@
         {if $subdir->media[1]->url}
             <div class="subdir_bild">
                 {if $subdir->media[1]->url}
-                    <img src="/images/upload/{$subdir->media[1]->url}" alt="">
+                    <img src="{$subdir->media[1]->url}" alt="">
                 {/if}
             </div>
         {elseif $subdir->media[0]->url}
             <div class="subdir_bild">
-                <img src="/images/upload/{$subdir->media[0]->url}" alt="">
+                <img src="{$subdir->media[0]->url}" alt="">
             </div>
         {/if}
     {/if}
@@ -39,7 +39,7 @@
                 <div class="top"
                 {if $subDir->media[0]->url != ''}
                     style="
-                        background: url('/images/upload/{$subDir->media[0]->url}') no-repeat center;
+                        background: url('{$subDir->media[0]->url}') no-repeat center;
                         background-size:cover;
                     "
                 {/if}
@@ -110,7 +110,7 @@
 
             {if $subdir->media[2]->url}
             <div class="subdir_bild">
-                <img src="/images/upload/{$subdir->media[2]->url}" alt="">
+                <img src="{$subdir->media[2]->url}" alt="">
             </div>
             {/if}
 
