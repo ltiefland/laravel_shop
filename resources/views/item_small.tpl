@@ -1,6 +1,6 @@
 <div class="artikel_box" id="anker{$item->item_id}">
     <div class="item_special">
-    {if $item->preis > 1 && $item->vk_preis && $item->nachlass_prozent>5}
+    {if $item->price > 1 && $item->vk_preis && $item->nachlass_prozent>5}
         <div class="sie_sparen">-&nbsp;{$item->nachlass_prozent|round}%</div>
     {/if}
     {if $item->NEU}
@@ -46,7 +46,7 @@
             <div class="preis">
                 <div class="preisInner">
 
-                    {$item->price[0]->preis|money_format|replace:"EUR":"&euro;"}
+                    {$item->price|money_format|replace:"EUR":"&euro;"}
 
                     <span style="vertical-align:5px;font-size:12px;font-weight:400;line-height:20px;">{if $item->preis_einheit && $item->gewicht>0}/{$item->gewicht|number_format:2} {$item->preis_einheit}{/if}</span>
 
@@ -58,7 +58,7 @@
                         {/if}
                     </span>
                     {if $item->$UVP>0 && $item->$UVP>$item->preis}
-                    <div class="infopic strike uvp">UVP: <span class="euro">&euro;</span>&nbsp;{$item->$UVP|money_format|replace:"USD":"$"|replace:"EUR":""}</div>
+                    <div class="infopic strike uvp">UVP: <span class="euro">&euro;</span>&nbsp;{$item->$UVP|money_format|replace:"USD":'$'|replace:"EUR":""}</div>
                     {/if}
                 {/if}
                 </div>
