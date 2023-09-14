@@ -96,7 +96,7 @@ Route::get( '/', function ()
     Route::post( "/bestellen_seite_{step}.html", [ BuyController::class, 'step1' ] )->where( 'step', '[1-4][ab]{0,1}' );
     Route::view( "basket.html", 'basket' );
     Route::get( "/directory/", [ ProductCategoryController::class, "index" ] )->whereNumber( 'id' );
-    Route::get( "/item/{id}", [ ProductController::class, "show" ] )->whereNumber( 'id' );
+    Route::get( "{item:slug}.html", [ ProductController::class, "show" ] )->whereNumber( 'id' );
     Route::get( "/directory/{id}-{name}", [ ProductCategoryController::class, "show" ] )->whereNumber( 'id' );
     Route::get( '/dashboard', function ()
     {
