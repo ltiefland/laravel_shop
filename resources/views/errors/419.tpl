@@ -1,5 +1,5 @@
-@extends('errors::minimal')
+{extends file="page.tpl"}
 
-@section('title', __('Page Expired'))
-@section('code', '419')
-@section('message', __('Page Expired'))
+{block name="content"}
+    <h2>Seite abgelaufen!</h2>
+{/block}

@@ -1,5 +1,8 @@
-@extends('errors::minimal')
+{extends file="page.tpl"}
 
-@section('title', __('Not Found'))
-@section('code', '404')
-@section('message', __('Not Found'))
+{block name="content"}
+    <h2>404: Not found</h2>
+Die angeforderte Seite ist nicht verfügbar.
+
+Bitte benutzen Sie das Hauptmenü, um zur gewünschten Seite zu kommen.
+{/block}

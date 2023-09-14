@@ -1,5 +1,9 @@
-@extends('errors::minimal')
+{extends file="page.tpl"}
 
-@section('title', __('Unauthorized'))
-@section('code', '401')
-@section('message', __('Unauthorized'))
+{block name="content"}
+    <h2>401: Unauthorized</h2>
+Sie sind nicht berechtigt auf diese Seite zuzugreifen.
+
+Bitte benutzen Sie das Hauptmenü, um zur gewünschten Seite zu kommen.
+{/block}
+

@@ -1,5 +1,9 @@
-@extends('errors::minimal')
+{extends file="page.tpl"}
 
-@section('title', __('Server Error'))
-@section('code', '500')
-@section('message', __('Server Error'))
+{block name="content"}
+    <h2>500: Internal Server Error</h2>
+Es ist ein Serverfehler aufgetreten.
+
+Bitte benutzen Sie das Hauptmenü, um zur gewünschten Seite zu kommen.
+{/block}
+
