@@ -79,7 +79,7 @@
                         "Accept"        => "application/json",
                     ]
                 ] )->getBody()->getContents();
-                return view( "shopPosition", [
+                return view( "shopposition", [
                     "shopPosition" => json_decode( $response ),
                 ] );
             }
