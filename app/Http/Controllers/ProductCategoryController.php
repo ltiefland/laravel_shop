@@ -4,6 +4,9 @@
 
 
     use GuzzleHttp\Client;
+    use Illuminate\Contracts\Foundation\Application;
+    use Illuminate\Contracts\View\Factory;
+    use Illuminate\Contracts\View\View;
 
     class ProductCategoryController extends Controller
     {
@@ -33,7 +36,7 @@
             dd( $nav );
         }
 
-        public function show( int $id )
+        public function show( int $id ): Factory|View|Application
         {
             $client = new Client();
             $response = $client->request( "get", config( "api.url" ) . "product-categories/" . $id, [
@@ -46,5 +49,20 @@
 	    return view("subdir", [
 	    	"subdir" => json_decode($response),
 	    ]);
+        }
+
+        public function shopPosition(): Factory|View|Application
+        {
+            $client = new Client();
+            $response = $client->request( "get", config( "api.url" ) . "product-categories/shopPosition", [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . config( "api.key" ),
+                    "Content-Type"  => "application/json",
+                    "Accept"        => "application/json",
+                ]
+            ] )->getBody()->getContents();
+            return view( "shopPosition", [
+                "shopPosition" => json_decode( $response ),
+            ] );
         }
     }
