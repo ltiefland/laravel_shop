@@ -38,6 +38,7 @@
 
         public function show( int $id ): Factory|View|Application
         {
+            $_SESSION["navigation"]["position"] = $id;
             $client = new Client();
             $response = $client->request( "get", config( "api.url" ) . "product-categories/" . $id, [
                 'headers' => [

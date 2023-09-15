@@ -16,6 +16,7 @@
     |
     */
 
+    session_start();
     $GLOBALS["INI"] = getConfig();
 
     $sql = "
@@ -44,13 +45,13 @@
     $data = [
         /*"nav"               => $menu,
         "serviceCenterMenu" => $sc["menu"],*/
-        "shopPosition"      => $shopPosition,
-        "langstrings"       => $GLOBALS["langstrings"],
-        "ini"               => $GLOBALS["INI"],
+        "shopPosition" => $shopPosition,
+        "langstrings"  => $GLOBALS["langstrings"],
+        "ini"          => $GLOBALS["INI"],
     ];
     \View::share( $data );
 
-Route::get( '/', function ()
+    Route::get( '/', function ()
     {
         $date = date( "Y-m-d" );
         //$aktion = Action::with( 'medium.medium' )->where( 'valid_from', '<=', $date )->where( 'valid_to', '>=', $date )->get();
