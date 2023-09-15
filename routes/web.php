@@ -40,12 +40,10 @@
 
     $nav = new ProductCategoryController();
     //$menu = $nav->nav_menu();
-    $shopPosition = $nav->shopPosition();
     //$sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );
     $data = [
         /*"nav"               => $menu,
         "serviceCenterMenu" => $sc["menu"],*/
-        "shopPosition" => $shopPosition,
         "langstrings"  => $GLOBALS["langstrings"],
         "ini"          => $GLOBALS["INI"],
     ];

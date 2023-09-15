@@ -56,8 +56,10 @@
                         "Accept"        => "application/json",
                     ]
                 ] )->getBody()->getContents();
+                $shopPosition = $this->shopPosition();
                 return view( "subdir", [
-                    "subdir" => json_decode( $response ),
+                    "subdir"       => json_decode( $response ),
+                    "shopPosition" => $shopPosition,
                 ] );
             }
             catch ( GuzzleException )
