@@ -67,7 +67,7 @@
             }
         }
 
-        public function shopPosition(): Factory|View|Application
+        public function shopPosition(): void
         {
             $client = new Client();
             try
@@ -78,10 +78,8 @@
                         "Content-Type"  => "application/json",
                         "Accept"        => "application/json",
                     ]
-                ] )->getBody()->getContents();
-                return view( "shopposition", [
-                    "shopPosition" => json_decode( $response ),
-                ] );
+                ] )->getBody()->getContents();#
+                \View::share( "shopposition", json_decode( $response ) );
             }
             catch ( GuzzleException $e )
             {
