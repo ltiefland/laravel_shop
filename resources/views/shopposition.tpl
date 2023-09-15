@@ -1,9 +1,9 @@
 <div class="breadcrumb noprint">
     <span class="breadcrumb_first_span">
         <li class="breadcrumb_li">
-            <a class="breadcrumb_item" href="{$ini.absoluteURL}/">
+            <a class="breadcrumb_item" href="/">
             <span>{$langstrings.shop.home}</span></a>
-        </li>                
+        </li>
         {assign var="indexloopsection" value=2}
         {foreach $shopPosition as $pos}
             <span class='breadcrumb-trenner'>&nbsp;>&nbsp;</span>
