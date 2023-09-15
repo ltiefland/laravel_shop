@@ -43,8 +43,11 @@
                     "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
+            $item = json_decode( $response )->data;
+            $shopPosition = $item->product_categories[0]->shopPosition();
             return view( "item", [
-                "item" => json_decode( $response )->data,
+                "item"         => $item,
+                "shopPosition" => $shopPosition,
             ] );
         }
     }
