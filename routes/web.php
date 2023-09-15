@@ -40,12 +40,12 @@
 
     $nav = new ProductCategoryController();
     $menu = $nav->index();
-    //$sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );
+    $sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );
     $data = [
         "nav"               => $menu,
-        /*"serviceCenterMenu" => $sc["menu"],*/
-        "langstrings"  => $GLOBALS["langstrings"],
-        "ini"          => $GLOBALS["INI"],
+        "serviceCenterMenu" => $sc["menu"],
+        "langstrings"       => $GLOBALS["langstrings"],
+        "ini"               => $GLOBALS["INI"],
     ];
     \View::share( $data );
 
