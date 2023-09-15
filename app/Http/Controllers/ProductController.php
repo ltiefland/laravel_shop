@@ -44,7 +44,7 @@
                 ]
             ] )->getBody()->getContents();
             $item = json_decode( $response )->data;
-            $_SESSION["navigation"]["position"] = $item->categories[0]->id;
+            $_SESSION["navigation"]["position"] = array_reverse( $item->categories )[0]->id;
             $cat = new ProductCategoryController();
             $shopPosition = $cat->shopPosition();
             return view( "item", [
