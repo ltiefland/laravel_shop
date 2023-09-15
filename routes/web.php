@@ -37,14 +37,14 @@
         $GLOBALS["langstrings"][$langstring->page_id][$langstring->id] = $langstring->string;
     }
 
-    /*$nav = new DirectoryController();
-    $menu = $nav->nav_menu();
+    $nav = new DirectoryController();
+    //$menu = $nav->nav_menu();
     $shopPosition = $nav->shopPosition();
-    $sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );*/
+    //$sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );
     $data = [
         /*"nav"               => $menu,
-        "serviceCenterMenu" => $sc["menu"],
-        "shopPosition"      => $shopPosition,*/
+        "serviceCenterMenu" => $sc["menu"],*/
+        "shopPosition"      => $shopPosition,
         "langstrings"       => $GLOBALS["langstrings"],
         "ini"               => $GLOBALS["INI"],
     ];
