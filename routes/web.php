@@ -37,7 +37,7 @@
         $GLOBALS["langstrings"][$langstring->page_id][$langstring->id] = $langstring->string;
     }
 
-    $nav = new DirectoryController();
+    $nav = new ProductCategoryController();
     //$menu = $nav->nav_menu();
     $shopPosition = $nav->shopPosition();
     //$sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );
