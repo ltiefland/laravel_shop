@@ -36,7 +36,7 @@
                         $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
                     }
                 }
-                dd( $nav );
+                return $nav;
             }
             catch ( GuzzleException )
             {
