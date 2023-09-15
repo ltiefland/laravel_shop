@@ -44,7 +44,8 @@
                 ]
             ] )->getBody()->getContents();
             $item = json_decode( $response )->data;
-            $shopPosition = $item->categories[0]->shopPosition();
+            $cat = new ProductCategoryController();
+            $shopPosition = $cat->shopPosition();
             return view( "item", [
                 "item"         => $item,
                 "shopPosition" => $shopPosition,
