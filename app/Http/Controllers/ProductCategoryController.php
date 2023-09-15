@@ -28,7 +28,7 @@
                 {
                     $nav[$cat->id] = $cat;
                 }
-                elseif(!@is_null($nav[$cat->product_category_id]))
+                elseif ( !@is_null( $nav[$cat->product_category_id] ) )
                 {
                     $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
                 }
@@ -46,15 +46,15 @@
                     "Accept"        => "application/json",
                 ]
             ] )->getBody()->getContents();
-	    return view("subdir", [
-	    	"subdir" => json_decode($response),
-	    ]);
+            return view( "subdir", [
+                "subdir" => json_decode( $response ),
+            ] );
         }
 
         public function shopPosition(): Factory|View|Application
         {
             $client = new Client();
-            $response = $client->request( "get", config( "api.url" ) . "product-categories/shopPosition", [
+            $response = $client->request( "get", config( "api.url" ) . "product-categories/shopPosition/" . $_SESSION["navigation"]["position"], [
                 'headers' => [
                     'Authorization' => 'Bearer ' . config( "api.key" ),
                     "Content-Type"  => "application/json",
