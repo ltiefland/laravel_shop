@@ -25,18 +25,7 @@
                         "Accept"        => "application/json",
                     ]
                 ] )->getBody()->getContents();
-                foreach ( json_decode( $response )->data as $cat )
-                {
-                    if ( is_null( $cat->product_category_id ) )
-                    {
-                        $nav[$cat->id] = $cat;
-                    }
-                    elseif ( !@is_null( $nav[$cat->product_category_id] ) )
-                    {
-                        $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
-                    }
-                }
-                return $nav;
+                return json_decode( $response );
             }
             catch ( GuzzleException )
             {
