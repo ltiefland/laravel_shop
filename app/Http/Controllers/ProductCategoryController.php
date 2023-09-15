@@ -79,7 +79,7 @@
                         "Accept"        => "application/json",
                     ]
                 ] )->getBody()->getContents();#
-                \View::share( "shopposition", json_decode( $response ) );
+                \View::share( "shopPosition", json_decode( $response ) );
             }
             catch ( GuzzleException $e )
             {

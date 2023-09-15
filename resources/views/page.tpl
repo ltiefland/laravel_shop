@@ -418,12 +418,6 @@
         <!-- End Facebook Pixel Code -->
         {/if}
 
-{*
-<!-- TrustBox script -->
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-<!-- End Trustbox script -->
-*}
-
     </head>
 
     <body class="normal" onload="{$onload}">
@@ -518,8 +512,8 @@
                         {/if}
                     }
                 {/if}
-                {if $shopPosition[2].dirID}
-                    $('#{$shopPosition[2].dirID}').show();
+                {if $shopPosition[2]->id}
+                    $('#{$shopPosition[2]->id}').show();
                 {/if}
 
 
