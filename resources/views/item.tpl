@@ -370,7 +370,7 @@
                 <!-- item_rightrow -->
                 <div class="item_rightrow">
                     <div class="logo_breadcrumb">
-                        <span style="float: left;min-width:100px;">{$item->manufacturer->logo->url}</span>
+                        <span style="float: left;min-width:100px;"><img src="{$item->manufacturer->logo->preview_url}" alt=""></span>
                         {include file="shopposition.tpl"}
                     </div>
 
