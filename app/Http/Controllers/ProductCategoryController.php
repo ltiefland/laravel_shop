@@ -4,6 +4,7 @@
 
 
     use GuzzleHttp\Client;
+    use GuzzleHttp\Exception\GuzzleException;
     use Illuminate\Contracts\Foundation\Application;
     use Illuminate\Contracts\View\Factory;
     use Illuminate\Contracts\View\View;
@@ -14,56 +15,74 @@
         public function index()
         {
             $client = new Client();
-            $response = $client->request( "get", config( "api.url" ) . "product-categories/", [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . config( "api.key" ),
-                    "Content-Type"  => "application/json",
-                    "Accept"        => "application/json",
-                ]
-            ] )->getBody()->getContents();
-            $nav = array();
-            foreach ( json_decode( $response )->data as $cat )
+            try
             {
-                if ( is_null( $cat->product_category_id ) )
+                $nav = array();
+                $response = $client->request( "get", config( "api.url" ) . "product-categories/", [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . config( "api.key" ),
+                        "Content-Type"  => "application/json",
+                        "Accept"        => "application/json",
+                    ]
+                ] )->getBody()->getContents();
+                foreach ( json_decode( $response )->data as $cat )
                 {
-                    $nav[$cat->id] = $cat;
+                    if ( is_null( $cat->product_category_id ) )
+                    {
+                        $nav[$cat->id] = $cat;
+                    }
+                    elseif ( !@is_null( $nav[$cat->product_category_id] ) )
+                    {
+                        $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
+                    }
                 }
-                elseif ( !@is_null( $nav[$cat->product_category_id] ) )
-                {
-                    $nav[$cat->product_category_id]->sub[$cat->id] = $cat;
-                }
+                dd( $nav );
             }
-            dd( $nav );
+            catch ( GuzzleException )
+            {
+            }
         }
 
         public function show( int $id ): Factory|View|Application
         {
             $_SESSION["navigation"]["position"] = $id;
             $client = new Client();
-            $response = $client->request( "get", config( "api.url" ) . "product-categories/" . $id, [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . config( "api.key" ),
-                    "Content-Type"  => "application/json",
-                    "Accept"        => "application/json",
-                ]
-            ] )->getBody()->getContents();
-            return view( "subdir", [
-                "subdir" => json_decode( $response ),
-            ] );
+            try
+            {
+                $response = $client->request( "get", config( "api.url" ) . "product-categories/" . $id, [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . config( "api.key" ),
+                        "Content-Type"  => "application/json",
+                        "Accept"        => "application/json",
+                    ]
+                ] )->getBody()->getContents();
+                return view( "subdir", [
+                    "subdir" => json_decode( $response ),
+                ] );
+            }
+            catch ( GuzzleException )
+            {
+            }
         }
 
         public function shopPosition(): Factory|View|Application
         {
             $client = new Client();
-            $response = $client->request( "get", config( "api.url" ) . "product-categories/shopPosition/" . $_SESSION["navigation"]["position"], [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . config( "api.key" ),
-                    "Content-Type"  => "application/json",
-                    "Accept"        => "application/json",
-                ]
-            ] )->getBody()->getContents();
-            return view( "shopPosition", [
-                "shopPosition" => json_decode( $response ),
-            ] );
+            try
+            {
+                $response = $client->request( "get", config( "api.url" ) . "product-categories/shopPosition/" . $_SESSION["navigation"]["position"], [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . config( "api.key" ),
+                        "Content-Type"  => "application/json",
+                        "Accept"        => "application/json",
+                    ]
+                ] )->getBody()->getContents();
+                return view( "shopPosition", [
+                    "shopPosition" => json_decode( $response ),
+                ] );
+            }
+            catch ( GuzzleException $e )
+            {
+            }
         }
     }
