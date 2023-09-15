@@ -67,7 +67,7 @@
             }
         }
 
-        public function shopPosition(): void
+        public function shopPosition()
         {
             $client = new Client();
             try
@@ -79,7 +79,7 @@
                         "Accept"        => "application/json",
                     ]
                 ] )->getBody()->getContents();#
-                \View::share( "shopPosition", json_decode( $response ) );
+                return json_decode( $response );
             }
             catch ( GuzzleException $e )
             {
