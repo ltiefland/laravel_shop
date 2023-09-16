@@ -39,7 +39,7 @@
                 <div class="top"
                 {if $subDir->media[0]->url != ''}
                     style="
-                        background: url('{$subDir->photo[0]->url_gr}') no-repeat center;
+                        background: url('{$subDir->media[0]->url_gr}') no-repeat center;
                         background-size:cover;
                     "
                 {/if}
