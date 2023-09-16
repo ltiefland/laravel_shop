@@ -30,7 +30,7 @@
                 $dbItem = $i->show( $item, true );
                 $this->media = $dbItem->media;
                 $this->shipping_group_id = $dbItem->shipping_group_id;
-                $this->weight = $dbItem->weight;
+                //$this->weight = $dbItem->weight;
                 $this->menge = $menge;
                 $this->slug = $dbItem->slug;
                 $this->price = $dbItem->price;
