@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\BasketController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\ProductCategoryController;
     use App\Http\Controllers\ProductController;
@@ -17,6 +18,10 @@
     */
 
     session_start();
+    if ( !isset( $_SESSION["SHOP"]["BASKET"] ) )
+    {
+        $_SESSION["SHOP"]["BASKET"] = new BasketController();
+    }
     $GLOBALS["INI"] = getConfig();
 
     $sql = "
