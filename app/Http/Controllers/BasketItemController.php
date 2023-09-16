@@ -7,17 +7,17 @@
 
     class BasketItemController extends Controller
     {
-        public string     $name;
-        public float      $price;
-        public int        $menge;
-        public string     $code              = "";
-        public int        $id;
-        public Collection $media;
-        public ?int       $tax               = 0;
-        public string     $slug              = "";
-        public int        $spedId            = 0;
-        public int        $shipping_group_id = 1;
-        public float      $weight            = 0;
+        public string $name;
+        public float  $price;
+        public int    $menge;
+        public string $code              = "";
+        public int    $id;
+        public array  $media;
+        public ?int   $tax               = 0;
+        public string $slug              = "";
+        public int    $spedId            = 0;
+        public int    $shipping_group_id = 1;
+        public float  $weight            = 0;
 
         //
         public string $addinfo;
