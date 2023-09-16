@@ -21,7 +21,15 @@
             $client = new Client();
             try
             {
-                $response = $client->request( "get", config( "api.url" ) . "products/" . $item . ".html", [
+                if ( is_numeric( $item ) )
+                {
+                    $url = config( "api.url" ) . "product/" . $item;
+                }
+                else
+                {
+                    $url = config( "api.url" ) . "products/" . $item . ".html";
+                }
+                $response = $client->request( "get", $url, [
                     'headers' => [
                         'Authorization' => 'Bearer ' . config( "api.key" ),
                         "Content-Type"  => "application/json",
