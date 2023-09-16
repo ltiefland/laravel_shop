@@ -7,22 +7,22 @@
         $(".topnav_ul li").hoverIntent(
             function(){
                 var topLvl = String( $(this).attr("class") );
-                
+
                 var topExpl = topLvl.split("_");
                 var topId = topExpl[1];
                 $(this).removeClass('highlight');
-                
+
                 if( windowWidth > 850){
                     $('.subnav').removeClass("topnav-hover");
                     $('.sub_'+topId).addClass("topnav-hover");
                     $(".topnav_ul li").removeClass('highlight');
-                }    
+                }
             }, function(){
                 var topLvl = String( $(this).attr("class") );
                 var topExpl = topLvl.split("_");
-                var topId = topExpl[1];  
+                var topId = topExpl[1];
                 $('.sub_'+topId).removeClass("topnav-hover");
-                $(".topnav_ul li").removeClass('highlight');        
+                $(".topnav_ul li").removeClass('highlight');
             }
 
         );
@@ -39,19 +39,19 @@
             }
 
         );
-        
-       
+
+
         $(".subnavClose").on( "click", function(){
-            $('.subnav').removeClass("topnav-hover");    
+            $('.subnav').removeClass("topnav-hover");
             $('.subnav').css("visibility", "hidden");
         });
-        
+
         // height subnav
         /*
         var maxHeight = 0;
         $(".subnav_inner_container").each(function(){
             var actHeight = $(this).height();
-            
+
             if( maxHeight == 0 ){
                 maxHeight = actHeight;
             }else{
@@ -64,7 +64,7 @@
             $(".subnav_inner_container").css("height", maxHeight + 30);
         }
         */
-        
+
         function removeMobileNav(w) {
             if(w>850) {
                 $('.mobileNav').remove();
@@ -139,7 +139,7 @@
 .opener:hover,
 .opener:focus {
     background:#f4f4f4;
-    border-radius:5px;    
+    border-radius:5px;
 }
 .fa-chevron-right {
     color:#e95802;
@@ -148,7 +148,7 @@
 </style>
 <nav class="topnav noprint">
     <div class="inner">
-    
+
 
         {*
         {if $herstellerInMenu|is_array}
@@ -158,53 +158,53 @@
         </li>
         {/if}
         *}
-  
+
         <ul class="topnav_ul">
         {foreach $nav as $n name=navigation}
-        
+
             {foreach $n.top as $top }
             <li class="{if $n@last}last{/if} li_{$top.id}">
                 <a class="topnav_li" id="{$top.id}" href="{$top.dirLink}" title="Zu {$top.name}">{$top.name}</a>
-            </li>  
+            </li>
             {/foreach}
         {/foreach}
         </ul>
     </div>
         {foreach $nav as $n}
-        
-            {foreach $n.top as $top}
-                {if is_array($n.sub) && $n.sub|count}
-                <div class="subnav sub_{$top.id}">
+
+            {foreach $n->top as $top}
+                {if is_array($n->sub) && $n->sub|count}
+                <div class="subnav sub_{$top->id}">
                    <div class="subnav_outer_container">
-                     
+
                         <div class="subnav_inner_container">
                           <div class="subnav_paddings">
-                            
+
                             <div class="subdir_col">
                                 {* 1st level opener *}
-                                {section loop=$n.sub start=0 name=s_ind}
-                                    {if $n.sub[s_ind].link}
-                                        <div id="{$n.sub[s_ind].id}" class="opener {if $smarty.section.s_ind.last}subdir_last{/if}">
-                                            <span class="sub_head"><a href="{$n.sub[s_ind].link}" title="Zu {$n.sub[s_ind].name}">{$n.sub[s_ind].name}</a>
-                                                {if count($n.sub[s_ind].sub2)}
-                                                    <a href="{$n.sub[s_ind].link}" class="topnav_next" data-closename="{$top.name}" data-id="sub2_{$n.sub[s_ind].id}" data-name="{$n.sub[s_ind].name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                {section loop=$n->sub start=0 name=s_ind}
+                                    {if $n->sub[s_ind]->link}
+                                        <div id="{$n->sub[s_ind]->id}" class="opener {if $smarty.section.s_ind.last}subdir_last{/if}">
+                                            <span class="sub_head"><a href="{$n->sub[s_ind]->link}" title="Zu {$n->sub[s_ind]->name}">{$n->sub[s_ind]->name}</a>
+                                                {if count($n->sub[s_ind]->sub2)}
+                                                    <a href="{$n->sub[s_ind]->link}" class="topnav_next" data-closename="{$top->name}" data-id="sub2_{$n->sub[s_ind].id}" data-name="{$n->sub[s_ind]->name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                                 {/if}
                                             </span>
                                         </div>
                                     {/if}
                                 {/section}
-                                
+
                             </div>
-                            
+
                             <div class="subdir_col subs">
-                                
+
                                 {* 1st level *}
-                                {section loop=$n.sub start=0 name=s_ind}
-                                <div id="sub_{$n.sub[s_ind].id}" class="subdir_box {if $smarty.section.s_ind.last}subdir_last{/if}">
-                                        
-                                        {if is_array($n.sub[s_ind].sub2) && $n.sub[s_ind].sub2|count>0}
-                                        {foreach $n.sub[s_ind].sub2 as $sub3}
-                                            <span id class="sub2"><a href="{$sub3.link}" title="Zu {$sub3.name}">{$sub3.name}</a></span>
+                                {section loop=$n->sub start=0 name=s_ind}
+                                <div id="sub_{$n->sub[s_ind]->id}" class="subdir_box {if $smarty.section.s_ind.last}subdir_last{/if}">
+
+                                        {if is_array($n->sub[s_ind]->sub2) && $n.sub[s_ind].sub2|count>0}
+                                        {foreach $n->sub[s_ind]->sub2 as $sub3}
+                                            <span id class="sub2"><a href="{$sub3->link}" title="Zu {$sub3->name}">{$sub3->name}</a></span>
                                         {/foreach}
                                         {/if}
                                 </div>
@@ -214,12 +214,12 @@
                             {*
                             {if !$smarty.session.isMobile}
                             <div class="subnav_special">
-                            
+
                             </div>
                             {/if}
                             *}
-                            
-                            
+
+
                            </div>
                         </div>
                     </div>
@@ -227,5 +227,5 @@
                 {/if}
             {/foreach}
         {/foreach}
-    
+
 </nav>
