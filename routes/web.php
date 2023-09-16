@@ -18,11 +18,39 @@
     */
 
     session_start();
+    $GLOBALS["INI"] = getConfig();
+    $GLOBALS["steuern"] = array();
+    //default LandID für Deutschland
+    $landID = 47;
+    //Wenn das Flag gesetzt ist, dann nimm diesen wert, damit auch "ausländische Shops" den richtigen MwSt angezeigt bekommen
+    if ( isset( $GLOBALS["INI"]["steuern"]["default_countryID"] ) )
+    {
+        $landID = $GLOBALS["INI"]["steuern"]["default_countryID"];
+    }
+
+    $countryIDs = ( isset( $GLOBALS['INI']['steuern']['use_countries_tax'] ) ) ? $GLOBALS['INI']['steuern']['use_countries_tax'] : $landID;
     if ( !isset( $_SESSION["SHOP"]["BASKET"] ) )
     {
         $_SESSION["SHOP"]["BASKET"] = new BasketController();
     }
-    $GLOBALS["INI"] = getConfig();
+
+    if ( !isset( $_SESSION["navigation"]["position"] ) )
+    {
+        $_SESSION["navigation"]["position"] = null;
+    }
+    $sql = "SELECT
+            *
+        FROM
+            content_management.countries_tax
+        WHERE
+            country_id IN (" . $countryIDs . ")
+    ";
+    $rows = DB::connection( "cms" )->select( $sql );
+    foreach ( $rows as $r )
+    {
+        $GLOBALS["steuern"][$r->country_id][$r->taxes_id] = $r->tax_percent;
+        $GLOBALS["steuern"][$r->country_id][null] = $GLOBALS["steuern"][$r->country_id][0];
+    }
 
     $sql = "
         SELECT
