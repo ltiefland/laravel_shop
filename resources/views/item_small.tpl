@@ -18,7 +18,7 @@
         {if $item->media[0]->url != $ini.itemKorrektur.noImage}
             style="
                 cursor:pointer;
-                background:url('{$item->media[0]->preview_url}') no-repeat top center;
+                background:url('{$item->media[0]->url}') no-repeat top center;
                 background-size:cover;
 
             "
