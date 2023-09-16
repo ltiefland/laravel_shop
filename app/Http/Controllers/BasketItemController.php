@@ -12,7 +12,7 @@
         public int        $menge;
         public string     $code              = "";
         public int        $id;
-        public Collection $medium;
+        public Collection $media;
         public ?int       $tax               = 0;
         public string     $slug              = "";
         public int        $spedId            = 0;
@@ -26,19 +26,20 @@
         {
             if ( $menge >= 1 )
             {
-                $dbItem = Item::with( 'medium.medium', 'price' )->find( $item );
-                $this->medium = $dbItem->medium;
+                $i = new ProductController();
+                $dbItem = $i->show( $item, true );
+                $this->media = $dbItem->media;
                 $this->shipping_group_id = $dbItem->shipping_group_id;
                 $this->weight = $dbItem->weight;
                 $this->menge = $menge;
                 $this->slug = $dbItem->slug;
-                $this->price = $dbItem->price[0]->preis;
+                $this->price = $dbItem->price;
                 if ( $price )
                 {
                     $this->price = $price;
                 }
                 $this->name = $dbItem->name;
-                //$this->tax = $dbItem->tax1;
+                $this->tax = 0;
                 $this->id = $item;
             }
         }

@@ -2,9 +2,7 @@
 
     namespace App\Http\Controllers;
 
-    use App\Models\Item as ItemAlias;
     use App\Http\Controllers\ShippingController;
-    use function Termwind\renderUsing;
     use Illuminate\Support\Facades\DB;
 
     class BasketController extends Controller
@@ -64,11 +62,6 @@
                 {
                     if ( !$bItem->code )
                     {
-                        $item = ItemAlias::find( $bItem->id );
-                        if ( !isset( $bItem->tax ) )
-                        {
-                            $bItem->tax = $item->tax1;
-                        }
                         $tax = $taxArr[$bItem->tax];
                         $bPreis = $bItem->menge * $bItem->price;
                         $buffer["itemAmt"][$bItem->tax] += $bPreis;
