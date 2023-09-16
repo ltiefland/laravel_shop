@@ -38,6 +38,26 @@
         $GLOBALS["langstrings"][$langstring->page_id][$langstring->id] = $langstring->string;
     }
 
+    /* Mobile Weiche */
+    if ( isset( $_SERVER["HTTP_USER_AGENT"] ) )
+    {
+        if ( !isset( $_SESSION['isMobile'] ) || $_SESSION['isMobile'] === false || !isset( $GLOBALS['isMobile'] ) || $GLOBALS['isMobile'] === false )
+        {
+
+            $_SESSION['isMobile'] = false;
+            $GLOBALS['isMobile'] = false;
+
+            $pattern = "/(alcatel|amoi|android|avantgo|blackberry|benq|cell|cricket|docomo|elaine|htc|iemobile|iphone|iPad|ipaq|ipod|j2me|java|midp|mini|mmp|mobi|motorola|nec-|nokia|palm|panasonic|philips|phone|playbook|sagem|sharp|sie-|silk|smartphone|sony|symbian|t-mobile|telus|up\.browser|up\.link|vodafone|wap|webos|wireless|xda|xoom|zte)/i";
+            if ( preg_match( $pattern, $_SERVER["HTTP_USER_AGENT"] ) )
+            {
+
+                $_SESSION['isMobile'] = true;
+                $GLOBALS['isMobile'] = true;
+            }
+
+        }
+    }
+
     $nav = new ProductCategoryController();
     $menu = $nav->index();
     $sc = parseCMSPage( $GLOBALS["INI"]["typo3"]["url"] . "/typo3/" );
