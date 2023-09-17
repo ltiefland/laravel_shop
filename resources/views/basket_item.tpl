@@ -8,7 +8,7 @@
                     {if !$item->for}
                     <a href="/{$item->slug}.html">
                     {if $item->media[0]->thumbnail}
-                        <img src="{$item->medium[0]->thumbnail}" />
+                        <img src="{$item->media[0]->thumbnail}" />
                     {else}
                         <img src="{$ini.itemKorrektur.noImage}" />
                     {/if}
