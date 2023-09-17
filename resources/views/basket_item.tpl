@@ -7,8 +7,8 @@
                 <td style="text-align:center;border-style:none!important;width:100px;">
                     {if !$item->for}
                     <a href="/{$item->slug}.html">
-                    {if $item->medium[0]->medium.name}
-                        <img src="/images/upload/{$item->medium[0]->medium.folder}/mini/{$item->medium[0]->medium.name}" />
+                    {if $item->media[0]->thumbnail}
+                        <img src="{$item->medium[0]->thumbnail}" />
                     {else}
                         <img src="{$ini.itemKorrektur.noImage}" />
                     {/if}
@@ -26,7 +26,7 @@
                     {if !($item->for||$item->id==999)}
                     </a>
                     {/if}
-                    
+
                     {if $item->addinfo}
                         <br /><em>{$item->addinfo}</em>
                     {/if}
@@ -34,10 +34,10 @@
                     <br />
                     {$item->LieferstatusText}
                     {/if}
-                    
+
                     {include file="item_kurier.tpl"}
                     <br />
-            
+
                     {if !($item->for||$item->id==999)}
                     <a class="loading_dlg" style="color:#911E18;" href="/delItem/{$id}">
                         <img width="16" height="16" src="/images/webelemente/warenkorb_papierkorb.gif" alt="Artikel aus Warenkorb löschen" align="absmiddle" /> l&ouml;schen
@@ -79,7 +79,7 @@
     	<input type="hidden" style="width:30px" name="Menge" value="{$item->menge}" />
         <input type="hidden" name="basket_action" value="valueChange" />
         <input type="hidden" name="basketItemID" value="{$id}" />
-        
+
 	    <div class="itemSmall_menge">
                 {if $item->price >0}
                     <input type="hidden" name="basketItemID" value="{$id}" id="basketItemID_{$id}" class="basketItemID" />
@@ -97,17 +97,17 @@
         </div>
 
 
-        
+
     </td>
     <td class="basket_preis">
         {$item->price|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}
         {if isset($smarty.session.sonderPreis.preisDaten)}
-            <br /> 
-            {if isset($item->preisShop)} 
+            <br />
+            {if isset($item->preisShop)}
             <del>{$item->preisShop|money_format|replace:"EUR":"&euro;"}</del>
             {/if}
         {/if}
-        
+
     </td>
     <td class="basket_item_summe">
         {($item->price * $item->menge)|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}
@@ -119,7 +119,7 @@
     {/if}
     {if $item->garantie_verf && !$item->garantie_gebucht}
     <td  style="text-align:center;">
-    
+
         <div id="garantie_link_{$id}">
             {$item->praemie|money_format|replace:"EUR":"&euro;"}
             <a style="color:#911E18;" href="#" class="garantie_basket" id="garantie_{$item->ID}_{$id}" onmouseover="return overlib('{$grafik|escape:"javascript"}', HAUTO, VAUTO);" onmouseout="return nd();">Ger&auml;teschutz buchen</a>
