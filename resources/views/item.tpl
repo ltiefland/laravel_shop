@@ -236,7 +236,7 @@
             <span>{$item->cntRatings}</span>
             <span>1</span>
             <span>5</span>
-            <span>{$item->kurzbezeichnung}</span>
+            <span>{$item->name}</span>
         </div>
         {/if}
 
@@ -270,10 +270,10 @@
                             {if isset($item->media[0]->url)}
                                 <img class="mausDrin" src="{$item->media[0]->kl_url}" alt="{$item->name}" title="{$item->name}" id="img_zoom" data-zoom-image="{$item->media[0]->url}" />
                             {elseif isset($item->FatherInfo.Artstamm.medien[0]->medium.name) && $item->FatherInfo.Artstamm.medien[0]->medium.name != $ini.itemKorrekur.noImage}
-                                <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->FatherInfo.Artstamm.medien[0]->medium.name}" {if $item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"] != ""}alt="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" title="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}" {/if} id="img_zoom" data-zoom-image="{$item->FatherInfo.Artstamm.medien[0]->medium.bild_url}" />
+                                <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->FatherInfo.Artstamm.medien[0]->medium.name}" {if $item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"] != ""}alt="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" title="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->FatherInfo.Artstamm.medien[0]->medium.bild_url}" />
                                 <br />Bild aus der Produktgruppe
                             {else}
-                                <img src="/images/upload/{$item->medium[0]->medium->folder}/{$item->medium[0]->medium.name}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}" {/if} />
+                                <img src="/images/upload/{$item->medium[0]->medium->folder}/{$item->medium[0]->medium.name}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} />
                             {/if}
                         {if $item->medium[0]->medium['aehnlich']==1 && !stristr( $item->medium[0]->medium.bild_url_klein, "noPicture.gif")}
                            <div style="margin-left:10px;margin-top:-23px;"> -- Abbildung ähnlich --</div>
@@ -285,7 +285,7 @@
                                 {foreach $item->media as $key => $bild}
                                     <li class="thumbs">
                                         <a href="#" data-image="{$bild->kl_url}" data-zoom-image="{$bild->url}" title="Artikelbild">
-                                            <img src="{$bild->thumbnail}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}"{/if}/>
+                                            <img src="{$bild->thumbnail}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}"{/if}/>
                                         </a>
                                     </li>
                                 {/foreach}
@@ -329,7 +329,7 @@
                         {else}
                         <div class="box_singleitem_img">
                             {if $item->media[0]->url != $ini.itemKorrektur.noImage}
-                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$0tem->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
+                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$0tem->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
                             {/if}
                         </div>
                         {/if}
@@ -725,7 +725,7 @@
 
 
     {if $showEULabel==1}
-    <div id="euLabelLayer" title="EU-Energielabel für {$item->kurzbezeichnung}">
+    <div id="euLabelLayer" title="EU-Energielabel für {$item->name}">
         <img id="euLabelLayerBild" src="" height="600" />
     </div>
     {/if}
@@ -856,7 +856,7 @@ $(function() {
     {$item->description3}
 {/if}
 </div>
-<div id="finanzierungsDlg" title="Finanzierungsbeispiele für {$item->kurzbezeichnung}"></div>
+<div id="finanzierungsDlg" title="Finanzierungsbeispiele für {$item->name}"></div>
 {if $ini.easycredit.aktiv==1}
 <link rel="stylesheet" type="text/css" href="https://ratenkauf.easycredit.de/ratenkauf/js/ratenrechner/v1/ratenrechner.css"/>
 <script type="text/javascript" src="https://ratenkauf.easycredit.de/ratenkauf/js/ratenrechner/v1/ratenrechner.js"></script>

@@ -15,12 +15,12 @@
         {/if}
     </td>
     <td>
-        <a {$item->infolayer_eventHandler} href="/{$item->slug}.html">{$item->kurzbezeichnung_erweitert|default:$item->name}</a>
-        
+        <a {$item->infolayer_eventHandler} href="/{$item->slug}.html">{$item->name_erweitert|default:$item->name}</a>
+
                     {if $item->addinfo}
                         <br /><em>{$item->addinfo}</em>
                     {/if}
-        
+
         <div class="infolayer" id="info_{$itemID}">{$item->infolayer}</div>
     </td>
     <td style="text-align:right;"
@@ -30,8 +30,8 @@
     >
             {$item->price|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}
             {if isset($smarty.session.sonderPreis.preisDaten)}
-                <br /> 
-                {if isset($item->preisShop)} 
+                <br />
+                {if isset($item->preisShop)}
                 <del>{$item.preisShop|money_format|replace:"EUR":"&euro;"}</del>
                 {/if}
             {/if}
