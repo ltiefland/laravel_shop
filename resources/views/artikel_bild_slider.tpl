@@ -16,7 +16,7 @@
 
 <div class="mobile_thumbs" style="width:100%;">
     <ul class="mobileSliderArtikelBilder" id="gallery">
-        {foreach $item.media as $key => $bild}
+        {foreach $item->media as $key => $bild}
             <li>
                 <picture>
                     <source media="(max-width:600px)" srcset="{$bild->gr_url}" />
