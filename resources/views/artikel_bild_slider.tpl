@@ -20,7 +20,7 @@
             <li>
                 <picture>
                     <source media="(max-width:600px)" srcset="{$bild->gr_url}" />
-                    <img src="{$bild->url}" class="img_zoom" {if $item.medien[$key]->medium["beschreibung"] != ""}alt="{$item.medien[$key]->medium["beschreibung"]}" title="{$item.medien[$key]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}"{/if} />
+                    <img src="{$bild->url}" class="img_zoom" alt="{$item->name}" title="{$item->name}" />
                 </picture>
             </li>
         {/foreach}
