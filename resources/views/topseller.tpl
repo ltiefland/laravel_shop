@@ -10,7 +10,7 @@
 }
 </style>
 <section class="lastvisited noprint">
-    <div class="inner">   
+    <div class="inner">
         <p class="subdir_choose_category">Top Seller {if $subdir.name} aus dieser Kategorie{/if}:</p>
         <div class="sliderLastVisitedWrapper" id="slidertopSeller">
             <ul class="slidertopSeller">
@@ -32,7 +32,7 @@
                         <div class="item_slider_img">
                         {if $item.medien[0]->medium.typ_id==1 || $item.medien[0]->medium.typ_id==NULL || $item.medien[0]->medium.typ_id==""}
                             <a href="{$item.itemLink}">
-                                <img src="{$item.medien[0]->medium.bild_url_klein}" {if $item.medien[0]->medium["beschreibung"] != ""}alt="{$item.medien[0]->medium["beschreibung"]}" title="{$item.medien[0]->medium["beschreibung"]}"{else}alt="{$item.kurzbezeichnung}" title="{$item.kurzbezeichnung}" {/if}/>
+                                <img src="{$item.medien[0]->medium.bild_url_klein}" {if $item.medien[0]->medium["beschreibung"] != ""}alt="{$item.medien[0]->medium["beschreibung"]}" title="{$item.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if}/>
                             </a>
                         {else}
                              <a href="{$item.itemLink}"><img src="/images/webelemente/noPicture.gif" /></a>
@@ -40,10 +40,10 @@
                         </div>
                         <div class="item_slider_wrapper">
                             <div class="item_category">
-                                {$item.kategorie}                                
+                                {$item.kategorie}
                             </div>
                             <div class="bezeichnung">
-                                <a class="item_slider_link" href="{$item.itemLink}" title="{$item.kurzbezeichnung}">{$item.kurzbezeichnung|truncate:40}</a>
+                                <a class="item_slider_link" href="{$item.itemLink}" title="{$item->name}">{$item->name|truncate:40}</a>
                             </div>
                             <div class="preisInner">
                                 <a href="{$item.itemLink}">{$item.preis|money_format|replace:"EUR":"&euro;"}</a><br />
@@ -53,7 +53,7 @@
                     </div>
                 </li>
                 {/foreach}
-            </ul> 
+            </ul>
         </div>
     </div>
 </section>

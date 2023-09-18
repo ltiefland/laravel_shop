@@ -16,7 +16,7 @@
             {if $item.medien[0]->medium.bild_url_klein}
             <li style="text-align:center!important;width:100%;">
                 <a href="{$item.itemLink}"><img style="padding:10px;margin:0 auto!important;" src="{$item.medien[0]->medium.bild_url_klein}" /></a><br />
-                <a href="{$item.itemLink}"><b>{$item.kurzbezeichnung}</b></a><br /><br />
+                <a href="{$item.itemLink}"><b>{$item->name}</b></a><br /><br />
                 <a href="{$item.itemLink}"><b style="font-size:24px;">{$item.preis|money_format|replace:"EUR":"&euro;"|replace:"USD":"$"}</b></a>
             </li>
             {/if}

@@ -3,21 +3,21 @@
             <div class="bild">
             <a href="{$item.dirLink}" title="Zum {$item.Name}">
                 {if $item.medien[0]->medium.bild_url_br}
-                <img src="{$item.medien[0]->medium.bild_url_br}" {if $item.medien[0]->medium["beschreibung"] != ""}alt="{$item.medien[0]->medium["beschreibung"]}" title="{$item.medien[0]->medium["beschreibung"]}"{else}alt="{$item.kurzbezeichnung}" title="{$item.kurzbezeichnung}" {/if} />
+                <img src="{$item.medien[0]->medium.bild_url_br}" {if $item.medien[0]->medium["beschreibung"] != ""}alt="{$item.medien[0]->medium["beschreibung"]}" title="{$item.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} />
                 {else}
                 <img src="/images/webelemente/noPicture.gif" alt="kein Bild vorhanden" />
                 {/if}
             </a>
             </div>
-        
-    </div>    
+
+    </div>
     <div class="bottom">
         <div class="itemLink">
-            <a href="{$item["dirLink"]}" title="Zu {$item["Name"]}"> 
+            <a href="{$item["dirLink"]}" title="Zu {$item["Name"]}">
                 <span>
                     <img src="/images/webelemente/icon_link_right.png" alt="Pfeil rechts" />
                 </span> Jetzt ansehen
             </a>
-        </div>    
+        </div>
     </div>
 </div>

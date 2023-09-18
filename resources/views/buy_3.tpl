@@ -60,7 +60,7 @@
                     <br>
                     <div class="midcol" style="float:left;width:100px;">
                         AGB's und
-                        
+
                         Widerrufsrecht:
                     </div>
                     <div class="midcol" style="float:left;width:4%">
@@ -234,22 +234,22 @@
                             {assign var="hasPreorder" value=false}
                             {foreach $basketContent.items as $index => $item}
                                 {if $item.LieferstatusValue > 1}
-                                {assign var="hasPreorder" value=true}       
+                                {assign var="hasPreorder" value=true}
                                 {/if}
                             {/foreach}
                             {if $hasPreorder}
-                            <span id="gts-o-has-preorder">Y</span>  
+                            <span id="gts-o-has-preorder">Y</span>
                             {else}
-                            <span id="gts-o-has-preorder">N</span>  
+                            <span id="gts-o-has-preorder">N</span>
                             {/if}
                             <span id="gts-o-has-digital">N</span>
                             <!-- end order and merchant information -->
-                        
+
                             <!-- start repeated item specific information -->
                             <!-- item example: this area repeated for each item in the order -->
                             {foreach $basketContent.items as $index => $item}
                             <span class="gts-item">
-                                <span class="gts-i-name">{$item.kurzbezeichnung_erweitert|default:$item.kurzbezeichnung}</span>
+                                <span class="gts-i-name">{$item.kurzbezeichnung_erweitert|default:$item->name}</span>
                                 <span class="gts-i-price">{$item.preis|number_format:2:".":""}</span>
                                 <span class="gts-i-quantity">{$item.Menge}</span>
                                 <span class="gts-i-prodsearch-id">{$item.ID}</span>
@@ -328,16 +328,16 @@
                 + pad(d.getUTCDate())
             }
             console.log("google...");
-            
+
             window.renderOptIn = function() {
                 // estimated_delivery_date
                 var edd = new Date();
                 var addDays = {$ini.google.estimated_delivery_date};
                 edd.setDate(edd.getDate() + addDays);
                 edd_formatted = ISODateString(edd);
-                
+
                 {if $smarty.session.bestellId}
-                    
+
                     window.gapi.load('surveyoptin', function() {
                         window.gapi.surveyoptin.render( {
                             "merchant_id": {$ini.google.merchant_id},
@@ -360,7 +360,7 @@
             lang: 'de_DE'
         };
         </script>
-        <!-- END GCR Language Code -->        
+        <!-- END GCR Language Code -->
         {/if}
 
 <!-- $Id: buy_3.tpl 3018 2023-01-19 15:19:42Z erling $ END -->

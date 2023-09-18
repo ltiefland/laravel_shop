@@ -368,7 +368,7 @@
 
                 <!-- Artikelname -->
 
-                    <h1 id="item_name_h1">{$item->hersteller_kurzbezeichnung}</h1>
+                    <h1 id="item_name_h1">{$item->kurzbezeichnung}</h1>
                     {if $item->langbezeichnung}
                         <h2>{$item->langbezeichnung}</h2>
                     {/if}

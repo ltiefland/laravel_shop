@@ -49,10 +49,10 @@
                         {assign var="showTrustedShops" value=1}
                         {if $smarty.post.send_anfrage==1}{assign var="showTrustedShops" value=0} Ihre Anfrage wurde an {$ini.titel_only} weitergeleitet und eine Best&auml;tigungsmail wurde an {$smarty.session.SHOP.buy.Persdata.email} geschickt. {else} Ihre Bestellung
                         wurde erfolgreich &uuml;bermittelt. Eine Best&auml;tigungsmail wurden soeben an {$smarty.session.SHOP.buy.Persdata.email} versendet. {/if}
-                        
+
                         <br />
                         <br />
-                        
+
                         {if $Versandtextbaustein}
                             {$Versandtextbaustein}
                         {/if}
@@ -125,22 +125,22 @@
                             {assign var="hasPreorder" value=false}
                             {foreach $basketContent.items as $index => $item}
                                 {if $item.LieferstatusValue > 1}
-                                {assign var="hasPreorder" value=true}       
+                                {assign var="hasPreorder" value=true}
                                 {/if}
                             {/foreach}
                             {if $hasPreorder}
-                            <span id="gts-o-has-preorder">Y</span>  
+                            <span id="gts-o-has-preorder">Y</span>
                             {else}
-                            <span id="gts-o-has-preorder">N</span>  
+                            <span id="gts-o-has-preorder">N</span>
                             {/if}
                             <span id="gts-o-has-digital">N</span>
                             <!-- end order and merchant information -->
-                        
+
                             <!-- start repeated item specific information -->
                             <!-- item example: this area repeated for each item in the order -->
                             {foreach $basketContent.items as $index => $item}
                             <span class="gts-item">
-                                <span class="gts-i-name">{$item.kurzbezeichnung_erweitert|default:$item.kurzbezeichnung}</span>
+                                <span class="gts-i-name">{$item.kurzbezeichnung_erweitert|default:$item->name}</span>
                                 <span class="gts-i-price">{$item.preis|number_format:2:".":""}</span>
                                 <span class="gts-i-quantity">{$item.Menge}</span>
                                 <span class="gts-i-prodsearch-id">{$item.ID}</span>
