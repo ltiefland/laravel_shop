@@ -324,7 +324,7 @@
                         </div>
                         {/if}
 
-                        {if $item->medium|count > 1}
+                        {if $item->media|count > 1}
                             {include file="artikel_bild_slider.tpl"}
                         {else}
                         <div class="box_singleitem_img">
