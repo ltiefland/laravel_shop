@@ -336,8 +336,8 @@
                             {include file="artikel_bild_slider.tpl"}
                         {else}
                         <div class="box_singleitem_img">
-                            {if $item->medium[0]->medium.bild_url != $ini.itemKorrektur.noImage}
-                            <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->medium[0]->medium.bild_url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}" {/if} id="img_zoom" data-zoom-image="/images/upload/{$item->medium[0]->medium.folder}/{$item->medium[0]->medium.name}" data-elevateZoom="/images/upload/{$item->medium[0]->medium.folder}/gr/{$item->medium[0]->medium.name}" />
+                            {if $item->media[0]->url != $ini.itemKorrektur.noImage}
+                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$0tem->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
                             {/if}
                         </div>
                         {/if}
