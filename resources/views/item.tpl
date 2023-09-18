@@ -268,7 +268,7 @@
                     <div class="desktop">
                         <div class="item_img">
                             {if isset($item->media[0]->url)}
-                                <img class="mausDrin" src="{$item->media[0]->url}" alt="{$item->name}" title="{$item->name}" id="img_zoom" data-zoom-image="{$item->media[0]->url}" />
+                                <img class="mausDrin" src="{$item->media[0]->kl_url}" alt="{$item->name}" title="{$item->name}" id="img_zoom" data-zoom-image="{$item->media[0]->url}" />
                             {elseif isset($item->FatherInfo.Artstamm.medien[0]->medium.name) && $item->FatherInfo.Artstamm.medien[0]->medium.name != $ini.itemKorrekur.noImage}
                                 <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->FatherInfo.Artstamm.medien[0]->medium.name}" {if $item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"] != ""}alt="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" title="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}" {/if} id="img_zoom" data-zoom-image="{$item->FatherInfo.Artstamm.medien[0]->medium.bild_url}" />
                                 <br />Bild aus der Produktgruppe
@@ -279,23 +279,15 @@
                            <div style="margin-left:10px;margin-top:-23px;"> -- Abbildung ähnlich --</div>
                         {/if}
                         </div>
-                        {assign var=anzBilder value=0}
-                        {foreach $item->medium as $key => $bild}
-                            {if $bild->medium.medium_type_id==1}
-                                {assign var=anzBilder value=$anzBilder+1}
-                            {/if}
-                        {/foreach}
-                        {if $anzBilder > 1}
+                        {if count($item->media) > 1}
                         <div class="thumbs_container" id="gallery">
                             <ul class="sliderArtikelBilder">
-                                {foreach $item->medium as $key => $bild}
-                                    {if $bild->medium.medium_type_id==1}
+                                {foreach $item->media as $key => $bild}
                                     <li class="thumbs">
-                                        <a href="#" data-image="/images/upload/{$bild->medium.folder}/{$bild->medium.name}" data-zoom-image="/images/upload/{$bild->medium->folder}/{$bild->medium.name}" title="Artikelbild">
-                                            <img src="/images/upload/{$bild->medium->folder}/mini/{$bild->medium.name}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}"{/if}/>
+                                        <a href="#" data-image="{$bild->kl_url}" data-zoom-image="{$bild->url}" title="Artikelbild">
+                                            <img src="{$bild->thumbnail}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}"{else}alt="{$item->kurzbezeichnung}" title="{$item->kurzbezeichnung}"{/if}/>
                                         </a>
                                     </li>
-                                    {/if}
                                 {/foreach}
                             </ul>
                         </div>
