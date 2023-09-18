@@ -20,7 +20,7 @@
                 <td style="border-style:none!important;text-align:left;padding:0 0 0 20px;">
                     <div class="infolayer" id="info_{$id}">{$item->infolayer}</div>
                     {if !($item->for||$item->id==999)}
-                    <a style="" {$item->infolayer_eventHandler} class="basket_item" href="/{$item->slug}.htm">
+                    <a style="" {$item->infolayer_eventHandler} class="basket_item" href="/{$item->slug}.html">
                     {/if}
                     {$item->name}
                     {if !($item->for||$item->id==999)}
