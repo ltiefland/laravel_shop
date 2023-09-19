@@ -70,9 +70,9 @@
 
 <div class="item_mobile">
     <table class="basket_tabelle">
-    {foreach $smary.session.SHOP.BASKET->items as $id => $bItem}
-        {include file="basket_item_mobile.tpl" item=$bItem id=$id}
-    {/foreach}
+        {foreach $smarty.session.SHOP.BASKET->items as $id => $bItem}
+            {include file="basket_item_mobile.tpl" item=$bItem id=$id}
+        {/foreach}
         {if ( isset( $smarty.session.netto_preis ) && $smarty.session.netto_preis == true ) || $ini.netto_preise == true}
         <tr>
             <td class="basket_preis" style="padding: 4px;">Warenwert Netto (zzgl. MwSt, zzgl. Versand):&nbsp;<br /></td>
@@ -83,7 +83,7 @@
         </tr>
         {foreach $smarty.session.SHOP.MWST as $mwst => $value}
         <tr>
-            <td class="basket_preis" style="border-bottom: 1px dotted #808080;padding: 4px;">zzgl. MwSt. ({$mwst}%):&nbsp;<br /></td>
+            <td class="basket_preis" style="border-bottom: 1px dotted #808080;padding: 4px;">zzgl. MwSt. ({$smarty.session.SHOP.BASKET->paymentInfo.TaxRates.$mwst}%):&nbsp;<br /></td>
             <td class="basket_summe" style="border-bottom: 1px dotted #808080;padding: 4px;">
                 <span class="bold">{$value|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}</span>
             </td>
@@ -93,16 +93,14 @@
         <tr>
             <td class="basket_preis">Warenwert Brutto (inkl. MwSt, zzgl. Versand):&nbsp;<br /></td>
             <td class="basket_summe">
-                {assign var="mwst" value=array_sum($smarty.session.SHOP.MWST)}
-                {assign var="summe" value=($smarty.session.SHOP.SUMME+$mwst)}
-                <span class="bold" style="color:#EA5802;" >{$summe|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}</span>
+                <span class="bold" style="color:#EA5802;" >{$smarty.session.SHOP.BASKET->paymentInfo.Total|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"|replace:" ":"&nbsp;"}</span>
             </td>
             
         </tr>
         {else}
-        {foreach $smarty.session.SHOP.MWST as $mwst => $value}
+            {foreach $smarty.session.SHOP.BASKET->paymentInfo.Tax as $mwst => $value}
         <tr>
-            <td class="basket_preis" style="border-bottom: 1px dotted #808080;padding: 4px;">enthaltene MwSt. ({$mwst}%):&nbsp;<br /></td>
+            <td class="basket_preis" style="border-bottom: 1px dotted #808080;padding: 4px;">enthaltene MwSt. ({$smarty.session.SHOP.BASKET->paymentInfo.TaxRates.$mwst}%):&nbsp;<br /></td>
             <td class="basket_summe" style="border-bottom: 1px dotted #808080;padding: 4px;">
                 <span class="bold">{$value|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}</span>
             </td>
@@ -112,7 +110,7 @@
         <tr>
             <td class="basket_preis">Warenwert brutto (inkl. MwSt, zzgl. Versand):&nbsp;<br /></td>
             <td class="basket_summe">
-                <span class="bold" style="color:#EA5802;" >{$smarty.session.SHOP.SUMME|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"}</span>
+                <span class="bold" style="color:#EA5802;" >{$smarty.session.SHOP.BASKET->paymentInfo.Total|money_format|replace:"EUR":"&euro;"|replace:" ":"&nbsp;"|replace:" ":"&nbsp;"}</span>
             </td>
         </tr>
         {/if}
