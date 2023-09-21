@@ -14,14 +14,18 @@
             try
             {
                 $nav = array();
-                $response = $client->request( "get", config( "api.url" ) . "manufacturers/".$manufacturer, [
+                $response = $client->request( "get", config( "api.url" ) . "manufacturers/" . $manufacturer, [
                     'headers' => [
                         'Authorization' => 'Bearer ' . config( "api.key" ),
                         "Content-Type"  => "application/json",
                         "Accept"        => "application/json",
                     ]
                 ] )->getBody()->getContents();
-                return json_decode( $response );
+                $m = json_decode( $response )->data;
+                return view( "manufacturer",
+                    [
+                        "manufacturer" => $m
+                    ] );
             }
             catch ( GuzzleException )
             {
