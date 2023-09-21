@@ -145,6 +145,7 @@
             "defaultLandID" => 47,
         ] );
     } )->where( 'step', '[1-4][ab]{0,1}' );
+    Route::get( "/manufacturers/{manufacturer:slug}.html", [ ManufacturerController::class, "show" ] );
     Route::post( "/bestellen_seite_{step}.html", [ BuyController::class, 'step1' ] )->where( 'step', '[1-4][ab]{0,1}' );
     Route::view( "basket.html", 'basket' );
     Route::get( "/directory/", [ ProductCategoryController::class, "index" ] )->whereNumber( 'id' );
