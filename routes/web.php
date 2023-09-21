@@ -1,6 +1,8 @@
 <?php
 
     use App\Http\Controllers\BasketController;
+    use App\Http\Controllers\BuyController;
+    use App\Http\Controllers\ManufacturerController;
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\ProductCategoryController;
     use App\Http\Controllers\ProductController;
