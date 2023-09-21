@@ -15,7 +15,7 @@
     *
     -------------------------------------------------------------
     */
-    function smarty_modifier_money_format_red( $string, $places = 2, $locale = "de_DE", $onlySymbol = false, $incSymbol = true, $shortSymbol = false )
+    function smarty_modifier_money_format_red( $string, $places = 2, $locale = "de_DE", $onlySymbol = false, $incSymbol = true, $shortSymbol = false ): bool|string
     {
         if ( !$locale )
         {

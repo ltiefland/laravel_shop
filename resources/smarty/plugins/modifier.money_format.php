@@ -14,23 +14,15 @@
     *
     -------------------------------------------------------------
     */
-    function smarty_modifier_money_format( $string, $places = 2 )
+    function smarty_modifier_money_format( $string ): bool|string
     {
         if ( !isset( $_SESSION["locale"] ) )
         {
-            $_SESSION["locale"] = "de_DE";
+            $_SESSION["locale"] = "de_DE.UTF-8";
         }
         setlocale( LC_MONETARY, $_SESSION["locale"] );
-        if ( phpversion() >= "7.0" )
-        {
-            $fmt = new \NumberFormatter( $_SESSION["locale"], NumberFormatter::CURRENCY );
-            $erg = $fmt->formatCurrency( $string, "EUR" );
-        }
-        else
-        {
-            $erg = money_format( "%.{$places}i", $string );
-        }
-        return $erg;
+        $fmt = new NumberFormatter( $_SESSION["locale"], NumberFormatter::CURRENCY );
+        return $fmt->formatCurrency( $string, "EUR" );
     }
 
     /* vim: set expandtab: */
