@@ -3,18 +3,28 @@
     namespace App\Http\Controllers;
 
 
-    use Illuminate\Contracts\Foundation\Application;
-    use Illuminate\Contracts\View\Factory;
-    use Illuminate\Contracts\View\View;
+    use GuzzleHttp\Client;
+    use GuzzleHttp\Exception\GuzzleException;
 
     class ManufacturerController extends Controller
     {
-        public function show( string $manufacturer ): Factory|View|Application
+        public function show( string $manufacturer )
         {
-            $m = $manufacturer::where( "name", $manufacturer )->firstOrFail();
-            $m->load( "products" );
-            return view( "manufacturer", [
-                "manufacturer" => $m,
-            ] );
+            $client = new Client();
+            try
+            {
+                $nav = array();
+                $response = $client->request( "get", config( "api.url" ) . "manufacturers/".$manufacturer, [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . config( "api.key" ),
+                        "Content-Type"  => "application/json",
+                        "Accept"        => "application/json",
+                    ]
+                ] )->getBody()->getContents();
+                return json_decode( $response );
+            }
+            catch ( GuzzleException )
+            {
+            }
         }
     }
