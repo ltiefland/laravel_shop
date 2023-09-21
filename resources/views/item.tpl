@@ -30,7 +30,9 @@
                 'openSpeed'     :   200,
                 'closeSpeed'    :   200,
                 helpers : {
-                    buttons : {}
+                    buttons : [
+
+                    ]
                 }
             });
         });
@@ -329,7 +331,7 @@
                         {else}
                         <div class="box_singleitem_img">
                             {if $item->media[0]->url != $ini.itemKorrektur.noImage}
-                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$0tem->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
+                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
                             {/if}
                         </div>
                         {/if}
@@ -377,7 +379,7 @@
                     {if $ini.template.durchstreichpreise==1 && $item->$UVP > $item->price}
                     <div class="break"></div>
                     <span class="infopic strike uvp">
-                        UVP: <span class="euro">&euro;</span>&nbsp;{$item->$UVP|money_format|replace:"USD":"$"|replace:"EUR":""}
+                        UVP: <span class="euro">&euro;</span>&nbsp;{$item->$UVP|money_format|replace:"USD":'$'|replace:"EUR":""}
                     </span>
                     <div class="break"></div>
                     {/if}
@@ -458,7 +460,7 @@
                         {if $item->price > 1 && $item->vk_preis && $item->nachlass_prozent>5}
                         <div class="sie_sparen">
                             <div>
-                                <div class="strike">{$item->vk_preis|money_format|replace:"EUR":"&euro;"|replace:"USD":"$"}</div>
+                                <div class="strike">{$item->vk_preis|money_format|replace:"EUR":"&euro;"|replace:"USD":'$'}</div>
                                 Sie sparen: {($item->vk_preis-$item->price)|money_format|replace:"EUR":"&euro;"|replace:"USD":"$"} ({$item->nachlass_prozent|round}%)
                             </div>
                         </div>
