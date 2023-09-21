@@ -8,12 +8,12 @@
 </style>
 <script>
     $(document).ready(function(){
-        
+
         $('.quickview_opener').click(function(event){
             var id = $(this).attr("id");
             id = id.split("_");
             id = id[1];
-            
+
             $('#quickview_' + id).dialog({
                 width:'80%',
                 create: function( event, ui ) {
@@ -23,7 +23,7 @@
                 }
             });
         });
-        
+
     });
 </script>
 {/if}
@@ -183,7 +183,7 @@ div.product_accordion:last-child {
         {assign var="i" value=0}
         {foreach $alladdons as $fatherID => $addonitems}
         <details>
-            <summary>{$addonitems[0].FatherName}</summary>            
+            <summary>{$addonitems[0].FatherName}</summary>
             <div class="product_wrapper">
                 {foreach $addonitems as $itemID => $addonitem}
                 <div class="product" id="product_{$itemID}">
@@ -193,7 +193,7 @@ div.product_accordion:last-child {
                             <img src="{$addonitem.medien[0]->medium.bild_url_mini}" />
                         </div>
                         <div class="informations">
-                            <p class="name" title="{$addonitem.kurzbezeichnung}">{$addonitem.kurzbezeichnung}</p>
+                            <p class="name" title="{$addonitem.name}">{$addonitem.name}</p>
                             <p class="price">{$addonitem.preis1|money_format}</p>
                         </div>
                     </label>
@@ -201,7 +201,7 @@ div.product_accordion:last-child {
                         <!-- quickview opener -->
                         <div class="quickview_opener" id="qv_{$addonitem.ID}">
                             <span id="product_quick_info" class="ui-icon ui-icon-info"></span>
-                        </div> 
+                        </div>
                         <div class="quickview_dlg" id="quickview_{$addonitem.ID}">
                             {include file="item_quickview.tpl" item=$addonitem}
                         </div>
@@ -215,7 +215,7 @@ div.product_accordion:last-child {
 </div>
 {/if}
 <!--
-<option value="{$fatherID}###{$addonitem.ID}###{$addonitem.kurzbezeichnung|utf8_encode}{if $addonitem.beschreibung}###{$addonitem.beschreibung|utf8_encode|replace:'"':''}{else}###keine Beschreibung{/if}###{$addonitem.bild_1_url}###{$addonitem.preis1}###{$addonitem.preis1|money_format}">{$addonitem.kurzbezeichnung|utf8_encode} - {$addonitem.preis1|money_format}</option>
+<option value="{$fatherID}###{$addonitem.ID}###{$addonitem.name|utf8_encode}{if $addonitem.beschreibung}###{$addonitem.beschreibung|utf8_encode|replace:'"':''}{else}###keine Beschreibung{/if}###{$addonitem.bild_1_url}###{$addonitem.preis1}###{$addonitem.preis1|money_format}">{$addonitem.name|utf8_encode} - {$addonitem.preis1|money_format}</option>
 <option value="{$fatherID}###{$addonitem.ID}###{$addonitem.kurzbezeichnung_erweitert}{if $addonitem.beschreibung}###{$addonitem.beschreibung|utf8_encode|replace:'"':''}{else}###keine Beschreibung{/if}###{$addonitem.bild_1_url_mini}###{$addonitem.preis1}###{$addonitem.preis1|money_format}">{$addonitem.kurzbezeichnung_erweitert} - {$addonitem.preis1|money_format}</option>
 -->
 

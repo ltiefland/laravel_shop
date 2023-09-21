@@ -316,7 +316,7 @@
                     _gaq.push(['_addItem',
                         '{{$smarty.session.SHOP.bestellId|default:$bestellId}}',            // Bestellnummer
                         '{$data.ID}',              // Artikelnummer
-                        '{$data.kurzbezeichnung}', // Artikelname
+                        '{$data.name}', // Artikelname
                         '',                        // Kategorie
                         '{$data.preis1}',          // Einzelpreis
                         '{$data.Menge}'            // bestelle Menge

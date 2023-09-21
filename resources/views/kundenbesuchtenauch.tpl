@@ -29,17 +29,17 @@
                     </div>
                     <div class="item_slider_img">
 
-                        <a href="{$itemKBA.itemLink}" title="Zum Artikel {$itemKBA.kurzbezeichnung}">
-                            <img style="max-height:120px;" src="{$itemKBA.medien[0]->medium.bild_url_mini}" {if $itemKBA.medien[0]->medium["beschreibung"] != ""}alt="{$itemKBA.medien[0]->medium["beschreibung"]}" title="{$itemKBA.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$itemKBA.kurzbezeichnung}" {/if}/>
+                        <a href="{$itemKBA.itemLink}" title="Zum Artikel {$itemKBA.name}">
+                            <img style="max-height:120px;" src="{$itemKBA.medien[0]->medium.bild_url_mini}" {if $itemKBA.medien[0]->medium["beschreibung"] != ""}alt="{$itemKBA.medien[0]->medium["beschreibung"]}" title="{$itemKBA.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$itemKBA.name}" {/if}/>
                         </a>
 
                     </div>
                     <div class="item_slider_wrapper">
                         <h3 class="bezeichnung">
-                            <a href="{$itemKBA.itemLink}" title="Zum Artikel {$itemKBA.kurzbezeichnung}">{$itemKBA.kurzbezeichnung|truncate:"45"}</a>
+                            <a href="{$itemKBA.itemLink}" title="Zum Artikel {$itemKBA.name}">{$itemKBA.name|truncate:"45"}</a>
                         </h3>
                         <span class="item_preis">
-                            <a href="{$itemKBA.itemLink}" title="Zum Artikel {$itemKBA.kurzbezeichnung}">{$itemKBA.preis|money_format|replace:"EUR":"&euro;"}</a><br />
+                            <a href="{$itemKBA.itemLink}" title="Zum Artikel {$itemKBA.name}">{$itemKBA.preis|money_format|replace:"EUR":"&euro;"}</a><br />
                             {if ( isset( $smarty.session.netto_preis ) && $smarty.session.netto_preis == true ) || $ini.netto_preise == true}
                             {$langstrings.shop.price_msg}
                             {else}

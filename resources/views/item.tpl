@@ -268,12 +268,12 @@
                     <div class="desktop">
                         <div class="item_img">
                             {if isset($item->media[0]->url)}
-                                <img class="mausDrin" src="{$item->media[0]->kl_url}" alt="{$item->name}" title="{$item->name}" id="img_zoom" data-zoom-image="{$item->media[0]->url}" />
+                                <img class="mausDrin" src="{$item->media[0]->url}" alt="{$item->name}" title="{$item->name}" id="img_zoom" data-zoom-image="{$item->media[0]->url}" />
                             {elseif isset($item->FatherInfo.Artstamm.medien[0]->medium.name) && $item->FatherInfo.Artstamm.medien[0]->medium.name != $ini.itemKorrekur.noImage}
                                 <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->FatherInfo.Artstamm.medien[0]->medium.name}" {if $item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"] != ""}alt="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" title="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->FatherInfo.Artstamm.medien[0]->medium.bild_url}" />
                                 <br />Bild aus der Produktgruppe
                             {else}
-                                <img src="/images/upload/{$item->medium[0]->medium->folder}/{$item->medium[0]->medium.name}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} />
+                                <img src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} />
                             {/if}
                         {if $item->medium[0]->medium['aehnlich']==1 && !stristr( $item->medium[0]->medium.bild_url_klein, "noPicture.gif")}
                            <div style="margin-left:10px;margin-top:-23px;"> -- Abbildung ähnlich --</div>
@@ -368,7 +368,7 @@
 
                 <!-- Artikelname -->
 
-                    <h1 id="item_name_h1">{$item->kurzbezeichnung}</h1>
+                    <h1 id="item_name_h1">{$item->name}</h1>
                     {if $item->langbezeichnung}
                         <h2>{$item->langbezeichnung}</h2>
                     {/if}

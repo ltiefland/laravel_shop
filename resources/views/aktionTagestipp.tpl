@@ -1,6 +1,6 @@
 <div class="box_top">
     <h1>
-        <a href="{$aktion.tagestipp.itemLink}">{$aktion.tagestipp.headline} {$aktion.tagestipp.kurzbezeichnung}</a>
+        <a href="{$aktion.tagestipp.itemLink}">{$aktion.tagestipp.headline} {$aktion.tagestipp.name}</a>
     </h1>
     <div class="box_middle">
         <div class="box_img">
