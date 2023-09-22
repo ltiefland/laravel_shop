@@ -71,7 +71,7 @@
                 {foreach $hersteller->manufacturer_products as $item}
                     {if $item->price > 0}
 
-                        {include file="item_small.tpl"  inline}
+                        {include file="item_small.tpl"}
                     {/if}
                 {/foreach}
             </div>
