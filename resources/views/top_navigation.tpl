@@ -178,17 +178,17 @@
 
                             <div class="subdir_col">
                                 {* 1st level opener *}
-                                {section loop=$n->sub start=0 name=s_ind}
-                                    {if $n->sub[s_ind]->link}
-                                        <div id="{$n->sub[s_ind]->id}" class="opener {if $smarty.section.s_ind.last}subdir_last{/if}">
-                                            <span class="sub_head"><a href="{$n->sub[s_ind]->link}" title="Zu {$n->sub[s_ind]->name}">{$n->sub[s_ind]->name}</a>
-                                                {if count($n->sub[s_ind]->sub2)}
-                                                    <a href="{$n->sub[s_ind]->link}" class="topnav_next" data-closename="{$top->name}" data-id="sub2_{$n->sub[s_ind].id}" data-name="{$n->sub[s_ind]->name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                {foreach $n->sub as $sub}
+                                    {if $sub->link}
+                                        <div id="{$sub->id}" class="opener {if $smarty.foreach.sub.last}subdir_last{/if}">
+                                            <span class="sub_head"><a href="{$sub->link}" title="Zu {$sub->name}">{$sub->name}</a>
+                                                {if count($sub->sub2)}
+                                                    <a href="{$sub->link}" class="topnav_next" data-closename="{$top->name}" data-id="sub2_{$sub->id}" data-name="{$sub->name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                                 {/if}
                                             </span>
                                         </div>
                                     {/if}
-                                {/section}
+                                {/foreach}
 
                             </div>
 
