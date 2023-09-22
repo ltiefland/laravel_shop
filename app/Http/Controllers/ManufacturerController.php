@@ -22,7 +22,7 @@
                     ]
                 ] )->getBody()->getContents();
                 $m = json_decode( $response )->data;
-                return view( "manufacturer",
+                return view( "hersteller_items",
                     [
                         "manufacturer" => $m
                     ] );
