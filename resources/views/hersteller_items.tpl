@@ -10,18 +10,8 @@
 
         <div class="box_middle">
             <div class="hLogo" style="padding:2%;">
-                {if $hersteller->Logo2}
-                    {if $hersteller->Logo2_href}<a href="{$hersteller->Logo2_href}">{/if}
-                    <img src="/images/Hersteller/2/{$hersteller->Logo2}" alt="{$herstellerName}"
-                         title="{$herstellerName}"/>
-                    {if $hersteller->Logo2_href}</a>{/if}
-                {else}
-                    {if $hersteller->Logo1}
-                        {if $hersteller->Logo1_href}<a href="{$hersteller->Logo1_href}">{/if}
-                        <img src="/images/Hersteller/1/{$hersteller->Logo1}" alt="{$herstellerName}"
-                             title="{$herstellerName}"/>
-                        {if $hersteller->Logo1_href}</a>{/if}
-                    {/if}
+                {if $hersteller->logo}
+                    <img src="{$hersteller->logo->preview_url}" alt="{$herstellerName}" title="{$herstellerName}"/>
                 {/if}
             </div>
             <div class="hText">
