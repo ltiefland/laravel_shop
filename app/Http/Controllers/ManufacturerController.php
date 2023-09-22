@@ -22,14 +22,15 @@
                 ] )->getBody()->getContents();
                 $herstellerListe = json_decode( $response )->data;
                 return view( "hersteller_liste",
-                             [
-                                 "herstellerListe" => $herstellerListe
-                             ] );
+                    [
+                        "herstellerListe" => $herstellerListe
+                    ] );
             }
             catch ( GuzzleException )
             {
             }
         }
+
         public function show( string $manufacturer )
         {
             $client = new Client();
@@ -48,8 +49,9 @@
                         "hersteller" => $m
                     ] );
             }
-            catch ( GuzzleException )
+            catch ( GuzzleException $e )
             {
+                abort( $e->getCode() );
             }
         }
     }
