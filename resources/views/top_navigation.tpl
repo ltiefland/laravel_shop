@@ -150,14 +150,10 @@
     <div class="inner">
 
 
-        {*
-        {if $herstellerInMenu|is_array}
         <li id="li_one" style="cursor:pointer;">
-            <a class="topnav_li" id="one">Marken</a>
+            <a class="topnav_li" id="one" href="/manufacturers/">Marken</a>
             <div id="topnav_active_one" class="topnav_active desktop"></div>
         </li>
-        {/if}
-        *}
 
         <ul class="topnav_ul">
         {foreach $nav as $n}
@@ -173,7 +169,7 @@
         {foreach $nav as $n}
 
             {foreach $n->top as $top}
-                {if is_array($n->sub) && $n->sub|count}
+                {if is_iterable($n->sub) && $n->sub|count}
                 <div class="subnav sub_{$top->id}">
                    <div class="subnav_outer_container">
 
@@ -202,7 +198,7 @@
                                 {section loop=$n->sub start=0 name=s_ind}
                                 <div id="sub_{$n->sub[s_ind]->id}" class="subdir_box {if $smarty.section.s_ind.last}subdir_last{/if}">
 
-                                        {if is_array($n->sub[s_ind]->sub2) && $n.sub[s_ind].sub2|count>0}
+                                        {if is_iterable($n->sub[s_ind]->sub2) && $n.sub[s_ind].sub2|count>0}
                                         {foreach $n->sub[s_ind]->sub2 as $sub3}
                                             <span id class="sub2"><a href="{$sub3->link}" title="Zu {$sub3->name}">{$sub3->name}</a></span>
                                         {/foreach}
