@@ -5,15 +5,21 @@
 
     use GuzzleHttp\Client;
     use GuzzleHttp\Exception\GuzzleException;
+    use Illuminate\Http\Request;
 
     class ManufacturerController extends Controller
     {
-        public function index()
+        public function index( Request $request )
         {
             $client = new Client();
             try
             {
-                $response = $client->request( "get", config( "api.url" ) . "manufacturers/", [
+                $url = config( "api.url" ) . "manufacturers/";
+                if ( $request->letter )
+                {
+                    $url .= "?letter=" . $request->letter;
+                }
+                $response = $client->request( "get", $url, [
                     'headers' => [
                         'Authorization' => 'Bearer ' . config( "api.key" ),
                         "Content-Type"  => "application/json",
