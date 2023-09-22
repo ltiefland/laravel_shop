@@ -23,7 +23,7 @@
                 $m = json_decode( $response )->data;
                 return view( "hersteller_items",
                     [
-                        "herstellerListe" => $m
+                        "hersteller" => $m
                     ] );
             }
             catch ( GuzzleException )
