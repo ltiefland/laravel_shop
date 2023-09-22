@@ -6,10 +6,10 @@
 
         $(".topnav_ul li").hoverIntent(
             function(){
-                var topLvl = String( $(this).attr("class") );
+                let topLvl = String( $(this).attr("class") );
 
-                var topExpl = topLvl.split("_");
-                var topId = topExpl[1];
+                let topExpl = topLvl.split("_");
+                let topId = topExpl[1];
                 $(this).removeClass('highlight');
 
                 if( windowWidth > 850){
@@ -18,9 +18,9 @@
                     $(".topnav_ul li").removeClass('highlight');
                 }
             }, function(){
-                var topLvl = String( $(this).attr("class") );
-                var topExpl = topLvl.split("_");
-                var topId = topExpl[1];
+                let topLvl = String( $(this).attr("class") );
+                let topExpl = topLvl.split("_");
+                let topId = topExpl[1];
                 $('.sub_'+topId).removeClass("topnav-hover");
                 $(".topnav_ul li").removeClass('highlight');
             }
@@ -42,28 +42,8 @@
 
 
         $(".subnavClose").on( "click", function(){
-            $('.subnav').removeClass("topnav-hover");
-            $('.subnav').css("visibility", "hidden");
+            $('.subnav').removeClass("topnav-hover").css("visibility", "hidden");
         });
-
-        // height subnav
-        /*
-        var maxHeight = 0;
-        $(".subnav_inner_container").each(function(){
-            var actHeight = $(this).height();
-
-            if( maxHeight == 0 ){
-                maxHeight = actHeight;
-            }else{
-                if( maxHeight < actHeight ){
-                    maxHeight = actHeight;
-                }
-            }
-        });
-        if( maxHeight > 0 ){
-            $(".subnav_inner_container").css("height", maxHeight + 30);
-        }
-        */
 
         function removeMobileNav(w) {
             if(w>850) {
@@ -180,7 +160,7 @@
                                 {* 1st level opener *}
                                 {foreach $n->sub as $sub}
                                     {if $sub->link}
-                                        <div id="{$sub->id}" class="opener {if $smarty.foreach.sub.last}subdir_last{/if}">
+                                        <div id="{$sub->id}" class="opener {if $sub@last}subdir_last{/if}">
                                             <span class="sub_head"><a href="{$sub->link}" title="Zu {$sub->name}">{$sub->name}</a>
                                                 {if count($sub->sub2)}
                                                     <a href="{$sub->link}" class="topnav_next" data-closename="{$top->name}" data-id="sub2_{$sub->id}" data-name="{$sub->name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -196,7 +176,7 @@
 
                                 {* 1st level *}
                                 {foreach $n->sub as $sub}
-                                <div id="sub_{$sub->id}" class="subdir_box {if $smarty.foreach.sub.last}subdir_last{/if}">
+                                <div id="sub_{$sub->id}" class="subdir_box {if $sub@last}subdir_last{/if}">
 
                                         {if is_iterable($sub->sub2) && $sub->sub2|count>0}
                                         {foreach $sub->sub2 as $sub3}
