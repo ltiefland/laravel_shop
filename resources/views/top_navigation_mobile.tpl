@@ -263,25 +263,25 @@
 
                             <div class="subdir_col">
                                 {* 1st level opener *}
-                                {section loop=$n->sub start=0 name=s_ind}
-                                    {if $n->sub[s_ind].link}
-                                        <div id="{$n->sub[s_ind].id}" class="opener {if $smarty.section.s_ind.last}subdir_last{/if}">
+                                {foreach $n->sub as $sub}
+                                    {if $sub->link}
+                                        <div id="{$sub->id}" class="opener {if $sub@last}subdir_last{/if}">
                                             <span class="sub_head">
-                                                <a href="{$n->sub[s_ind].link}" title="Zu {$n->sub[s_ind].name}">{$n->sub[s_ind].name}</a>
+                                                <a href="{$sub->link}" title="Zu {$sub->name}">{$sub->name}</a>
                                                 {if $smarty.session.isMobile==true}
-                                                    {if count($n->sub[s_ind]->sub2)}
-                                                        <a class="topnav_next mobile" data-closename="{$top->name}" data-id="sub2_{$n->sub[s_ind].id}" data-name="{$n->sub[s_ind].name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                                    {if count($sub->sub2)}
+                                                        <a class="topnav_next mobile" data-closename="{$top->name}" data-id="sub2_{$sub->id}" data-name="{$sub->name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                                     {/if}
                                                 {/if}
                                             </span>
                                         </div>
 
-                                        {if $n->sub[s_ind].id}
-                                            {if count($n->sub[s_ind]->sub2)}
-                                            <div id="sub2_{$n->sub[s_ind].id}" class="sub2container">
-                                            {foreach $n->sub[s_ind]->sub2 as $sub3}
+                                        {if $sub->id}
+                                            {if count($sub->sub2)}
+                                            <div id="sub2_{$sub->id}" class="sub2container">
+                                            {foreach $sub->sub2 as $sub3}
                                                 <div>
-                                                  <span class="sub2"><a data-closename="{$n->sub[s_ind].name}" data-id="sub_{$top->id}" href="{$sub3->dirLink}" title="Zu {$sub3->ame}">{$sub3->name}</a></span>
+                                                  <span class="sub2"><a data-closename="{$sub->name}" data-id="sub_{$top->id}" href="{$sub3->dirLink}" title="Zu {$sub3->ame}">{$sub3->name}</a></span>
                                                 </div>
                                             {/foreach}
                                             </div>
@@ -289,7 +289,7 @@
                                         {/if}
 
                                     {/if}
-                                {/section}
+                                {/foreach}
 
                             </div>
 
