@@ -2,7 +2,7 @@
 {block name=content}
     <!-- $Id$ BEGIN -->
     <div class="box_static">
-    {foreach from=$herstellerListe key=hId item=h name=herstellerListe}
+    {foreach $herstellerListe as $hId => $h}
         {if $h.ID==$smarty.get.hersteller}
         {if $h.Bezeichnung}
             {assign var=herstellerName value=$h.Bezeichnung}
