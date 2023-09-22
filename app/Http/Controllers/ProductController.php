@@ -52,8 +52,9 @@
                     ] );
                 }
             }
-            catch ( GuzzleException )
+            catch ( GuzzleException $e )
             {
+                abort( $e->getCode() );
             }
         }
     }

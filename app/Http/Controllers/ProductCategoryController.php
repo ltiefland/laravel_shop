@@ -27,8 +27,9 @@
                 ] )->getBody()->getContents();
                 return json_decode( $response );
             }
-            catch ( GuzzleException )
+            catch ( GuzzleException $e )
             {
+                abort( $e->getCode() );
             }
         }
 
@@ -51,8 +52,9 @@
                     "shopPosition" => $shopPosition,
                 ] );
             }
-            catch ( GuzzleException )
+            catch ( GuzzleException $e )
             {
+                abort( $e->getCode() );
             }
         }
 
@@ -72,6 +74,7 @@
             }
             catch ( GuzzleException $e )
             {
+                abort( $e->getCode() );
             }
         }
     }
