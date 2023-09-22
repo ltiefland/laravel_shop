@@ -364,7 +364,15 @@
                 <!-- item_rightrow -->
                 <div class="item_rightrow">
                     <div class="logo_breadcrumb">
-                        <span style="float: left;min-width:100px;"><img src="{$item->manufacturer->logo->preview_url}" alt=""></span>
+                        <span style="float: left;min-width:100px;">
+                            <a href="/manufacturers/{$item->manufacturer->slug}.html">
+                                {if $item->manufacturer->logo}
+                                <img src="{$item->manufacturer->logo->preview_url}" alt="">
+                                {else}
+                                {$item->manufacturer->name}
+                                {/if}
+                            </a>
+                        </span>
                         {include file="shopposition.tpl"}
                     </div>
 
