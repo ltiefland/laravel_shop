@@ -5,7 +5,7 @@
         {if $hersteller->Bezeichnung}
             {assign var=herstellerName value=$hersteller->Bezeichnung}
         {else}
-            {assign var=herstellerName value=$hersteller->Name}
+            {assign var=herstellerName value=$hersteller->name}
         {/if}
 
         <div class="box_middle">
