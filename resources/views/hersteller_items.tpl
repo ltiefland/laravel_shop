@@ -2,46 +2,42 @@
 {block name=content}
     <!-- $Id$ BEGIN -->
     <div class="box_static">
-    {foreach $herstellerListe as $hId => $h}
-        {if $h.ID==$smarty.get.hersteller}
-        {if $h.Bezeichnung}
-            {assign var=herstellerName value=$h.Bezeichnung}
+        {if $hersteller->Bezeichnung}
+            {assign var=herstellerName value=$hersteller->Bezeichnung}
         {else}
-            {assign var=herstellerName value=$h.Name}
+            {assign var=herstellerName value=$hersteller->Name}
         {/if}
 
-            <div class="box_middle">
-                <div class="hLogo" style="padding:2%;">
-                    {if $h.Logo2}
-                        {if $h.Logo2_href}<a href="{$h.Logo2_href}">{/if}
-                        <img src="/images/Hersteller/2/{$h.Logo2}" alt="{$herstellerName}" title="{$herstellerName}" />
-                        {if $h.Logo2_href}</a>{/if}
-                    {else}
-                        {if $h.Logo1}
-                            {if $h.Logo1_href}<a href="{$h.Logo1_href}">{/if}
-                            <img src="/images/Hersteller/1/{$h.Logo1}" alt="{$herstellerName}" title="{$herstellerName}" />
-                            {if $h.Logo1_href}</a>{/if}
-                        {/if}
+        <div class="box_middle">
+            <div class="hLogo" style="padding:2%;">
+                {if $hersteller->Logo2}
+                    {if $hersteller->Logo2_href}<a href="{$hersteller->Logo2_href}">{/if}
+                    <img src="/images/Hersteller/2/{$hersteller->Logo2}" alt="{$herstellerName}" title="{$herstellerName}" />
+                    {if $hersteller->Logo2_href}</a>{/if}
+                {else}
+                    {if $hersteller->Logo1}
+                        {if $hersteller->Logo1_href}<a href="{$hersteller->Logo1_href}">{/if}
+                        <img src="/images/Hersteller/1/{$hersteller->Logo1}" alt="{$herstellerName}" title="{$herstellerName}" />
+                        {if $hersteller->Logo1_href}</a>{/if}
                     {/if}
-                </div>
-                <div class="hText">
-                    <h1>{$herstellerName}</h1>
-                    {if $h.Text}
-                        <p>{$h.Text|nl2br}</p>
-                    {/if}
-                    {if $h.Text3}
-                        <p>&nbsp;</p>
-                        <p>{$h.Text3}</p>
-                    {/if}
-                    </div>
-                    <div class="back" style="padding:2%;">
-                        <a href="javascript:history.back();">
-                            <img src="/images/webelemente/butt_zurueck.png" alt="zur&uuml;ck" />
-                        </a>
-                    </div>
+                {/if}
             </div>
-        {/if}
-    {/foreach}
+            <div class="hText">
+                <h1>{$herstellerName}</h1>
+                {if $hersteller->Text}
+                    <p>{$hersteller->Text|nl2br}</p>
+                {/if}
+                {if $hersteller->Text3}
+                    <p>&nbsp;</p>
+                    <p>{$hersteller->Text3}</p>
+                {/if}
+                </div>
+                <div class="back" style="padding:2%;">
+                    <a href="javascript:history.back();">
+                        <img src="/images/webelemente/butt_zurueck.png" alt="zur&uuml;ck" />
+                    </a>
+                </div>
+        </div>
     </div>
 
 
