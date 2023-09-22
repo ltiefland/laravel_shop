@@ -239,7 +239,7 @@
     </div>
     <div class="inner">
         <ul class="topnav_ul">
-        {foreach $nav as $n name=navigation}
+        {foreach $nav as $n}
             {foreach $n->top as $top }
             <li class="{if $n@last}last{/if} li_{$top->id}">
                 <a class="topnav_li" id="{$top->id}" href="{$top->dirLink}" title="Zu {$top->name}">{$top->name}</a>
