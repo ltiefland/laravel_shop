@@ -1,7 +1,7 @@
 <script type="text/javascript" src="/JavaScript/jquery.hoverIntent.min.js"></script>
 <script>
     $(document).ready(function(){
-        var windowWidth = $(window).width();
+        let windowWidth = $(window).width();
         removeMobileNav(windowWidth);
 
         $(".topnav_ul li").hoverIntent(
