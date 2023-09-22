@@ -195,27 +195,17 @@
                             <div class="subdir_col subs">
 
                                 {* 1st level *}
-                                {section loop=$n->sub start=0 name=s_ind}
-                                <div id="sub_{$n->sub[s_ind]->id}" class="subdir_box {if $smarty.section.s_ind.last}subdir_last{/if}">
+                                {foreach $n->sub as $sub}
+                                <div id="sub_{$sub->id}" class="subdir_box {if $smarty.foreach.sub.last}subdir_last{/if}">
 
-                                        {if is_iterable($n->sub[s_ind]->sub2) && $n.sub[s_ind].sub2|count>0}
-                                        {foreach $n->sub[s_ind]->sub2 as $sub3}
+                                        {if is_iterable($sub->sub2) && $sub->sub2|count>0}
+                                        {foreach $sub->sub2 as $sub3}
                                             <span id class="sub2"><a href="{$sub3->link}" title="Zu {$sub3->name}">{$sub3->name}</a></span>
                                         {/foreach}
                                         {/if}
                                 </div>
-                                {/section}
+                                {/foreach}
                             </div>
-
-                            {*
-                            {if !$smarty.session.isMobile}
-                            <div class="subnav_special">
-
-                            </div>
-                            {/if}
-                            *}
-
-
                            </div>
                         </div>
                     </div>
