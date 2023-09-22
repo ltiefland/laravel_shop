@@ -69,7 +69,7 @@
 
             <div class="subdir_artikel">
                 {foreach $hersteller->manufacturer_products as $item}
-                    {if $item.price > 0}
+                    {if $item->price > 0}
 
                         {include file="item_small.tpl"  inline}
                     {/if}
