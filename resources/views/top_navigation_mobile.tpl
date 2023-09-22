@@ -244,7 +244,7 @@
             <li class="{if $n@last}last{/if} li_{$top->id}">
                 <a class="topnav_li" id="{$top->id}" href="{$top->dirLink}" title="Zu {$top->name}">{$top->name}</a>
                 {if $smarty.session.isMobile==true}
-                    {if is_array($n->sub) && $n->sub|count>0}
+                    {if $n->sub|count>0}
                         <a class="topnav_next mobile" data-closename="Menü" data-id="sub_{$top->id}" data-name="{$top->name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                     {/if}
                 {/if}
@@ -254,7 +254,7 @@
         </ul>
         {foreach $nav as $n}
             {foreach $n->top as $top}
-                {if $n->sub|is_array && $n->sub|count}
+                {if $n->sub|count}
                 <div class="subnav sub_{$top->id}" id="sub_{$top->id}">
                    <div class="subnav_outer_container">
 
