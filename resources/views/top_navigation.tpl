@@ -149,7 +149,7 @@
         {foreach $nav as $n}
 
             {foreach $n->top as $top}
-                {if is_iterable($n->sub) && $n->sub|count}
+                {if $n->sub|count}
                 <div class="subnav sub_{$top->id}">
                    <div class="subnav_outer_container">
 
@@ -178,7 +178,7 @@
                                 {foreach $n->sub as $sub}
                                 <div id="sub_{$sub->id}" class="subdir_box {if $sub@last}subdir_last{/if}">
 
-                                        {if is_iterable($sub->sub2) && $sub->sub2|count>0}
+                                        {if $sub->sub2|count>0}
                                         {foreach $sub->sub2 as $sub3}
                                             <span id class="sub2"><a href="{$sub3->link}" title="Zu {$sub3->name}">{$sub3->name}</a></span>
                                         {/foreach}
