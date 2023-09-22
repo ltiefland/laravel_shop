@@ -13,7 +13,6 @@
             $client = new Client();
             try
             {
-                $nav = array();
                 $response = $client->request( "get", config( "api.url" ) . "manufacturers/" . $manufacturer, [
                     'headers' => [
                         'Authorization' => 'Bearer ' . config( "api.key" ),
@@ -24,7 +23,7 @@
                 $m = json_decode( $response )->data;
                 return view( "hersteller_items",
                     [
-                        "manufacturer" => $m
+                        "herstellerListe" => $m
                     ] );
             }
             catch ( GuzzleException )
