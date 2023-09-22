@@ -269,7 +269,7 @@
                                             <span class="sub_head">
                                                 <a href="{$n->sub[s_ind].link}" title="Zu {$n->sub[s_ind].name}">{$n->sub[s_ind].name}</a>
                                                 {if $smarty.session.isMobile==true}
-                                                    {if is_array($n->sub[s_ind].sub2)}
+                                                    {if count($n->sub[s_ind]->sub2)}
                                                         <a class="topnav_next mobile" data-closename="{$top->name}" data-id="sub2_{$n->sub[s_ind].id}" data-name="{$n->sub[s_ind].name}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                                     {/if}
                                                 {/if}
@@ -277,9 +277,9 @@
                                         </div>
 
                                         {if $n->sub[s_ind].id}
-                                            {if is_array($n->sub[s_ind].sub2)}
+                                            {if count($n->sub[s_ind]->sub2)}
                                             <div id="sub2_{$n->sub[s_ind].id}" class="sub2container">
-                                            {foreach $n->sub[s_ind].sub2 as $sub3}
+                                            {foreach $n->sub[s_ind]->sub2 as $sub3}
                                                 <div>
                                                   <span class="sub2"><a data-closename="{$n->sub[s_ind].name}" data-id="sub_{$top->id}" href="{$sub3->dirLink}" title="Zu {$sub3->ame}">{$sub3->name}</a></span>
                                                 </div>
