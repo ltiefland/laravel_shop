@@ -536,7 +536,7 @@
                        },400);
                     });
                     $('.warenkorb').mouseleave(function(){
-                        clearTimeout(timeout);
+                        clearTimeout(timeout)0;
                        $('.warenkorb_menu').hide();
                     });
                 **/
@@ -744,7 +744,7 @@
 
 
         <div id="loading" style="text-align:center;">
-            <img src="/images/webelemente/loading.gif" /><br />
+            <img src="/images/webelemente/loading.gif" alt="Bitte warten...." /><br />
             Bitte warten....
         </div>
 
