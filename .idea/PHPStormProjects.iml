@@ -7,5 +7,6 @@
     <orderEntry type="library" name="main" level="application" />
     <orderEntry type="library" name="uc-block.bundle" level="application" />
     <orderEntry type="library" name="uc-block-ui.bundle" level="application" />
+    <orderEntry type="library" name="ratenrechner" level="application" />
   </component>
 </module>

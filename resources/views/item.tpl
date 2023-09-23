@@ -5,11 +5,7 @@
 <script>
     $(function(){
 
-        let w = $('.item_leftrow').width();
-        {* classname, windowWidth, slides, autoplay, infiniteLoop, forceWidth *}
-        let slider = initSlider( "sliderArtikelBilder", w, 6, false, false, true );
-
-        zoomType='';
+        let zoomType='';
         initElevateZoom(zoomType,true);
         $( window ).resize(function(){
             $('.zoomContainer').each(function(){
@@ -40,8 +36,7 @@
         {if $item->versandkosten_overlib}
         $('.tooltip_opener').mouseenter(function(){
             $('.tooltip').css("display","block");
-        });
-        $('.tooltip_opener').mouseleave(function(){
+        }).mouseleave(function(){
             $('.tooltip').hide();
         });
         {/if}
@@ -51,8 +46,7 @@
             let id = href.split("#");
             if(id[1]) {
                 id = id[1];
-                $('#' + id).load("/module/reiter/" + id + ".php?item=" + {$item->id});
-                $('#' + id).css("display","contents");
+                $('#' + id).load("/module/reiter/" + id + ".php?item=" + {$item->id}).css("display","contents");
             }
             $('#beschreibung').css({
                 "opacity":1,
@@ -69,8 +63,7 @@
                 let id = href.split("#");
                 if(id[1]) {
                     id = id[1];
-                    $('#' + id).load("/module/reiter/" + id + ".php?item=" + {$item->id});
-                    $('#'+id).css({
+                    $('#' + id).load("/module/reiter/" + id + ".php?item=" + {$item->id}).css({
                         "opacity":1,
                         "margin-left":"0px",
                     });
@@ -91,7 +84,7 @@
     });
     function showEuLabel()
     {
-        bild=$(this).attr("data-link");
+        let bild=$(this).attr("data-link");
         $('#euLabelLayerBild').attr("src",bild);
         $('#euLabelLayer').dialog("open");
     }
@@ -158,7 +151,7 @@
             });*/
 
             // yt dialog
-            w = 520;
+            let w = 520;
             let ww = $(window).width();
             if(ww<768) {
                 w = ww;
@@ -182,8 +175,7 @@
                 }
                 let f = 1.77777;
                 let h = w/f;
-                $('#youtubeFrame').height(h);
-                $('#youtubeFrame').attr("src",$(this).attr("data-src"))
+                $('#youtubeFrame').height(h).attr("src",$(this).attr("data-src"))
                 $('#youtube').dialog("open");
             });
 
@@ -221,7 +213,7 @@
             });
             function showEuLabel()
             {
-                bild=$(this).attr("data-link");
+                let bild=$(this).attr("data-link");
                 $('#euLabelLayerBild').attr("src",bild);
                 $('#euLabelLayer').dialog("open");
             }
@@ -242,7 +234,7 @@
         </div>
         {/if}
 
-        <!-- Strkturierte Daten -->
+        <!-- Strukturierte Daten -->
         <meta content="{$item->id}" />
         {if $item->EAN}
                <meta content="{$item->EAN}" />
@@ -259,7 +251,7 @@
         <div>
             <meta content="{$item->hersteller_Bezeichnung|default:$item->hersteller_Name}"/>
         </div>
-         <!-- Strkturierte Daten ENDE-->
+         <!-- Strukturierte Daten ENDE-->
 
 
         <div class="box_middle">
@@ -272,10 +264,10 @@
                             {if isset($item->media[0]->url)}
                                 <img class="mausDrin" src="{$item->media[0]->url}" alt="{$item->name}" title="{$item->name}" id="img_zoom" data-zoom-image="{$item->media[0]->url}" />
                             {elseif isset($item->FatherInfo.Artstamm.medien[0]->medium.name) && $item->FatherInfo.Artstamm.medien[0]->medium.name != $ini.itemKorrekur.noImage}
-                                <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->FatherInfo.Artstamm.medien[0]->medium.name}" {if $item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"] != ""}alt="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" title="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->FatherInfo.Artstamm.medien[0]->medium.bild_url}" />
+                                <img class="mausDrin" src="/images/upload/{$item->medium[0]->medium->folder}/{$item->FatherInfo.Artstamm.medien[0]->medium.name}" {if $item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"] != ""}alt="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" title="{$item->FatherInfo.Artstamm.medien[0]->medium["beschreibung"]}" {else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->FatherInfo.Artstamm.medien[0]->medium.bild_url}" />
                                 <br />Bild aus der Produktgruppe
                             {else}
-                                <img src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} />
+                                <img src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}" {else}alt="{$item->name}" title="{$item->name}" {/if} />
                             {/if}
                         {if $item->medium[0]->medium['aehnlich']==1 && !stristr( $item->medium[0]->medium.bild_url_klein, "noPicture.gif")}
                            <div style="margin-left:10px;margin-top:-23px;"> -- Abbildung ähnlich --</div>
@@ -287,7 +279,7 @@
                                 {foreach $item->media as $key => $bild}
                                     <li class="thumbs">
                                         <a href="#" data-image="{$bild->url}" data-zoom-image="{$bild->url}" title="Artikelbild">
-                                            <img src="{$bild->thumbnail}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}"{/if}/>
+                                            <img src="{$bild->thumbnail}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}" {else}alt="{$item->name}" title="{$item->name}"{/if}/>
                                         </a>
                                     </li>
                                 {/foreach}
@@ -305,9 +297,9 @@
                                                         position: absolute;
                                                         text-align: center !important;
                                                         z-index: 1000 !important;">
-                                                <img src="/images/webelemente/YouTube-icon-full_color.png" />
+                                                <img src="/images/webelemente/YouTube-icon-full_color.png"  alt="Youtube-Video"/>
                                             </div>
-                                            <img src="/images/upload/video_thumbnails/{$bild->medium.folder}.jpg" />
+                                            <img src="/images/upload/video_thumbnails/{$bild->medium.folder}.jpg"  alt="{$bild->beschreibung}"/>
                                         </a>
                                     </li>
                                     {/if}
@@ -347,9 +339,9 @@
                                                         position: absolute;
                                                         text-align: center !important;
                                                         z-index: 1000 !important;">
-                                                <img src="/images/webelemente/YouTube-icon-full_color.png" />
+                                                <img src="/images/webelemente/YouTube-icon-full_color.png"  alt="Youtube-Video"/>
                                             </div>
-                                            <img src="/images/upload/video_thumbnails/{$bild->medium.folder}.jpg" />
+                                            <img src="/images/upload/video_thumbnails/{$bild->medium.folder}.jpg" alt="Icon" />
                                         </a>
                                     </li>
                                     {/if}
@@ -403,7 +395,7 @@
                     <div class="preis_lieferstatus">
                         {if $item->LieferstatusValue==4}
                         <div>
-                            <img src="/images/webelemente/24h_lieferung.svg">
+                            <img src="/images/webelemente/24h_lieferung.svg" alt="">
                         </div>
                         {/if}
                         <!-- Lagerbestand -->
@@ -428,7 +420,7 @@
                     <div class="icons">
                         {foreach $item->medium as $medium}
                             {if $medium->medium.medium_type_id==6}
-                                <img src="/images/upload/{$medium->medium->folder}/kl/{$medium->medium.bild_url}" />
+                                <img src="/images/upload/{$medium->medium->folder}/kl/{$medium->medium.bild_url}" alt="{$bild->beschreibung}" />
                             {/if}
                         {/foreach}
                     </div>
@@ -512,10 +504,7 @@
                                             });
                                             $('#optionPreis').val(newPrice);
                                             $('#visiblePrice').html(newPrice.money_format() + " &euro;");
-                                        });
-
-
-                                        $('select.options').each(function(){
+                                        }).each(function(){
                                             newPrice += optionAufschlag(this,optionen);
                                         });
                                         $('#optionPreis').val(newPrice);
@@ -528,9 +517,9 @@
                                     let aufschlag = 0;
                                     const optid = $("option:selected",opt).attr("value");
                                     if(optid) {
-                                        for(key in optionen) {
-                                            for(key2 in optionen[key].options) {
-                                                if(key2==optid) {
+                                        for(let key in optionen) {
+                                            for(let key2 in optionen[key].options) {
+                                                if(key2===optid) {
                                                     aufschlag = parseFloat(optionen[key].options[key2].aufschlag);
                                                 }
                                             }
@@ -577,7 +566,7 @@
                                                     $('#menge').change(function(){
                                                     if($('#menge').val()>{$item->max_bestellmenge})
                                                     {
-                                                        alert("Sie kÃ¶nnen nur maximal {$item->max_bestellmenge} Exemplare dieses Artikels bestellen!");
+                                                        alert("Sie können nur maximal {$item->max_bestellmenge} Exemplare dieses Artikels bestellen!");
                                                     }
                                                     })
                                                 })
@@ -715,9 +704,7 @@
                         <p>{$item->langbezeichnung}</p>
                     {/if}
                     {if $item->description}
-                    <span>
-                        <p class="normal" style="padding-top:1.5%;">{$item->description|nl2br}</p>
-                    </span>
+                    <p class="normal" style="padding-top:1.5%;">{$item->description|nl2br}</p>
                     {/if}
 
                     <p class="normal">{$item->description2|nl2br}</p>
@@ -737,7 +724,7 @@
 
     {if $showEULabel==1}
     <div id="euLabelLayer" title="EU-Energielabel für {$item->name}">
-        <img id="euLabelLayerBild" src="" height="600" />
+        <img id="euLabelLayerBild" src="" height="600"  alt=""/>
     </div>
     {/if}
 
@@ -745,8 +732,7 @@
 
 <script>
     $(document).ready(function(){
-        $("#beschreibung img").removeAttr("width");
-        $("#beschreibung img").removeAttr("height");
+        $("#beschreibung img").removeAttr("width").removeAttr("height");
 
     });
 </script>
@@ -764,7 +750,7 @@
     }
 
     select.options {
-        margin: 5px 10px 5px 0px;
+        margin: 5px 10px 5px 0;
         padding:4px;
         border: 1px solid #EA5900;
         background-color: rgb(255, 255, 255);
@@ -814,7 +800,7 @@ $(function() {
                window.location = window.location.origin + '/?item=' + nid;
             }
         })
-        return;
+        return true;
     });
 
     $('#finanzierungsDlg').dialog({
@@ -853,7 +839,7 @@ $(function() {
         hide: "fade"
 
     })
-    $('#beschreiung3_open').click( function () {
+    $('#beschreibung3_open').click( function () {
         $('#beschreibung3').dialog("open");
         return false;
     });
@@ -883,7 +869,7 @@ $(function() {
 </script>
 {/if}
     <div id="youtube" title="Video">
-        <iframe id="youtubeFrame" width="480" height="360" allowfullscreen="true"></iframe>
+        <iframe id="youtubeFrame" width="480" height="360" allowfullscreen="allowfullscreen"></iframe>
     </div>
 
 <!-- $Id: item.tpl 3009 2023-01-09 10:36:15Z erling $ END -->

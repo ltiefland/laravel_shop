@@ -1,8 +1,8 @@
 <script>
     $(document).ready(function(){
         // classname, windowWidth, slides, autoplay, infiniteLoop, forceWidth, pager
-        var w = $(".mobile_thumbs").width();
-        var slider = initSlider( "mobileSliderArtikelBilder", w, 0, false, true, false, true );
+        let w = $(".mobile_thumbs").width();
+        let slider = initSlider( "mobileSliderArtikelBilder", w, 0, false, true, false, true );
 
         //pass the images to Fancybox
         $('.img_zoom').fancybox({
@@ -49,11 +49,10 @@
         display:block;
     }
 .box_2 .neu_icon {
-  margin-left:0px;
   display: block;
   position: absolute;
   z-index: 2;
-  margin: 3px;
+  margin: 3px 3px 3px 0;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
     width:5px;
