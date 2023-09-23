@@ -56,9 +56,6 @@
         <link rel="stylesheet" href="/styles/header_menu.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/styles/top_nav.css" media="screen" />
         <link rel="stylesheet" href="/styles/qtip.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="/styles/print.css" type="text/css" media="print" />
-        <link rel="stylesheet" type="text/css" href="/styles/tablet.css" media="screen and (max-width:1100px)" />
-        <link rel="stylesheet" type="text/css" href="/styles/smartphone.css" media="screen and (max-width:350px)" />
 
         <link rel="stylesheet" href="/styles/color.css" media="screen" />
         <link rel="stylesheet" href="/styles/ui-mods.css" media="screen" />
@@ -67,6 +64,9 @@
         <link rel="stylesheet" href="/JavaScript/fancybox/source/jquery.fancybox.css" media="screen" />
         <link rel="stylesheet" href="/styles/jquery.bxslider.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/styles/font-awesome/css/fontawesome-all.min.css" type="text/css" media="screen" />
+            <link rel="stylesheet" href="/styles/print.css" type="text/css" media="print" />
+            <link rel="stylesheet" type="text/css" href="/styles/tablet.css" media="screen and (max-width:1100px)" />
+            <link rel="stylesheet" type="text/css" href="/styles/smartphone.css" media="screen and (max-width:350px)" />
         {/asset_compile}
 
         <!-- Stylesheet ENDE -->
