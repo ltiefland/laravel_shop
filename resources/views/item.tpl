@@ -606,7 +606,8 @@
                         </div>
 
                         <div class="itemNav">
-                            <a href="/directory/{$item->proeuct_category->slug}/"><i class="fa fa-caret-left" aria-hidden="true"></i> Zur&uuml;ck zur &Uuml;bersicht</a>
+                            {$categories=array_reverse($item->categories)}
+                            <a href="/directory/{$categories[0]->slug}/"><i class="fa fa-caret-left" aria-hidden="true"></i> Zur&uuml;ck zur &Uuml;bersicht</a>
                         </div>
                     </form>
 
