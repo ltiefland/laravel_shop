@@ -75,6 +75,28 @@
         <!-- Stylesheet ENDE -->
 
         <script type="text/javascript" src="/JavaScript/jquery-1.11.2.min.js"></script>
+        <script>
+            jQuery.event.special.touchstart = {
+                setup: function( _, ns, handle ) {
+                    this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+                }
+            };
+            jQuery.event.special.touchmove = {
+                setup: function( _, ns, handle ) {
+                    this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+                }
+            };
+            jQuery.event.special.wheel = {
+                setup: function( _, ns, handle ){
+                    this.addEventListener("wheel", handle, { passive: true });
+                }
+            };
+            jQuery.event.special.mousewheel = {
+                setup: function( _, ns, handle ){
+                    this.addEventListener("mousewheel", handle, { passive: true });
+                }
+            };
+        </script>
         <script type="text/javascript" src="/JavaScript/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/JavaScript/jquery.bxslider/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="/JavaScript/utils.js"></script>
