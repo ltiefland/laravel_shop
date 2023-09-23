@@ -64,11 +64,11 @@
         <link rel="stylesheet" href="/styles/ui-mods.css" media="screen" />
         <link rel="stylesheet" href="/styles/links.css" media="screen" />
 
-        {/asset_compile}
-
         <link rel="stylesheet" href="/JavaScript/fancybox/source/jquery.fancybox.css" media="screen" />
         <link rel="stylesheet" href="/styles/jquery.bxslider.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/styles/font-awesome/css/fontawesome-all.min.css" type="text/css" media="screen" />
+        {/asset_compile}
+
         <!-- Stylesheet ENDE -->
 
         <script type="text/javascript" src="/JavaScript/jquery-1.11.2.min.js"></script>
