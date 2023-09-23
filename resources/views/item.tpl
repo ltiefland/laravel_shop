@@ -606,7 +606,7 @@
                         </div>
 
                         <div class="itemNav">
-                            <a href="{$item->fatherLink}"><i class="fa fa-caret-left" aria-hidden="true"></i> Zur&uuml;ck zur &Uuml;bersicht</a>
+                            <a href="/directory/{$item->proeuct_category->slug}/"><i class="fa fa-caret-left" aria-hidden="true"></i> Zur&uuml;ck zur &Uuml;bersicht</a>
                         </div>
                     </form>
 
