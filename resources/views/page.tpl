@@ -48,30 +48,27 @@
 
 
         <link rel="canonical" href="{$ini.absoluteURL}{$smarty.server.REQUEST_URI}" />
-        <link rel="stylesheet" href="/styles/reiter/jquery-ui.min.css" />
+        <link rel="stylesheet" href="/styles/reiter/jquery-ui.min.css" media="screen" />
 
         {asset_compile}
-        <link rel="stylesheet" href="/styles/fonts.css" type="text/css" />
-        <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
-        <link rel="stylesheet" href="/styles/header_menu.css" type="text/css"/>
-        <link rel="stylesheet" href="/styles/top_nav.css" />
-        <link rel="stylesheet" href="/styles/qtip.css" type="text/css"/>
+        <link rel="stylesheet" href="/styles/fonts.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/styles/styles.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/styles/header_menu.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/styles/top_nav.css" media="screen" />
+        <link rel="stylesheet" href="/styles/qtip.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/styles/print.css" type="text/css" media="print" />
-        <!--<link rel="stylesheet" type="text/safari" href="/styles/safari.css" />-->
-        {*<link rel="stylesheet" href="/styles/finder.css" />*}
-        {* <link rel="stylesheet" href="/JavaScript/shariff-master/build/shariff.complete.css" /> *}
         <link rel="stylesheet" type="text/css" href="/styles/tablet.css" media="screen and (max-width:1100px)" />
         <link rel="stylesheet" type="text/css" href="/styles/smartphone.css" media="screen and (max-width:350px)" />
 
-        <link rel="stylesheet" href="/styles/color.css" />
-        <link rel="stylesheet" href="/styles/ui-mods.css" />
-        <link rel="stylesheet" href="/styles/links.css" />
+        <link rel="stylesheet" href="/styles/color.css" media="screen" />
+        <link rel="stylesheet" href="/styles/ui-mods.css" media="screen" />
+        <link rel="stylesheet" href="/styles/links.css" media="screen" />
 
         {/asset_compile}
 
-        <link rel="stylesheet" href="/JavaScript/fancybox/source/jquery.fancybox.css" />
+        <link rel="stylesheet" href="/JavaScript/fancybox/source/jquery.fancybox.css" media="screen" />
         <link rel="stylesheet" href="/styles/jquery.bxslider.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="/styles/font-awesome/css/fontawesome-all.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/styles/font-awesome/css/fontawesome-all.min.css" type="text/css" media="screen" />
         <!-- Stylesheet ENDE -->
 
         <script type="text/javascript" src="/JavaScript/jquery-1.11.2.min.js"></script>
