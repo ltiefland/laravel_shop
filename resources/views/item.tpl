@@ -767,10 +767,9 @@
         margin: 5px 10px 5px 0px;
         padding:4px;
         border: 1px solid #EA5900;
-        background: #fff;
         background-color: rgb(255, 255, 255);
-        background-position-x: 0%;
-        background-position-y: 0%;
+        background-position-x: 0;
+        background-position-y: 0;
         background-repeat: repeat;
         background-attachment: scroll;
         background-image: none;
