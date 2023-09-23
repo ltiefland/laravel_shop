@@ -87,7 +87,7 @@ footer .inner .kontakt
 .search #searchSubmit {
     background-position: center;
     height: 26px;
-    margin: 14px 0px 0px 89% !important;
+    margin: 14px 0 0 89% !important;
     top:1px;
 }
 #artikel .itemTable_container .itemTable_rownew {
@@ -133,8 +133,7 @@ footer .inner .kontakt
 .bottom_nav {
     flex-direction:column;
     gap:15px;
-    margin:0;
-    margin-bottom:50px;
+    margin: 0 0 50px;
 }
 .item_mobile {
     display:block;
@@ -266,7 +265,7 @@ td.save_address {
 }
 .inner_basket h1,
 .inner_basket h3 {
-    padding:10px 0px;
+    padding:10px 0;
 }
 
 .box_subdir a .top {
@@ -334,8 +333,8 @@ float: right;
     vertical-align:top;
 }
 .basket_table_artikel {
-    margin-left:0px;
-    padding-left:0px;
+    margin-left:0;
+    padding-left:0;
     width:100%;
 }
 .basket_table_artikel thead {
@@ -409,7 +408,7 @@ img{
 }
 .root{
     clear:none;
-    margin-top:0px;
+    margin-top:0;
     overflow:hidden;
 }
 .header {
@@ -417,7 +416,7 @@ img{
     height: auto;
     position:relative;
     z-index: 99999999999999999;
-    padding-top: 0px;
+    padding-top: 0;
     border-bottom: 1px solid #ccc !important;
     float: left;
 }
@@ -470,7 +469,7 @@ img{
 .header .mobile .boxRight .warenkorb{
     float:left;
     width:48%;
-    padding:0% 1%;
+    padding:0 1%;
     margin: 0;
     text-align: center;
     position:relative;
@@ -482,7 +481,7 @@ img{
     max-width:100%;
     position: relative;
     float: none;
-    margin: 0px;
+    margin: 0;
 }
 .header .mobile .boxCenter .logo a{
     margin: 0 0 -3px 0;
@@ -499,7 +498,7 @@ img{
     margin-top:-3%;
 }
 .header .mobile .warenkorb .warenkorb_icon{
-    padding:0px;
+    padding:0;
     width: 100%;
 }
 .warenkorb_preis {
@@ -516,7 +515,7 @@ img{
     width:100%;
 }
 .searchMobile .mobile .search{
-    padding: 1% 0px;
+    padding: 1% 0;
     width: 100%;
     float: left;
 }
@@ -531,7 +530,7 @@ img{
 .header_wk_anzahl {
     width: 13%;
     text-align: center;
-    margin: 0px;
+    margin: 0;
     padding: 12px 2.5%;
     float: left;
 }
@@ -543,7 +542,7 @@ img{
 .header_wk_anzahl_10 {
     width: 13%;
     text-align: center;
-    margin: 0px;
+    margin: 0;
     padding: 12px 1.9%;
     float: left;
 }
@@ -613,7 +612,7 @@ img{
     position:absolute;
 }
 .active-nav #topnav {
-	margin:0%!important;
+	margin:0!important;
 	width:100%;
     background-color: rgb(255, 255, 255);
     overflow:hidden;
@@ -736,7 +735,7 @@ img{
 }
 .buttons_selection
 {
-  padding: 1% 10% 0% 2%;
+  padding: 1% 10% 0 2%;
 }
 
 
@@ -832,7 +831,7 @@ img{
     }
     .artikel_box:nth-of-type(3n+2),
     .box_subdir:nth-of-type(3n+2) {
-        margin:1% 0%;
+        margin:1% 0;
     }
 
     .subdir_artikel .artikel_box {
@@ -854,18 +853,18 @@ img{
     .content .serviceBox_wrapper{
         width:100%;
         float:left;
-        padding:2% 0%;
+        padding:2% 0;
     }
 
 /*
     .content .subdir .box_subdir:nth-child(3n+2){
-        margin: 0px;
+        margin: 0;
     }
     */
     .content .subdir_artikel_wrapper .subdir_artikel .artikel_box .preisInner,
     .content .subdir_artikel_wrapper .subdir_artikel .artikel_box .preis_messageInner,
     .content .subdir_artikel_wrapper .subdir_artikel .artikel_box .favorite_ButtonInner {
-        padding: 1% 0% 0;
+        padding: 1% 0 0;
         width: 100%;
         float: left;
         text-align: center;
@@ -904,7 +903,7 @@ img{
     }
     /** LOGIN CONTROL CENTER **/
     .loginInfo{
-        min-width: 0px;
+        min-width: 0;
     }
     .basket-table-items{
         margin: 0;
@@ -978,7 +977,7 @@ img{
     .topfooter_inner .top{
         position: unset!important;
         float: left;
-        margin: 9px 0px 0px;
+        margin: 9px 0 0;
     }
     .topfooter_inner .top a:link,
     .topfooter_inner .top a:active,
@@ -987,7 +986,7 @@ img{
     }
 
     .topfooter .top .topfooter_box{
-        padding-top: 0px;
+        padding-top: 0;
         text-align:center;
     }
     .topfooter .top .topfooter_box div{
@@ -1054,17 +1053,17 @@ img{
     .addresses .box_middle .boxInner{
         clear:both;
         width: 100%;
-        padding-left: 0px;
+        padding-left: 0;
     }
     .addresses .box_middle .boxInner:nth-child(2n+1){
-        border-right: 0px;
+        border-right: 0;
     }
     /** BESTELLVORGANG **/
     .content .box_2 .bestellartWrapper:nth-child(2),
     .content .box_2 .bestellartWrapper{
         clear:both;
         width: 60%;
-        padding: 0px 20%;
+        padding: 0 20%;
     }
 
     .itemLeftContainer{
@@ -1080,7 +1079,7 @@ img{
         width: 50%;
     }
     .content .box_2 .item_top{
-        padding: 0px;
+        padding: 0;
     }
 
     .itemPreis {
@@ -1369,7 +1368,7 @@ img{
     .item_socialmedia {
         clear: both;
         float:left;
-        margin:0px 0;
+        margin:0 0;
         width:100%;
     }
     .item_rightrow .itemBasketButton {
@@ -1380,7 +1379,7 @@ img{
     }
     .basketButton {
         background-color:#b81d19;
-        border-radius:0px;
+        border-radius:0;
         text-align:center;
     }
     .p_artikel {
@@ -1464,7 +1463,7 @@ img{
     #readOnlyWalletWidgetDiv {
         clear:both;
         float:none;
-        margin-left:0px;
+        margin-left:0;
     }
     #widgets {
         display:none;
