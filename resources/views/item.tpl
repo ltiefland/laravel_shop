@@ -286,7 +286,7 @@
                             <ul class="sliderArtikelBilder">
                                 {foreach $item->media as $key => $bild}
                                     <li class="thumbs">
-                                        <a href="#" data-image="{$bild->kl_url}" data-zoom-image="{$bild->url}" title="Artikelbild">
+                                        <a href="#" data-image="{$bild->url}" data-zoom-image="{$bild->url}" title="Artikelbild">
                                             <img src="{$bild->thumbnail}" class="mausDrin" {if $bild->medium["beschreibung"] != ""}alt="{$bild->medium["beschreibung"]}" title="{$bild->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}"{/if}/>
                                         </a>
                                     </li>
