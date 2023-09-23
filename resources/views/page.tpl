@@ -101,9 +101,6 @@
 
         <!-- Javascript START -->
         {asset_compile}
-        {*
-        <script type="text/javascript" src="/JavaScript/finanzierungSantander.js"></script>
-        *}
 
         <script type="text/javascript" src="/JavaScript/jquery.elevateZoom-3.0.8.min.js"></script>
         <script type="text/javascript" src="/JavaScript/jquery.elevatezoom.js"></script>
@@ -111,11 +108,9 @@
         <script type="text/javascript" src="/JavaScript/fancybox/source/jquery.fancybox.pack.js"></script>
 
         <script type="text/javascript" src="/JavaScript/weban.js"></script>
-        {* <script type="text/javascript" src="/js/weban_scripts.js"></script> *}
         <script type="text/javascript" src="/JavaScript/addresses.js"></script>
         <script type="text/javascript" src="/JavaScript/view_orders.js"></script>
         <script type="text/javascript" src="/JavaScript/validateEmail.js"></script>
-        <!--<script type="text/javascript" src="/includes/auto_plz/autoplz.js"></script>-->
         <script type="text/javascript" src="/JavaScript/jquery_socialprivacy/jquery.socialshareprivacy.min.js"></script>
         <script type="text/javascript" src="/JavaScript/weban_itemZoom.js"></script>
         <script type="text/javascript" src="/JavaScript/money_format.js"></script>
@@ -156,9 +151,6 @@
         <script type="text/javascript" src="/JavaScript/email_fehler.js"></script>
         {/if}
         <script type="text/javascript" src="/JavaScript/subnav.js"></script>
-        {if $smarty.session.isMobile}
-        {* <script type="text/javascript" src="/JavaScript/jquery.ui.touch-punch.min.js"></script> *}
-        {/if}
         {if $ini.exorbyte.exorbyte_url!=""}
         <script src="{$ini.exorbyte.exorbyte_url}" type="text/javascript"></script>
         {/if}
@@ -355,7 +347,6 @@
         {/if}
 
         {* google kundenrezension *}
-        {*if $ini.google.kundenrezension_aktiv==1 && isset($ini.google.merchant_id) && isset($bestellId) && isset($smarty.session.SHOP.buy.Persdata.email)*}
         {assign var="showGoogleKundenrezension" value=1}
         {if $zahlungsformular && $versandInfo.versandart=="finanzierung"}
             {assign var="showGoogleKundenrezension" value=0}
