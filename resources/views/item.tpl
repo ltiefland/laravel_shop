@@ -15,7 +15,7 @@
         });
 
         //pass the images to Fancybox
-        $("#img_zoom").click(function(e){
+        $("#img_zoom").click(function(){
             let ez = $('#img_zoom').data('elevateZoom');
             let g = ez.getGalleryList();
             console.log(g);
@@ -92,15 +92,14 @@
 
 
     <style>
-        .zoomWrapper{
+        /*.zoomWrapper{
             border: none;
-        }
+        }*/
         #img_zoom{
         }
-        .ui-widget-header {
+        /*.ui-widget-header {
             background-image:none!important;
         }
-        /*
         .bx-wrapper .bx-prev {
             left:-8%;
         }
@@ -129,7 +128,7 @@
             margin:10px 0;
         }
 
-        .content .box_2 .thumbs_container .thumbs {
+        .thumbs_container .thumbs {
             display:flex;
         }
 
@@ -323,7 +322,7 @@
                         {else}
                         <div class="box_singleitem_img">
                             {if $item->media[0]->url != $ini.itemKorrektur.noImage}
-                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}"{else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
+                            <img class="mausDrin" src="{$item->media[0]->url}" {if $item->medium[0]->medium["beschreibung"] != ""}alt="{$item->medium[0]->medium["beschreibung"]}" title="{$item->medium[0]->medium["beschreibung"]}" {else}alt="{$item->name}" title="{$item->name}" {/if} id="img_zoom" data-zoom-image="{$item->media[0]->url}" data-elevateZoom="{$item->media[0]->gr_url}" />
                             {/if}
                         </div>
                         {/if}
@@ -393,11 +392,6 @@
                     <!-- Lieferstatus -->
                     </span>
                     <div class="preis_lieferstatus">
-                        {if $item->LieferstatusValue==4}
-                        <div>
-                            <img src="/images/webelemente/24h_lieferung.svg" alt="">
-                        </div>
-                        {/if}
                         <!-- Lagerbestand -->
                         {include file="item_kurier.tpl"}
                         {include file="lagerbestand.tpl"}
@@ -407,9 +401,7 @@
                         </div>
                     <!-- Spedition -->
                     {if $item->versandgruppen_id==2}
-                        <span>
-                            <p>Speditionsversand:&nbsp;zzgl.&nbsp;49,00&nbsp;€</p>
-                        </span>
+                        <p>Speditionsversand:&nbsp;zzgl.&nbsp;49,00&nbsp;€</p>
                     {/if}
 
                     </div>
