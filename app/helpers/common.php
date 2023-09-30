@@ -139,6 +139,7 @@
             $url = config( "api.url" ) . "countries/";
             $response = $client->request( "get", $url, [
                 'headers' => [
+                    'Authorization' => 'Bearer ' . config( "api.key" ),
                     "Content-Type"  => "application/json",
                     "Accept"        => "application/json",
                 ]
