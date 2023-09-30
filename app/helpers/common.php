@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\BasketController;
     use GuzzleHttp\Client;
     use GuzzleHttp\Exception\GuzzleException;
     use PHPHtmlParser\Dom;
@@ -117,7 +118,7 @@
             $content = str_replace( "fileadmin/", $GLOBALS["INI"]["typo3"]["url"] . "/typo3/fileadmin/", $content );
             $content = str_replace( "ce-textpic", "", $content );
         }
-        catch ( ChildNotFoundException|CircularException|CurlException|StrictException|NotLoadedException $e )
+        catch ( ChildNotFoundException|CircularException|CurlException|StrictException|NotLoadedException )
         {
         }
         return array( "menu" => $menu, "content" => $content, );
