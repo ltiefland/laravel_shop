@@ -1,5 +1,7 @@
 <?php
 
+    use GuzzleHttp\Client;
+    use GuzzleHttp\Exception\GuzzleException;
     use PHPHtmlParser\Dom;
     use PHPHtmlParser\Exceptions\ChildNotFoundException;
     use PHPHtmlParser\Exceptions\CircularException;
@@ -127,3 +129,28 @@
         $_SESSION["SHOP"]["BASKET"] = new BasketController();
     }
 
+    function getRechnungsLaender(): array
+    {
+        $arr = array();
+        $client = new Client();
+        try
+        {
+            $url = config( "api.url" ) . "countries/";
+            $response = $client->request( "get", $url, [
+                'headers' => [
+                    "Content-Type"  => "application/json",
+                    "Accept"        => "application/json",
+                ]
+            ] )->getBody()->getContents();
+            $laender = json_decode( $response )->data;
+            foreach ( $laender as $land )
+            {
+                $arr[$land->id] = $land->name;
+            }
+            return $arr;
+        }
+        catch ( GuzzleException $e )
+        {
+            abort( $e->getCode() );
+        }
+    }
