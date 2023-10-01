@@ -155,4 +155,26 @@
         {
             abort( $e->getCode() );
         }
+
+        function getLand( int $landId )
+        {
+            $client = new Client();
+            try
+            {
+                $url = config( "api.url" ) . "countries/" . $landId;
+                $response = $client->request( "get", $url, [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . config( "api.key" ),
+                        "Content-Type"  => "application/json",
+                        "Accept"        => "application/json",
+                    ]
+                ] )->getBody()->getContents();
+                $land = json_decode( $response )->data;
+                return $land->name;
+            }
+            catch ( GuzzleException $e )
+            {
+                abort( $e->getCode() );
+            }
+        }
     }

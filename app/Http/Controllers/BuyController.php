@@ -38,7 +38,7 @@
                 }
                 $request->validate( $rules );
                 $_SESSION["SHOP"]["buy"]["Persdata"] = $request->Persdata;
-                $_SESSION["SHOP"]["buy"]["Persdata"]["Land_Name"] = Country::find( $_SESSION["SHOP"]["buy"]["Persdata"]["Land"] )->name_de;
+                $_SESSION["SHOP"]["buy"]["Persdata"]["Land_Name"] = getLand( $_SESSION["SHOP"]["buy"]["Persdata"]["Land"] );
                 if ( $lieferadresse == "false" )
                 {
                     $_SESSION["SHOP"]["buy"]["Persdata"]["liefer_Vorname"] = $_SESSION["SHOP"]["buy"]["Persdata"]["Vorname"];
