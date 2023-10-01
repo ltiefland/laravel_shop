@@ -1,23 +1,12 @@
 <?php
 
-    function smarty_modifier_getIsoCode( $Land = 'Deutschland', $len = 2 )
+    function smarty_modifier_getIsoCode( $Land = 'Deutschland' )
     {
         $iso = "DE";
-        $sql = "SELECT 
-                `iso-" . $len . "` as iso_code 
-            FROM 
-                countries
-            WHERE
-                `name_de` ='" . $Land . "'
-            OR
-                `name_uk` = '" . $Land . "'
-            OR
-                `id` = '" . $Land . "'
-        ";
-        $row = DB::connection( 'cms' )->select( $sql );
-        if ( $row[0] )
+        $i = getLand( $Land, true );
+        if ( $i )
         {
-            $iso = $row[0]->iso_code;
+            $iso = $i;
         }
         return $iso;
     }
