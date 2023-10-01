@@ -115,12 +115,7 @@
                 $this->mail( $orderId );
                 $order->mail();
             }
-            return view( 'buy_' . $id, [
-                "serviceCenterMenu" => $GLOBALS["serviceCenterMenu"],
-                "nav"               => $GLOBALS["menu"],
-                "ini"               => $GLOBALS["INI"],
-                "langstrings"       => $GLOBALS["langstrings"],
-            ] );
+            return view( 'buy_' . $id );
         }
 
         private function mail( $orderId )
