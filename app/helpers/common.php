@@ -157,7 +157,7 @@
         }
     }
 
-    function getLand( int $landId )
+    function getLand( int $landId, $iso = false )
     {
         $client = new Client();
         try
@@ -171,7 +171,12 @@
                 ]
             ] )->getBody()->getContents();
             $land = json_decode( $response )->data;
-            return $land->name;
+            $ret = $land->name;
+            if ( $iso === true )
+            {
+                $ret = strtoupper( $land->short_code );
+            }
+            return $ret;
         }
         catch ( GuzzleException $e )
         {
