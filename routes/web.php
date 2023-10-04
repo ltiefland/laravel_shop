@@ -139,6 +139,9 @@
             "serviceContent" => $content,
         ] );
     } );
+    Route::post( "/updateSession", function ()
+    {
+    } );
     Route::get( "/bestellen_seite_{step}.html", function ( $step )
     {
         return view( 'buy_' . $step, [
