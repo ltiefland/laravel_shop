@@ -4,8 +4,8 @@
     <td class="desktop" style="text-align:center;">
         {if !$item->for}
         <a href="/{$item->slug}.html">
-        {if $item->medium[0]->medium->name}
-            <img src="/images/upload/{$item->medium[0]->medium->folder}/mini/{$item->medium[0]->medium->name}" />
+        {if $item->media[0]->thumbnail}
+            <img src="{$item->media[0]->thumbnail}" />
         {else}
             <img src="{$ini.itemKorrektur.noImage}" />
         {/if}
