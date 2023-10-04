@@ -161,9 +161,6 @@
         <script type="text/javascript" src="/JavaScript/empfehlen_merken.js"></script>
         {/if}
 
-        {if $ini.star_garantie.aktiv==1}
-        <script type="text/javascript" src="/JavaScript/garantie.js"></script>
-        {/if}
         {/asset_compile}
 
         {if $ini.modules.nicht_gefunden==1}

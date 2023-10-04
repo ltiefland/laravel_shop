@@ -2,24 +2,20 @@
 <tr>
     <td style="text-align:center;">{$item->menge}</td>
     <td class="desktop" style="text-align:center;">
-        {if !$item->for}
         <a href="/{$item->slug}.html">
         {if $item->media[0]->thumbnail}
-            <img src="{$item->media[0]->thumbnail}" />
+            <img src="{$item->media[0]->thumbnail}"  alt=""/>
         {else}
-            <img src="{$ini.itemKorrektur.noImage}" />
+            <img src="{$ini.itemKorrektur.noImage}"  alt=""/>
         {/if}
         </a>
-        {else}
-        <img src="/images/garantie/geraeteschutz.png" />
-        {/if}
     </td>
     <td>
         <a {$item->infolayer_eventHandler} href="/{$item->slug}.html">{$item->name_erweitert|default:$item->name}</a>
 
-                    {if $item->addinfo}
-                        <br /><em>{$item->addinfo}</em>
-                    {/if}
+        {if $item->addinfo}
+            <br /><em>{$item->addinfo}</em>
+        {/if}
 
         <div class="infolayer" id="info_{$itemID}">{$item->infolayer}</div>
     </td>

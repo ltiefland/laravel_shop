@@ -117,20 +117,6 @@
         {include file="favoriten.tpl" mode="subdir"}
     </td>
     {/if}
-    {if $item->garantie_verf && !$item->garantie_gebucht}
-    <td  style="text-align:center;">
-
-        <div id="garantie_link_{$id}">
-            {$item->praemie|money_format|replace:"EUR":"&euro;"}
-            <a style="color:#911E18;" href="#" class="garantie_basket" id="garantie_{$item->ID}_{$id}" onmouseover="return overlib('{$grafik|escape:"javascript"}', HAUTO, VAUTO);" onmouseout="return nd();">Ger&auml;teschutz buchen</a>
-            <script>
-                $("#vollschutz").show();
-            </script>
-            <br>
-            Erfahren Sie <a style="font-weight:bold" href="/?id=30">hier</a> alles &uuml;ber<br> 5 Jahre Ger&auml;teschutz
-        </div>
-    </td>
-    {/if}
 </tr>
 </form>
 

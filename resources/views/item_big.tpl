@@ -85,11 +85,6 @@
 
     </div>
 
-    <div class="item_big_link">
-        {if $item.garantie_verf}
-        <img src="/images/garantie/stern_artikeluebersicht.gif" alt="5 Jahre Ger&auml;teschutz m&ouml;glich!" title="5 Jahre Ger&auml;teschutz m&ouml;glich!">
-        {/if}
-    </div>
     {if $item.nachlass > 0}
     <div style="position:absolute;margin:80px 0 0 105px;">
     {include file="nachlass.tpl" format="kl" preis=$item.nachlass}
